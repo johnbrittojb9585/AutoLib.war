@@ -3,9 +3,9 @@ package Common;
 public interface DataQuery {
 
 	
-    //  Home start Query	
+    //  Home start Query	N JOHN BASE COMMIT
 	
-	
+	public static final String JOHN = "SELECT SUM(volumes) FROM library_collection_final";
 	public static final String TotCollection_Count = "SELECT SUM(volumes) FROM library_collection_final";
 	public static final String DueList_Count = "SELECT COUNT(*) FROM due_reminder";
 	public static final String TotMember_Count = "SELECT COUNT(*) FROM member_view";
