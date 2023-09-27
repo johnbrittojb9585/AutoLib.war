@@ -11,6 +11,7 @@
 
 Copyright 2005 Macromedia, Inc. All rights reserved. -->
 <title>Panimalar College Of Nursing</title>
+<title>John Britto</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="mm_travel2.css" type="text/css" />
 
