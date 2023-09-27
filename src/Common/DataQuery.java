@@ -4,6 +4,10 @@ public interface DataQuery {
 
 	
     //  Home start Query	N JOHN BASE COMMIT
+//  Home start Query	N JOHN BASE COMMIT
+	
+//  Home start Query	N JOHN BASE COMMIT
+	
 	
 	public static final String JOHN = "SELECT SUM(volumes) FROM library_collection_final";
 	public static final String TotCollection_Count = "SELECT SUM(volumes) FROM library_collection_final";
