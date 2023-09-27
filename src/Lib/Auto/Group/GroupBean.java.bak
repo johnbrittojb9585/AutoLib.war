@@ -1,0 +1,433 @@
+package Lib.Auto.Group;
+import java.io.*;
+import java.util.*;
+import java.sql.*;
+
+public  class GroupBean   {
+
+    // ----------------------------------------------------- Instance Variables
+
+    static int code ;
+    static String name = null;
+    static int geli;
+    static int beli;
+    static int bbeli;
+    static int bveli;
+    static int nbeli;
+    static int jeli;
+    static int seli;
+    static int reli;
+    static int peli;
+    static int teli;
+    static int glper;
+    static int blper;
+    static int bblper;
+    static int bvlper;
+    static int nblper;
+    static int jlper;
+    static int slper;
+    static int rlper;
+    static int plper;
+    static int tlper;
+    static String remarks = null;
+    static int renewal;
+    static String status = null;
+
+    static java.util.ArrayList al=null;
+	
+
+
+    // ----------------------------------------------------------- Properties
+
+    public int getCode() {
+
+	return code;
+    }
+
+
+    
+    public void setCode(int code) {
+
+        this.code = code;
+
+    }
+
+//-------------------------------------
+    
+    public String getName() {
+
+	return name;
+
+    }
+
+
+    
+    public void setName(String name) {
+
+        this.name = name;
+
+    }
+//------------------------------------------------
+
+    
+    public int getGeli() {
+
+	return geli;
+
+    }
+
+
+
+    public void setGeli(int geli) {
+
+        this.geli = geli;
+
+    }
+
+    //-------------------------------------------
+ public int getBeli() {
+
+	return beli;
+
+    }
+
+
+
+    public void setBeli(int beli) {
+
+        this.beli = beli;
+
+    }
+    //-----------------------------------
+     public int getBbeli() {
+
+	return bbeli;
+
+    }
+
+
+
+    public void setBbeli(int bbeli) {
+
+        this.bbeli = bbeli;
+
+    }
+
+    //------------------------------------------
+ public int getBveli() {
+
+	return bveli;
+
+    }
+
+
+
+    public void setBveli(int bveli) {
+
+        this.bveli = bveli;
+
+    }
+
+     // ----------------------------------------------------------- Properties
+
+    public int getNbeli() {
+
+	return nbeli;
+    }
+
+
+    
+    public void setNbeli(int nbeli) {
+
+        this.nbeli = nbeli;
+
+    }
+
+//-------------------------------------
+
+    public int getJeli() {
+
+	return jeli;
+
+    }
+
+
+    
+    public void setJeli(int jeli) {
+
+        this.jeli = jeli;
+
+    }
+//------------------------------------------------
+
+    
+    public int getSeli() {
+
+	return seli;
+
+    }
+
+
+
+    public void setSeli(int seli) {
+
+        this.seli = seli;
+
+    }
+
+    //-------------------------------------------
+ public int getReli() {
+
+	return reli;
+
+    }
+
+
+
+    public void setReli(int reli) {
+
+        this.reli = reli;
+
+    }
+    //-----------------------------------
+     public int getPeli() {
+
+	return peli;
+
+    }
+
+
+
+    public void setPeli(int peli) {
+
+        this.peli = peli;
+
+    }
+
+    //------------------------------------------
+ public int getTeli() {
+
+	return teli;
+
+    }
+
+
+
+    public void setTeli(int teli) {
+
+        this.teli = teli;
+
+    }
+
+     // ----------------------------------------------------------- Properties
+
+    public int getGlper() {
+
+	return glper;
+    }
+
+
+    
+    public void setGlper(int glper) {
+
+        this.glper = glper;
+
+    }
+
+//-------------------------------------
+    
+    public int getBlper() {
+
+	return blper;
+
+    }
+
+
+    
+    public void setBlper(int blper) {
+
+        this.blper = blper;
+
+    }
+//------------------------------------------------
+
+
+    public int getBblper() {
+
+	return bblper;
+
+    }
+
+
+
+    public void setBblper(int bblper) {
+
+        this.bblper = bblper;
+
+    }
+
+    //-------------------------------------------
+ public int getBvlper() {
+
+	return bvlper;
+
+    }
+
+
+
+    public void setBvlper(int bvlper) {
+
+        this.bvlper = bvlper;
+
+    }
+    //-----------------------------------
+     public int getNblper() {
+
+	return nblper;
+
+    }
+
+
+
+    public void setNblper(int nblper) {
+
+        this.nblper = nblper;
+
+    }
+
+    //------------------------------------------
+ public int getJlper() {
+
+	return jlper;
+
+    }
+
+
+
+    public void setJlper(int jlper) {
+
+        this.jlper = jlper;
+
+    }
+
+     // ----------------------------------------------------------- Properties
+
+    public int getSlper() {
+
+	return slper;
+    }
+
+
+    
+    public void setSlper(int slper) {
+
+        this.slper = slper;
+
+    }
+
+//-------------------------------------
+
+    public int getRlper() {
+
+	return rlper;
+
+    }
+
+
+    
+    public void setRlper(int rlper) {
+
+        this.rlper = rlper;
+
+    }
+//------------------------------------------------
+
+    
+    public int getPlper() {
+
+	return plper;
+
+    }
+
+
+
+    public void setPlper(int plper) {
+
+        this.plper = plper;
+
+    }
+
+    //-------------------------------------------
+ public int getTlper() {
+
+	return tlper;
+
+    }
+
+
+
+    public void setTlper(int tlper) {
+
+        this.tlper = tlper;
+
+    }
+
+     //-------------------------------------------
+ public String getRemarks() {
+
+	return remarks;
+
+    }
+
+
+
+    public void setRemarks(String remarks) {
+
+        this.remarks = remarks;
+
+    }
+
+     //-------------------------------------------
+ public int getRenewal() {
+
+	return renewal;
+
+    }
+
+
+
+    public void setRenewal(int renewal) {
+
+        this.renewal = renewal;
+
+    }
+
+    public String getStatus() {
+
+	return status;
+
+    }
+
+
+
+    public void setStatus(String status) {
+
+        this.status = status;
+
+    }
+
+ //--------------------------------------
+  public ArrayList getAl() {
+	
+	return al;
+    }
+
+
+    
+    public void setAl(ArrayList al) {
+
+        this.al = al;
+
+    }
+
+}

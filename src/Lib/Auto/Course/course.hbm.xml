@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Course">
+
+<class name="CourseBean" table="course_mas" lazy="false">
+		<id name="code" column="course_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="name" column="course_name" type="java.lang.String"/>
+		<property name="major" column="course_major" type="java.lang.String"/>  
+		<property name="period" column="course_period" type="int"/>  
+		 <property name="type" column="course_type" type="java.lang.String"/>
+		<property name="desc" column="short_desc" type="java.lang.String"/>  
+	
+		
+		
+		
+</class>
+</hibernate-mapping>
+
+
+

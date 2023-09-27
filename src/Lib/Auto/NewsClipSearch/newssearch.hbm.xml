@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.NewsClipSearch">
+
+<sql-query name="NewsClipsimpleSearchQuery">
+
+	SELECT 
+	Newspaper_name, 
+	Newspaper_type, 
+	Newspaper_title,
+	Newspaper_abstract, 
+	Newspaper_subject, 
+	Newspaper_key, 	
+	Newspaper_code,
+	Newspaper_content
+	FROM newsclipping_mas where 2>1
+
+</sql-query>
+
+</hibernate-mapping>
+

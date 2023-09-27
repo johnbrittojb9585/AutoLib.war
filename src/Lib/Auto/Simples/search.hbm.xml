@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Simples">
+
+<sql-query name="simpleSearchQuery">
+
+	SELECT  access_no,call_no,title,author_name,edition,location,availability,document,year_pub,Bprice,place,sp_name,volno,sres,sub_name,pages,script,isbn,other_title FROM full_search where 2>1
+
+</sql-query>
+
+<sql-query name="articleSearchQuery">
+
+	SELECT  access_no,call_no,title,author_name,edition,location,availability,document,year_pub,Bprice,place,sp_name,volno,sub_name,jnl_name,issue_no,atl_page_nos FROM view_article_search where 2>1
+
+</sql-query>
+
+<sql-query name="ebookSimpleSearchQuery">
+
+	SELECT  access_no,call_no,title,author_name,edition,location,availability,document,year_pub,Bprice,place,sp_name,volno FROM ebook_mas_view where 2>1
+
+</sql-query>
+
+</hibernate-mapping>
+

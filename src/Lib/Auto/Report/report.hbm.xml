@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Report">
+
+
+
+<sql-query name="todayIssueListQuery">
+	select member_code,member_name,access_no,title,author_name,issue_date,due_date,doc_type,staff_code FROM issuedbooks where 2>1  
+</sql-query>
+
+<sql-query name="todayReturnListQuery">
+	select member_code,member_name,access_no,title,author_name, issue_date,due_date,return_date,doc_type,staff_code from jissue_history where 2>1   
+</sql-query>
+<sql-query name="todayRenewListQuery">
+	select member_code,member_name,access_no,title,author_name,issue_date,due_date,doc_type,staff_code FROM issuedbooks where 2>1  
+</sql-query>
+
+<sql-query name="todayTransAmountListQuery">
+
+	select member_code,member_name,access_no,title,author_name, issue_date,due_date,trans_date,trans_amount,trans_head,remarks from trans_member_view where 2>1  
+</sql-query>
+
+<sql-query name="todayPaidListQuery">
+	select bill_no,member_code,member_name,amount,payment_date,pay_mode,staff_code,doc_type,dept_name from payment_clear_view where 2>1 
+</sql-query>
+
+</hibernate-mapping>
+
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Journal_Artical">
+
+<sql-query name="JournalArticleSearchQuery">
+
+	SELECT 
+	jnl_name, 
+	Atl_Title, 
+	Atl_Author, 
+	Atl_Subject, 
+	Atl_Keywords, 
+	Atl_Abstract,
+	Atl_Page_Nos,
+	Atl_No,
+	Vol_No,
+	Issue_No,
+	Issue_Year,
+	Issue_Month	
+	FROM journal_articles WHERE 2>1
+
+</sql-query>
+
+
+</hibernate-mapping>
+
+
+

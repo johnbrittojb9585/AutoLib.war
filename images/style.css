@@ -1,0 +1,51 @@
+.logdkblue {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #04689a; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.hexatxt {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #363636; LINE-HEIGHT: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.hextitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #2b497d; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.hexbotlinks {
+	FONT-SIZE: 8pt; COLOR: #698caf; FONT-FAMILY: arial; TEXT-DECORATION: none
+}
+.smalltext {
+	FONT-SIZE: 8pt; COLOR: #5692c2; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.hexnews {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: arial; TEXT-DECORATION: none
+}
+.righttitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #04689a; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.bluetext-01 {
+	FONT-WEIGHT: normal; FONT-SIZE: 13pt; COLOR: #008ff9; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.logdkbluebld {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #6fa6d2; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.logbox {
+	FONT-SIZE: 7.5pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.boldtext_gold {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #d1b930; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.hextitle01 {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #656293; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.hextitle03 {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #467564; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.hextitle04 {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #917e46; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.hextitle05 {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #6f5560; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.bg {
+	BACKGROUND-IMAGE: url(images/bgg.gif)
+}
+.homebg {
+	BACKGROUND-IMAGE: url(images/bg.gif)
+}

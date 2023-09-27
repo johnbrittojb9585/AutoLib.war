@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.PubSup">
+<class name="PubSupBean" table="sup_pub_mas" lazy="false">
+		<id name="sp_code" column="SP_Code" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="sp_name" column="SP_Name" type="java.lang.String"/>
+		<property name="short_desc" column="Short_Desc" type="java.lang.String"/>  		
+		 <property name="address1" column="Address1" type="java.lang.String"/>
+		<property name="address2" column="Address2" type="java.lang.String"/>  
+		 <property name="city" column="City" type="java.lang.String"/>
+		<property name="state" column="State" type="java.lang.String"/>  
+		 <property name="country" column="Country" type="java.lang.String"/>
+		<property name="pincode" column="PinCode" type="java.lang.String"/>   
+		<property name="phone" column="Phone" type="java.lang.String"/>  
+		 <property name="fax" column="Fax" type="java.lang.String"/>
+		<property name="emailid" column="EmailId" type="java.lang.String"/>  
+		 <property name="urlid" column="URLID" type="java.lang.String"/>
+		<property name="sp_type" column="SP_Type" type="java.lang.String"/> 
+		
+
+
+	
+</class>
+
+</hibernate-mapping>
+
+
+

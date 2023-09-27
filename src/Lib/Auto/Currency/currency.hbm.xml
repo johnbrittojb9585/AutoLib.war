@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Currency">
+
+<class name="CurrencyBean" table="currency_mas" lazy="false">
+		<id name="code" column="code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="currency" column="currency" type="java.lang.String"/>
+		<property name="indian_value" column="indian_value" type="float"/>  
+		<property name="remarks" column="remarks" type="java.lang.String"/>  
+		
+	
+		
+		
+		
+</class>
+
+</hibernate-mapping>
+
+
+

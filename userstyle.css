@@ -1,0 +1,66 @@
+.class11
+{
+background-color:#F19646;
+color:#333F98;
+font-weight:bold;
+font-family:arial;
+font-style:western;
+position:absolute;
+visibility:hidden;
+font-size:8pt;
+height:20;
+width:145;
+z-index:20pt;
+}
+.class2
+{
+border:.1em groove #2D6911;
+Z-index:300pt;
+text-align:center;
+font-family:arial;
+font-size:8pt;
+font-style:western;
+text-decoration:small-caps;
+height:20;
+width:150;
+}
+
+.text {  font-family: Arial, Helvetica, sans-serif; font-size: 9pt}
+.browntext { font-family: Arial, Helvetica, sans-serif; font-size: 9pt ; color: #761F00}
+.sbrowntext { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: #761F00 }
+.tg {  cursor: default; page-break-before: left; page-break-after: right}
+.bodytxt { font-family: Arial, Helvetica, sans-serif; font-size: 9pt ; color: #69511F}
+.blinks { font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt; color: #761F00 }
+.sbrownclose { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: #761F00 ; line-height: 8pt}
+.wt { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #FFFFFF; line-height: 9pt}
+.year { font-family: Arial, Helvetica, sans-serif; font-size: 14pt; color: #FFFFFF; font-weight: bold}
+.box { font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt}
+.bltext { font-family: Arial, Helvetica, sans-serif; font-size: 12pt; color: #000000}
+.news {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; color: #FFFFFF}
+.bltxt { font-family: Arial, Helvetica, sans-serif; font-size: 9pt}
+.homet { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #711F00; line-height: 10pt}
+.bodytextbold {font-family: Times New Roman; font-size: 12pt ; font-weight: bold; color: black }
+.bodytextsmall {font-family: Times New Roman; font-size: 12pt ; font-weight:bold; color: black }
+
+.sucessbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: green; FONT-FAMILY: Times New Roman; TEXT-DECORATION: none
+}
+.errorbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #cc0066; FONT-FAMILY: Times New Roman; TEXT-DECORATION: none
+}
+.sucesssmall {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #5048E4;  font-weight: bold; FONT-FAMILY: Times New Roman; TEXT-DECORATION: none
+}
+.errorsmall {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #cc0066; FONT-FAMILY: Times New Roman; TEXT-DECORATION: none
+}
+.listbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; FONT-FAMILY: Times New Roman; TEXT-DECORATION: none
+}
+.exceptionbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 14pt; COLOR: red; FONT-FAMILY: Times New Roman; TEXT-DECORATION: none
+}
+.error {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #cc0066; FONT-FAMILY: TimesNewRoman ; TEXT-DECORATION: none
+}
+

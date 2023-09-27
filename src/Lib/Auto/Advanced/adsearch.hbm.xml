@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Advanced">
+
+<sql-query name="advancedSearchQuery">
+
+	SELECT  access_no,call_no,title,author_name,edition,location,availability,document,year_pub,Bprice,place,sp_name,volno,media as phy_media,binding,invoice_no,invoice_date,purchase as gift_purchase,add_field1,add_field2,add_field3,supplier,dept_name,sres,pages,script,sub_name FROM full_search where 2>1 
+
+</sql-query>
+
+<sql-query name="fullViewQuery">
+
+	SELECT  access_no,call_no,title,author_name,location,availability,document,SP_Name,Year_Pub,sub_name,dept_name,supplier,Bprice,contents,SRes,place,volno,add_field3 FROM full_search where 2>1 
+
+</sql-query>
+
+<sql-query name="articlefullViewQuery">
+
+	SELECT  access_no,call_no,title,author_name,location,availability,document,SP_Name,Year_Pub,sub_name,dept_name,supplier,Bprice,contents,SRes,place,volno,add_field3,sub_name,jnl_name,issue_month,atl_page_nos FROM view_article_search where 2>1 
+
+</sql-query>
+
+<sql-query name="ebookfullViewQuery">
+
+	SELECT  access_no,call_no,title,author_name,location,availability,document,SP_Name,Year_Pub,sub_name,dept_name,supplier,Bprice,contents,SRes,place,volno,add_field3 FROM ebook_mas_view where 2>1 
+
+</sql-query>
+
+<sql-query name="fullViewSearchQuery">
+
+	SELECT  access_no,call_no,title,author_name,location,availability,document,SP_Name,Year_Pub,sub_name,dept_name,supplier,Bprice,contents,SRes,place,volno,add_field3,keywords FROM full_search where 2>1 
+
+</sql-query>
+
+
+</hibernate-mapping>
+

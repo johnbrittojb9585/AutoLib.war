@@ -1,0 +1,132 @@
+.dataTable  {
+	color: #464645;
+	text-align: left;
+	border: 1px solid #666;
+    width:100%;
+	margin: 20px 0 20px 0 !important;
+	font-family:"Times New Roman",Georgia,Serif;
+	font-size: 12px;
+}
+
+.dataTable th  {
+	text-align: left;
+	vertical-align: top;
+	background-color:#40ABEE;
+	color: #fff;
+}
+
+thead tr {
+	background-color1: #fc0;
+	background-color: ;
+}
+
+.dataTable th.sorted {
+	background-color1: orange;
+	background-color: #40ABEE;
+}
+
+.dataTable th a,.dataTable th a:visited {
+	color: white;
+	font-weight: bold;
+}
+
+.dataTable th  a:hover {
+	text-decoration: underline;
+	color: white;
+	font-weight: bold;
+}
+
+.dataTable th.sorted a,.dataTable th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+.dataTable th.sortable a {
+	background-image: url(../images/arrow_off.png);
+	background-repeat: no-repeat;
+}
+
+.dataTable th.order1 a {
+	background-image: url(../images/arrow_down.png);
+	background-repeat: no-repeat;
+}
+
+.dataTable th.order2 a {
+	background-image: url(../images/arrow_up.png);
+	background-repeat: no-repeat;
+}
+
+.dataTable tr.odd {
+	background-color:#f1f1f1;
+}
+
+.dataTable tr.tableRowEven,.dataTable tr.even {
+	background-color1: #fea;
+	background-color:#fff;
+}
+
+div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 99%;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+	background-repeat: no-repeat;
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png) ;
+	background-repeat: no-repeat;
+}
+
+span.xml {
+	background-image: url(../images/ico_file_xml.png);
+	background-repeat: no-repeat;
+}
+
+span.pdf {
+	background-image: url(../images/ico_file_pdf.png);
+	background-repeat: no-repeat;
+}
+
+span.rtf {
+	background-image: url(../images/ico_file_rtf.png);
+	background-repeat: no-repeat;
+}
+
+span.pagebanner {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 99%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+}
+
+span.pagelinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 99%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+	color: #f1f1f1;
+}

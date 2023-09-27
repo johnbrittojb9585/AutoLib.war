@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.JournalBrowse">
+
+<sql-query name="JNLFullviewSearchQuery">
+
+	SELECT jnl_code,jnl_name,issn,frequency,doc_type,country,LANGUAGE,deli_mode,jnl_type,sub_name,publisher,url,location FROM journal_view where 2>1 
+
+</sql-query>
+
+
+</hibernate-mapping>
+

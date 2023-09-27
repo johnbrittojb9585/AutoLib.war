@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.QuestionBank">
+<class name="QuestionBankBean" table="question_bank" lazy="false">
+		<id name="qcode" column="QB_Code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	    <property name="qdate" column="Date" type="java.lang.String"/>
+		<property name="uniname" column="University" type="java.lang.String"/> 
+		
+		<property name="subname" column="Sub_Name" type="java.lang.String"/> 
+		<property name="subcode" column="Sub_Code" type="java.lang.String"/> 
+		
+		<property name="dname" column="Dept" type="java.lang.String"/> 
+		<property name="qcourse" column="Course" type="java.lang.String"/> 
+		<property name="qyear" column="Year" type="java.lang.String"/> 
+		<property name="qmonth" column="Month" type="java.lang.String"/>  
+		<property name="semester" column="semester" type="java.lang.String"/>  
+		
+		<property name="remarks1" column="Add_Field1" type="java.lang.String"/>  
+		<property name="remarks2" column="Add_Field2" type="java.lang.String"/>
+		<property name="contents" column="Contents" type="java.lang.String"/>
+
+</class>
+
+</hibernate-mapping>
+
+
+

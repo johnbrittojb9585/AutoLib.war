@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.NewsClipSearch">
+
+<sql-query name="EResourcesimpleSearchQuery">
+
+	SELECT 
+	CODE, 
+	website, 
+	webdetails, 
+	webtitle, 
+	websubtitle, 
+	webtype	
+	FROM web_mas where 2>1
+
+</sql-query>
+
+</hibernate-mapping>
+

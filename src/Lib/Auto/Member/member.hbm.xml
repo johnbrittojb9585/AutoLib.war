@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Member">
+
+<class name="MemberBean" table="member_mas" lazy="false">
+		<id name="code" column="Member_Code" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="name" column="Member_Name" type="java.lang.String"/>
+		<property name="bdate" column="Birth_Date" type="date"/>  		
+		 <property name="edate" column="Enroll_Date" type="date"/>
+		<property name="exdate" column="Expiry_Date" type="date"/>  
+		 <property name="damount" column="Deposit_Amount" type="double"/>
+		<property name="decode" column="Designation_Code" type="int"/>  
+		 <property name="sex" column="Sex" type="java.lang.String"/>
+		<property name="madd1" column="Member_Add1" type="java.lang.String"/>   
+		<property name="madd2" column="Member_Add2" type="java.lang.String"/>  
+		 <property name="mcity" column="Member_City" type="java.lang.String"/>
+		<property name="mstate" column="Member_State" type="java.lang.String"/>  
+		 <property name="mpincode" column="Member_PinCode" type="java.lang.String"/>
+		<property name="mphone" column="Member_Phone" type="java.lang.String"/> 
+		<property name="memail" column="Member_Email" type="java.lang.String"/>  
+		 <property name="deptcode" column="Dept_Code" type="int"/>
+		<property name="coursecode" column="Course_Code" type="int"/>  
+		 <property name="groupcode" column="Group_Code" type="int"/>
+		<property name="remarks" column="Remarks" type="java.lang.String"/>  		
+		<property name="profile" column="Profile" type="java.lang.String"/>  
+		 <property name="photo" column="photo" type="java.lang.String"/>
+		<property name="cyear" column="Cyear" type="java.lang.String"/>  
+
+
+</class>
+
+<sql-query name="updateMemberMas">
+	update member_mas set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateIssueMas">
+	update issue_mas set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateIssueHistory">
+	update issue_history set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateTransMas">
+	update trans_mas set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updatePaymentClearance">
+	update payment_clearance set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateLibTimeManagement">
+	update lib_timemanagement set user_id=:NewMemberCode where user_id=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateLoginMas">
+	update login_mas set login_id=:NewMemberCode,login_password=:NewMemberCode where login_id=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateMiscellaneousMas">
+	update miscellaneous_mas set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateRenewalTime">
+	update renewal_time set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateEntryLog">
+	update entry_log set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+<sql-query name="updateReturnLog">
+	update return_log set member_code=:NewMemberCode where member_code=:OldMemberCode		
+</sql-query>
+
+
+
+
+</hibernate-mapping>
+
+
+

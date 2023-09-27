@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.JNL_Supplier_Invoice">
+
+<class name="JnlSupInvBean" table="journal_supinvoice_mas" lazy="false">
+		<id name="QuoteNo" column="Sup_Inv_No" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="Quotedate" column="Sup_Inv_Date" type="java.lang.String"/>  		
+		<property name="Remarks" column="Remarks" type="java.lang.String"/>  
+		<property name="Add1" column="Add_Field1" type="java.lang.String"/>  		
+		<property name="Add2" column="Add_Field2" type="java.lang.String"/>  			
+		
+				
+</class>
+
+<sql-query name="DeleteJNLSupInvMas">
+		delete from journal_supinvoice_mas WHERE sup_inv_no=:invno
+</sql-query>
+
+</hibernate-mapping>
+
+
+

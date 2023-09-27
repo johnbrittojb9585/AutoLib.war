@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Indent_Order">
+
+<class name="IndentOrderDetailsBean" table="indent_order_details" lazy="false">
+		<id name="ordno" column="Order_No" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="orddate" column="Order_Date" type="java.lang.String"/>  	    
+		<property name="quoteno" column="Quote_No" type="java.lang.String"/>			
+		<property name="quotedate" column="Quote_Date" type="java.lang.String"/> 		    
+		<property name="supcode" column="Sup_Code" type="int"/>  
+		<property name="supplier" column="Supplier" type="java.lang.String"/>
+				
+		<property name="indentno" column="Indent_No" type="java.lang.String"/>
+		<property name="titleno" column="Title_No" type="int"/> 	
+		<property name="apprvoedcopy" column="Copies" type="int"/>
+
+		<property name="Remarks" column="Remarks" type="java.lang.String"/>  
+		<property name="Add1" column="Add_Field1" type="java.lang.String"/>  		
+		<property name="Add2" column="Add_Field2" type="java.lang.String"/>  	
+
+</class>
+
+
+<sql-query name="IndentOrderFullView">
+        SELECT Order_No,Order_Date,Quote_No,Quote_Date,Sup_Code,Supplier,Indent_No,Title_no,Title,Author_Name,
+Copies,Remarks,Add_Field1,Add_Field2,Title_Status FROM indent_order_fullview where Order_No=:ordno
+
+</sql-query>
+
+<sql-query name="DeleteIndentOrderDetail">
+		delete from indent_order_details WHERE Order_No=:ordno
+
+</sql-query>
+
+<sql-query name="UpdateOrderIndentMas">
+		UPDATE indent_details_mas SET Title_Status='ORDERED',Indent_Status='ORDERED' WHERE Title_No=:titleno AND Indent_No=:indtno
+</sql-query>
+
+</hibernate-mapping>
+
+
+

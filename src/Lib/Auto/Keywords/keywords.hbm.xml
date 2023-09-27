@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Keywords">
+<class name="KeywordsBean" table="keywords_mas" lazy="false">
+		<id name="kcode" column="keyword_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="kname" column="keyword_name" type="java.lang.String"/>
+		<property name="kdesc" column="short_desc" type="java.lang.String"/>  
+		
+ 
+	
+
+	
+</class>
+
+</hibernate-mapping>
+
+
+

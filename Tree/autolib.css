@@ -1,0 +1,438 @@
+BODY { 
+	background : #CAE1FF;
+	margin:0;
+	padding:0
+}
+.bodytexthighlight {  
+	font-family: Arial; 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: red
+}
+#footertext {
+	font-family: Arial; 
+	background: #104E8B;
+	color: #FFFFFF;
+	font-size: 9pt; 
+}
+.largeList { 
+	width: 300px; 
+	overflow: scroll;
+}
+.highlightRow{
+	background-color:#BCC995; 
+	color:#ffffff
+}
+a:link, a:visited {
+	font-family: Arial; 
+	font-size: 12px;	
+	color: #000000;
+	text-decoration: none;
+}
+a:hover, a:active {
+	font-family: Arial; 
+	font-size: 12px;	
+	color: #328dcc;
+	text-decoration: none;
+}
+.leftRightForm th {
+	font-family: Arial; 
+	font-size: 9pt;
+	font-weight: bold; 
+	color: #666666;
+	text-align: right;
+	vertical-align: top;
+}
+.contentTbl {
+	border-style: solid; 
+	border-color: #7C1271; 
+	border-width: 1px; 
+	text-indent:10px;
+} 
+.leftRightForm td {
+	font-family: Arial; 
+	font-size: 9pt;
+	color: #666666;
+	vertical-align: top;
+}
+#buttons {
+	margin: 15px 0 15px 0;
+}
+.welcome {
+	font-family: Arial;
+	font-weight: bold condensed;
+	font-size: 9pt;
+	color: #66ccff;
+	padding: 0px 0px 0px 25px;
+}
+input, select {
+	color: #0ff;
+	font-family: Arial; 
+	font-size: 9pt;
+	font-weight: normal; 
+	color: #666666;
+	margin: 0px 3px 0px 3px;
+}
+.submitButton {
+	font-size: 10px;
+	color: #DCE0E5;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	text-decoration: none;
+	font-weight: bold;
+	background-color:#104E8B;
+	border:none;
+	height:18px;
+	cursor:hand;	
+}
+.contentTable {
+	border: 1px solid #7C1271;
+	border-collapse: collapse;
+}
+.contentTable td{
+	font-family: Arial; 
+	font-size: 9pt;
+	color: #000; 
+	text-align: left;
+	border: 0px solid #ACBFD1;
+}
+.contentTable th {
+	font-family: Arial; 
+	font-size: 9pt;
+	font-weight: bold; 
+	color: #000; 
+	text-align:left; 
+	border: 0px solid #ACBFD1;
+}
+.columnHeader {
+	font-family: Arial; 
+	font-size: 9pt;
+	font-weight: bold; 
+	color: #000; 
+	text-align:center; 
+	background-color:#DCE0E5;
+	border: 1px solid #ACBFD1;
+}
+.dashboard {
+	border: 1px solid #aaa; border-collapse: collapse; 
+} 
+.dashboard th { 
+	background-color: #DCE0E5;
+	border: 1px solid #aaa; border-collapse: collapse;  
+	text-align: center;
+}
+.dashboardtd {border: 1px solid #aaa; border-collapse: collapse; }
+.sectionheaders {
+   font-family:Arial; 
+   font-size: 8pt; 
+   font-weight: bold; 
+   color: #FFFFFF;
+	background-image: url(../images/tab3d2_long.JPG);
+	background-repeat: no-repeat;
+	width:100%;
+	height:40px;
+	text-indent:20px;
+}
+.tabHighlight {
+	background-image: url(../images/Test3.gif);
+	background-repeat: no-repeat;
+	text-align:center;
+	width: 210px;
+	height: 27px;
+}
+.subHeading {
+	background-image: url(../images/tab3d2_longest.JPG);
+	background-repeat: no-repeat;
+	text-align:center;
+	valign: bottom;
+	width: 210px;
+	height: 27px;
+}
+.tabNonHighlight {
+	background-image: url(../images/tabNonSelected.jpg);
+	background-repeat: no-repeat;
+	text-align:center;
+	width: 210px;
+	height: 27px;
+}
+.mandatory {
+	color: red;
+	font-size: 9pt; 
+}
+.bodytext {
+	font-family: Arial; 
+	font-size: 9pt; 
+	font-weight: normal; 
+	color: #666666;
+}
+.contentmTbl {
+	border-style: solid; 
+	border-color: #53868B; 
+	border-width: 1px; 
+	text-indent:10px;
+}
+#tableHeader {
+	font-family: Arial; 
+	font-size: 10pt; 
+	font-weight: bold; 
+	color: white;
+}
+.bodytextbold {  
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	font-weight: bold; 
+	color: navy
+}
+#bodyhead {
+	color: #7C1271;
+	font-family: Trebuchet MS;
+	font-weight: bold;
+	font-size: 13pt;
+}
+#bodysearch {
+	color: navy;
+	font-family: Trebuchet MS;
+	font-size: 12pt;
+}
+#tablehead {
+	color: white;
+	font-family: Trebuchet MS;
+	font-size: 8pt;
+	font-weight: bold; 
+	background : #104E8B;
+}
+#tablebody {
+	color: black;
+	font-family: Trebuchet MS;
+	font-size: 8pt;
+}
+#reporthead {
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	font-weight: bold; 
+	color: black;
+}
+#reportright {
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	color: navy;
+}
+#highlight {
+	background : #F1EDC2;
+}
+#date {
+	font-family: Book Antiqua; 
+	font-size: 8pt; 
+	font-weight: bold; 
+	color: red;
+}
+#bodyleft {
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	color: navy;
+}
+#bodyright {
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	color: black;
+}
+.addedit {
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	color: navy;
+}
+#field {
+	font-family: verdana; 
+	font-size: 8pt; 
+	color: red;
+}
+#note {
+	font-family: Georgia; 
+	font-size: 10pt; 
+	color: red;
+}
+.contentAppForm {
+	border-style: solid; 
+	border-color: #53868B; 
+	border-width: 1px; 
+	text-indent:10px;
+}
+.contentProfile {
+	border:4ptlightgreen dotted;
+	border-color:black;
+}
+.marquee {
+	color : #FFF5EE;
+	background : #6495ED;
+	font-family: courier; 
+	font-size: 12pt; 
+}
+#borderLineinTableDef {
+	 border-top: 1.0pt solid windowtext; 
+	 border-bottom: 1.0pt solid windowtext; 
+	 border-left: 1.0pt solid windowtext; 
+	 border-right: 1.0pt solid windowtext; 
+	 border-color: #51adc2;
+}
+#profileLink {
+	font-family: verdana; 
+	font-size: 10pt; 
+	color: #C80B43;
+}
+#bodysubhead {
+	color: #cc0033;
+	font-family: Trebuchet MS;
+	font-weight: bold;
+	font-size: 10pt;
+}
+#helplink {
+	color: navy;
+	font-family: Trebuchet MS;
+	font-weight: bold;
+	font-size: 10pt;
+}
+#helphead {
+	color: #7C1271;
+	font-family: Trebuchet MS;
+	font-weight: bold;
+	font-size: 13pt;
+}
+#helpsteps {
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	color: navy;
+	font-weight: bold;
+}
+#helpdef {
+	font-family: Trebuchet MS; 
+	font-size: 10pt; 
+	color: black;
+}
+.info, .icon-ok, .warning, .error, .validation { 
+	 border: 1px solid; 
+	 margin: 10px 0px; 
+	 padding:10px 8px 10px 50px; 
+	 background-repeat: no-repeat; 
+	 background-position: 10px center; 
+	 font-family:Arial; /* Arial, Helvetica, sans-serif */
+	 font-weight: bold;
+	 font-size: 13px;
+}
+
+.info { 
+	 color: #00529B; 
+	 background-color: #BDE5F8; 
+	 background-image: url('../images/information.png'); 
+} 
+.icon-ok { 
+	 color: #4F8A10; 
+	 background-color: #DFF2BF; 
+	 background-image:url('../images/success.png'); 
+} 
+.warning { 
+	 color: #9F6000; 
+	 background-color: #FEEFB3; 
+	 background-image: url('../images/warrning.png'); 
+}
+.validation { 
+	 color: #D63301; 
+	 background-color: #FFCCBA; 
+	 background-image: url('../images/validation.png'); 
+}
+.error { 
+	 color: #D8000C; 
+	 background-color: #FFBABA; 
+	 background-image: url('../images/error.png'); 
+}
+#error {
+	color: Red;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+.front { 
+	 background-image: url('../images/FRONT.JPG'); 
+	 background-repeat: no-repeat; 
+      background-size: cover;
+	 background-position: top center !important;
+	 
+}
+
+
+#campusnewshead {
+	font-family: Trebuchet MS;
+	font-size: 12pt;
+	font-weight: bold;
+	color: white;
+}
+#campusnewstitle {
+	font-family: Trebuchet MS; 
+	font-size: 12pt; 
+	color: #8B2323;
+}
+.checkbx { 
+	width: 19px; 
+	height: 20px; 
+	padding: 0 5px 0 0; 
+	display: block; 
+	clear: left; 
+	float: left; 
+} 
+.rad { 
+	width: 19px; 
+	height: 20px; 
+	padding: 0 5px 0 0; 
+	display: block; 
+	clear: left; 
+	float: left; 
+}
+#clgtitle {
+	font-family: Centaur; 
+	font-size: 20pt; 
+	color: #FFFFFF;
+}
+#titleDateTime {
+	font-size: 10pt; 
+	color: #FDFCDC;
+	font-weight: bold;
+}
+#DateTime {
+	font-size: 10pt; 
+	color: #FFFFFF;
+}
+#titleAutolib {
+	font-family: verdana; 
+	font-size: 10pt; 
+	color: #FEF1E9;
+	font-weight: bold;
+}
+#homeYou {
+	font-family: verdana; 
+	font-size: 8pt; 
+	color: black;
+	font-weight: bold;
+}
+#pageItems {
+	font-family: verdana; 
+	font-size: 8pt; 
+	color: #008B8B;
+	font-weight: bold;
+}
+#macError {
+	font-family: verdana; 
+	font-size: 8pt; 
+	color: red;
+	font-weight: bold;
+}
+#entryHead {
+	font-family: Georgia; 
+	font-size: 15pt; 
+	color: green;
+	font-weight: bold;
+}
+#markEntry {
+	font-family: verdana; 
+	font-size: 10pt; 
+	color: black;
+	font-weight: bold;
+}

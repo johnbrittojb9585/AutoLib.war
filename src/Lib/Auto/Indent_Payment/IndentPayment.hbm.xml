@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Indent_Payment">
+
+<class name="IndentPaymentBean" table="indent_payment_mas" lazy="false">
+		<id name="paymentno" column="Payment_Ref_No" type="int">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="paymentsenddate" column="Payment_Sent_Date" type="java.lang.String"/> 
+		<property name="checkno" column="Cheque_No" type="java.lang.String"/>	
+		<property name="chequedate" column="Cheque_Date" type="java.lang.String"/> 
+		<property name="Netamount" column="Tot_Amount" type="double"/>	
+		<property name="transdetails" column="Trans_Details" type="java.lang.String"/>	
+	
+		<property name="Remarks" column="Remarks" type="java.lang.String"/>  
+		<property name="Add1" column="Add_Field1" type="java.lang.String"/>  		
+		<property name="Add2" column="Add_Field2" type="java.lang.String"/>  	
+		
+				
+</class>
+
+<sql-query name="IndentInvoiceUpdate">
+		UPDATE indent_invoice_details SET Flag='COMPLETED',Payment_Ref_No=:pmtno WHERE Invoice_No =:invno
+</sql-query>
+
+<sql-query name="IndentPaymentFullView">
+		SELECT Payment_Ref_No,Payment_Sent_Date,Cheque_no,Cheque_Date,Tot_Amount,Trans_Details,Remarks,Add_Field1,Add_Field2,Invoice_No,Inv_Tot_Amount FROM
+indent_payment_fullview WHERE Payment_Ref_No=:pmtno
+</sql-query>
+
+<sql-query name="DeleteIndentPaymentMas">
+		delete from indent_payment_mas where Payment_Ref_No=:pmtno
+</sql-query>
+
+<sql-query name="IndentInvoiceDeleteUpdate">
+		UPDATE indent_invoice_details SET Flag='PENDING',Payment_Ref_No='' WHERE Invoice_No=:invno
+</sql-query>
+
+<sql-query name="IndentNoSearch">
+		SELECT Payment_Ref_No,Supplier,tot_amount FROM indent_payment_fullview where Supplier like :invno 
+		GROUP BY Payment_Ref_No,Supplier,Sup_Code
+</sql-query>
+
+<!--<sql-query name="IndentInvRefNo1212">-->
+<!--		SELECT invoice_no,supplier,SUM(Accepted_Price) as Accepted_Price1 FROM indent_invoice_fullview where invoice_no like :invno GROUP BY invoice_no,supplier,sup_code-->
+<!--</sql-query>-->
+
+</hibernate-mapping>
+
+
+

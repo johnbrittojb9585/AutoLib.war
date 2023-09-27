@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Review">
+<class name="ReviewBean" table="review_mas" lazy="false">
+
+<id name="reviewNo" column="review_no" type="int">
+			<generator class="assigned"/>
+</id>
+
+<property name="accessNo" column="access_no" type="java.lang.String"/>
+<property name="memberCode" column="member_code" type="java.lang.String"/>
+<property name="rcDate" column="review_date" type="java.lang.String"/>
+<property name="title" column="review_title" type="java.lang.String"/> 
+<property name="desc" column="review_desc" type="java.lang.String"/> 
+<property name="rating" column="rating" type="int"/>
+
+
+</class>
+</hibernate-mapping>

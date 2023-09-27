@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Journal_Issues">
+<class name="JnlIssBean" table="journal_issues" lazy="false">
+		<id name="iss_acc_no" column="Issue_Access_No" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="jnl_code" column="Jnl_Code" type="java.lang.String"/>
+		<property name="sub_code" column="Subs_No" type="java.lang.String"/>  
+		<property name="iss_year" column="Issue_year" type="java.lang.String"/>
+		<property name="iss_month" column="Issue_Month" type="java.lang.String"/> 		
+		<property name="iss_vol" column="Issue_Volume" type="java.lang.String"/>  
+		<property name="iss_no" column="Issue_No" type="java.lang.String"/>
+		<property name="part_no" column="Part_No" type="java.lang.String"/>   		
+		<property name="iss_date" column="Issue_Date" type="java.lang.String"/>  
+		<property name="exp_date" column="Expected_Date" type="java.lang.String"/>
+		<property name="rec_date" column="Received_Date" type="java.lang.String"/>		
+		<property name="avail" column="Availability" type="java.lang.String"/>  
+		<property name="bvol_no" column="BVol_No" type="java.lang.String"/>		
+		<property name="remarks" column="Remarks" type="java.lang.String"/>		
+		<property name="iss_amount" column="Issue_Amount" type="java.lang.String"/>  
+		<property name="page" column="content_page" type="java.lang.String"/>
+
+
+
+	
+</class>
+
+</hibernate-mapping>
+
+
+

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+<!--	<property name="connection.datasource">java:/comp/env/jdbc/library</property>-->
+	    <property name="connection.datasource">java:library</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hibernate.max_fetch_depth">2</property>
+        <property name="transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory
+        </property>
+        <mapping resource="Lib/Auto/Simples/search.hbm.xml"/>
+        <mapping resource="Lib/Auto/Author/author.hbm.xml"/>
+        <mapping resource="Lib/Auto/Subject/subject.hbm.xml"/>
+        <mapping resource="Lib/Auto/Binding/binding.hbm.xml"/>
+        <mapping resource="Lib/Auto/Advanced/adsearch.hbm.xml"/>
+        <mapping resource="Lib/Auto/BrowseSimple/browsesearch.hbm.xml"/>
+        <mapping resource="Lib/Auto/Account/account.hbm.xml"/>
+        <mapping resource="Lib/Auto/Department/department.hbm.xml"/>
+		<mapping resource="Lib/Auto/City/City.hbm.xml"/>
+        <mapping resource="Lib/Auto/Course/course.hbm.xml"/>
+        <mapping resource="Lib/Auto/Designation/designation.hbm.xml"/>
+        <mapping resource="Lib/Auto/Branch/branch.hbm.xml"/>
+        <mapping resource="Lib/Auto/Keywords/keywords.hbm.xml"/>
+        <mapping resource="Lib/Auto/Newsclliping/newsclip.hbm.xml"/>
+        <mapping resource="Lib/Auto/EResource/EResource.hbm.xml"/>
+        <mapping resource="Lib/Auto/NewsClipSearch/newssearch.hbm.xml"/>
+        <mapping resource="Lib/Auto/EBook/ebook.hbm.xml"/> 
+		<mapping resource="Lib/Auto/EBookSearch/ebooksearch.hbm.xml"/>
+		<mapping resource="Lib/Auto/EBookImport/EBookImport.hbm.xml"/>		
+		<mapping resource="Lib/Auto/Suggestion/suggestion.hbm.xml"/>
+		<mapping resource="Lib/Auto/Review/review.hbm.xml"/>
+        <mapping resource="Lib/Auto/EResourceSearch/EResourceSearch.hbm.xml"/>
+        <mapping resource="Lib/Auto/Journal_Artical/journalartical.hbm.xml"/>         
+		<mapping resource="Lib/Auto/MResource/MResource.hbm.xml"/> 
+		
+		<mapping resource="Lib/Auto/JNL_Enquiry/Jnlenquirymas.hbm.xml"/> 
+		<mapping resource="Lib/Auto/JNL_Enquiry/Jnlenquirydetails.hbm.xml"/>		
+		<mapping resource="Lib/Auto/JNL_Order/Jnlordermas.hbm.xml"/> 
+		<mapping resource="Lib/Auto/JNL_Order/Jnlorderdetails.hbm.xml"/> 		
+		<mapping resource="Lib/Auto/JNL_Invoice/JnlInvoice.hbm.xml"/> 				
+        <mapping resource="Lib/Auto/JNL_Payment/JnlPayment.hbm.xml"/> 						 
+        <mapping resource="Lib/Auto/JNL_Supplier_Invoice/JnlSupInvDetail.hbm.xml"/> 	
+        <mapping resource="Lib/Auto/JNL_Supplier_Invoice/JnlSupInvMas.hbm.xml"/> 	 
+		 
+        <!-- Start Indent Master Form -->
+        <mapping resource="Lib/Auto/Indent_Mas/IndentMasDetails.hbm.xml" />                 	
+        <mapping resource="Lib/Auto/Indent_Order/IndentOrderDetails.hbm.xml" /> 
+        <mapping resource="Lib/Auto/Indent_Invoice/IndentInvDetails.hbm.xml" /> 
+        <mapping resource="Lib/Auto/Indent_Payment/IndentPayment.hbm.xml" />   
+         
+        <!-- Start Book Import  -->         
+		<mapping resource="Lib/Auto/Book_Import/BookDataImport.hbm.xml"/>    
+		
+		 <!-- Start BAckVolume Import  -->         
+		<mapping resource="Lib/Auto/BackVolume_Import/BvolumeDataImport.hbm.xml"/>       
+                  
+		<!-- Start Home Service  -->       
+		<mapping resource="Login/Home.hbm.xml"/>   
+		
+		
+		
+		
+				
+
+		<!-- Start TransMaster  -->       
+		<mapping resource="Lib/Auto/TransMas/TransMas.hbm.xml"/>  		
+		<mapping resource="Lib/Auto/Miscellaneous/Miscellaneous.hbm.xml"/>  
+		
+		<mapping resource="Lib/Auto/QBSubject/qbsubject.hbm.xml"/>
+		<mapping resource="Lib/Auto/QuestionBank/QuestionBank.hbm.xml"/>	
+		
+          <!-- Message Mas  -->
+            <mapping resource="Lib/Auto/Report/report.hbm.xml"/>
+          
+		 <mapping resource="Lib/Auto/MsgMas/MsgMas.hbm.xml" />   
+		 
+		 <!-- member_mas -->
+		 
+		  <mapping resource="Lib/Auto/Member/member.hbm.xml"/>
+		 <!-- JournalSubscriptions -->
+		 
+         	 <mapping resource="Lib/Auto/JournalSubscription/journalSubscription.hbm.xml" />  
+         	 
+        <mapping resource="Lib/Auto/GateRegister_Import/GateDataImport.hbm.xml"/>     	 
+   </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Budget_Report_Full" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="def85fb4-3be2-44b9-a55f-52f2b055aeb4">
+	<property name="ireport.zoom" value="1.2100000000000182"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="124"/>
+	<parameter name="CMP_NAME" class="java.lang.String"/>
+	<parameter name="CMP_ADD" class="java.lang.String"/>
+	<parameter name="ReportTitle" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="All_Query" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{All_Query}]]>
+	</queryString>
+	<field name="bud_SAmount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Bud_Code" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Bud_Head" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Bud_From" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Bud_To" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dept_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Bud_Amount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Bud_Bal" class="java.lang.String"/>
+	<field name="B_Amount" class="java.lang.String"/>
+	<field name="B_SAmount" class="java.lang.String"/>
+	<field name="budB_Bal" class="java.lang.String"/>
+	<field name="NB_Amount" class="java.lang.String"/>
+	<field name="NB_SAmount" class="java.lang.String"/>
+	<field name="budNB_Bal" class="java.lang.String"/>
+	<field name="S_Amount" class="java.lang.String"/>
+	<field name="S_SAmount" class="java.lang.String"/>
+	<field name="budS_Bal" class="java.lang.String"/>
+	<field name="P_Amount" class="java.lang.String"/>
+	<field name="P_SAmount" class="java.lang.String"/>
+	<field name="budP_Bal" class="java.lang.String"/>
+	<field name="R_Amount" class="java.lang.String"/>
+	<field name="R_SAmount" class="java.lang.String"/>
+	<field name="budR_Bal" class="java.lang.String"/>
+	<field name="J_Amount" class="java.lang.String"/>
+	<field name="J_SAmount" class="java.lang.String"/>
+	<field name="budJ_Bal" class="java.lang.String"/>
+	<field name="M_Amount" class="java.lang.String"/>
+	<field name="M_SAmount" class="java.lang.String"/>
+	<field name="budM_Bal" class="java.lang.String"/>
+	<field name="bud_Bal" class="java.lang.String"/>
+	<field name="BB_Amount" class="java.lang.String"/>
+	<field name="BB_SAmount" class="java.lang.String"/>
+	<field name="T_Amount" class="java.lang.String"/>
+	<field name="T_SAmount" class="java.lang.String"/>
+	<field name="budBB_Bal" class="java.lang.String"/>
+	<field name="budT_Bal" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="18c7bcd7-289f-42be-aec2-8d7de10c9502" key="rectangle-1" x="34" y="3" width="486" height="56"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="3999cb1d-c84d-4730-aacd-72a0378a2c08" x="49" y="8" width="456" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CMP_NAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="4ece0c44-cec0-49e0-b4c8-8153b55386df" key="image-1" x="40" y="5" width="55" height="51"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA["/logo/reportcollege.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="a8fcfce9-353d-4861-ba32-c3dd57f9594a" x="49" y="33" width="456" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CMP_ADD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c57b60cf-7fe2-46d9-8f04-b3831a2d8e58" x="49" y="57" width="456" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="b08e4b29-7f9d-4dcd-be9e-16cea31e5a65" x="486" y="0" width="68" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="cf551eb4-bca1-4655-af94-48ffb17c148c" x="445" y="0" width="43" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date : ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement uuid="6ac6dc28-58ff-4a96-82da-1d3fe2ee332e" x="392" y="20" width="79" height="19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bud_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ae312959-cdda-44da-bb6c-3a5829ec90c9" x="38" y="20" width="108" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Bud_Head}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ee9b2b6a-cf6f-4523-952f-eedcbfba4e26" x="161" y="20" width="124" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Dept_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="157cfb72-e31b-4ca1-9127-1745940d7005" x="309" y="20" width="78" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Bud_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="433e17c6-ec81-4f39-8d0c-c1d4f0628cd0" x="1" y="20" width="33" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8a5693cf-3d40-4849-9d4e-a47cbbb1320d" x="0" y="39" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="31055c94-921a-4b99-8a40-1737f5c9e114" x="34" y="20" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="11a69880-2a0d-4ebc-aee6-88d4e289b50e" x="0" y="20" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="80b2a707-a989-4f7d-9a1a-6c07ccff096f" x="157" y="20" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="ff2b4f9c-9023-4b55-8d53-9b30865f4b2a" x="306" y="20" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="2f188212-9d4f-4763-88bd-b63a11723fa3" x="389" y="20" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="0b028c99-785f-4d2f-b0a6-04f8e9dba2c0" x="554" y="20" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="50b8fa48-69b3-48c5-985f-ce2d04358619" x="473" y="20" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="bbaff687-4e42-4092-9015-b6112229738d" x="1" y="20" width="554" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="45d4a642-2983-43b7-a29a-0e09a07a4170" x="1" y="1" width="33" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5d99f7bf-7769-4a5e-a580-c7bc50dcde59" x="38" y="0" width="119" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Budget Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="287a50e6-2dd0-474a-b3ba-ca1cbba905df" x="160" y="0" width="146" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="28d9ca42-3bd8-43ed-a8f5-3a8aae60c127" x="307" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TotalAmount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="988031b2-c961-4ec4-9ef7-579c949f42de" x="391" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BudgetSpent]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="00b9892b-b155-41a1-8c71-17aab6ca480b" x="0" y="0" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="6b5e22d7-78d4-42a9-82f7-076f618c2cf5" x="0" y="20" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="76e66ce7-51fa-4208-a185-60880e61eb36" x="0" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="e4ade921-10dc-4d21-bf2b-ada0fb22c38d" x="34" y="0" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement uuid="7e49de7e-9cec-45a8-86de-f8ebecd63a18" x="157" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="d2b4de2d-bf49-4154-8e71-c928209500d7" x="306" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="22b1bd06-3755-4a63-9909-548c4f10a0de" x="389" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="e7299841-bd1a-4c4b-96d8-0c85a67e531c" x="554" y="0" width="1" height="21"/>
+			</line>
+			<staticText>
+				<reportElement uuid="d64f5bfb-bb8e-47da-ae6e-714c2341b2e7" x="475" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BalAmount]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="4c55a02f-d4bf-473b-abb0-7f941ba49978" x="473" y="0" width="1" height="20"/>
+			</line>
+			<textField>
+				<reportElement uuid="e326a793-646b-412f-9374-3b6cb385d70f" x="479" y="19" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bud_Bal}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="244">
+			<rectangle>
+				<reportElement uuid="dce19677-6185-4815-9cc0-b3a09049f07f" x="82" y="18" width="376" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="fdc4ff04-528d-4be8-b5a9-69ddd55ff84f" x="129" y="18" width="75" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DocType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d0bde67e-7327-472b-8650-ff05f05de26d" x="214" y="19" width="75" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allocated]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eca0d480-7c75-46bf-a6fd-126a577ec4d2" x="299" y="19" width="75" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Spent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2da5663e-f005-4dff-95e3-90d7fd49def8" x="382" y="19" width="75" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3dbe1511-0680-4bb3-a0bc-d2ef85026209" x="86" y="18" width="33" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="09b61738-f120-4cb9-a717-3149cece86ac" x="209" y="18" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="5ea5226e-84cc-4f1e-99aa-44a9b75f669d" x="123" y="18" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="c8b562fd-990f-414b-9e97-b77ebe995eee" x="294" y="18" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="8beacff2-c929-4628-9901-b0d8a3526144" x="378" y="18" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="f5fb1fb9-72a2-4f22-9636-395b2d86cee2" x="82" y="38" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="dd32740b-3dfe-4a17-b8f5-4287ab8011ca" x="209" y="38" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="78f39c80-b407-4f4b-8cbb-1636ce39642f" x="123" y="38" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="8919370a-864f-4215-ae9d-0ce3fba23739" x="294" y="38" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="83d444a0-8133-4e65-9a35-ee315f3803f3" x="378" y="38" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="e25bac19-1ad9-4d55-80df-a50ee2083df8" x="82" y="57" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="a24a69bb-48da-45e1-bdc3-7319a1e5ab53" x="209" y="57" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="680513d5-70a9-45eb-a21e-903b1be9bee6" x="123" y="57" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="37dd1361-7ce9-4a2d-84c9-66e0a18b6d03" x="294" y="57" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="3dd2cc84-1a99-4121-931c-75262625c7be" x="378" y="57" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="9dca00e9-17ca-4708-95cc-168ba0f8af0f" x="82" y="77" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="ff7cf72b-f5e1-4dea-86e7-91b3b0d52b51" x="209" y="77" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="283dbd18-4c00-468f-b187-558f9498fa14" x="123" y="77" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="ffcd3845-8a05-4431-b5c1-3925a9c4fc2f" x="294" y="77" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="c3beecbe-165f-48bb-a492-1b6689afb25e" x="378" y="77" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="72e9fa4a-5f23-4be5-a293-e7163bd36d47" x="82" y="97" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="b5fdf0f9-5674-4448-8a71-892f04ddb437" x="209" y="97" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="f8b4aa41-6376-4db7-bda8-889899574bc0" x="123" y="97" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="30b9367b-fea5-4a2d-9587-b662760de65e" x="294" y="97" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="8080d858-1c8c-49c5-ac99-6789b95eb24a" x="378" y="97" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="2527e792-2287-4c77-8608-847138c7d4bb" x="82" y="116" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="f9d583be-3bdb-4907-be03-880089e496eb" x="209" y="116" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="cddcc607-7a0f-4ac3-90f2-a90679f0e693" x="123" y="116" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="c7fda4f7-fbdf-4d0e-95d6-348e23978692" x="294" y="116" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="f5c886fc-e6a6-4348-a6af-2dffccff9893" x="378" y="116" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="d2e16036-3f31-46f6-9d27-a0717d5a1bcc" x="82" y="136" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="89405f71-9ebf-44b1-a49d-604363c295c9" x="209" y="136" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="80ac3648-7631-48f3-b68a-22ebe5ca76e4" x="123" y="136" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="afbee96d-b9af-4ff5-9247-22e424a9984b" x="294" y="136" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="b7a18491-c258-4bd0-854d-9948f46cc525" x="378" y="136" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="fd9ce07a-11fc-4896-9d14-1c70321d5840" x="82" y="156" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="45446590-dc9e-4c1c-ac4c-23fd57840ad9" x="209" y="156" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="ec6c8c9f-e744-4156-8eca-8f5885863be3" x="123" y="156" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="e0b2ebde-e6fb-4974-b3b6-f3a21c7e3c14" x="294" y="156" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="6ae007ff-4063-43d0-a197-d337d0cc851c" x="378" y="156" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="6ae13f60-8788-4ffe-aff7-1ee27a23d795" x="82" y="176" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="a7c115a9-29ca-4ba6-8170-bca679f286d4" x="209" y="177" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="840da9ff-89db-4e93-906e-74ccc1c0b8c4" x="123" y="177" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="524ad68c-2eb6-466d-a454-3428bf0cfb63" x="294" y="177" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="a7daa810-7c59-41a0-bf39-cdf5b2815aa0" x="378" y="177" width="1" height="20"/>
+			</line>
+			<rectangle>
+				<reportElement uuid="889f6e81-c079-4ee3-ad3e-4632f7d413e3" x="82" y="196" width="376" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement uuid="09120e64-abe6-41e8-b11e-254e4bdd2d0f" x="209" y="196" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="5cd5285d-f9d3-421f-90f0-02f9eb9b51bc" x="123" y="196" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="d6694bc3-6f4f-4c63-9525-c8e373a0cab9" x="294" y="196" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="735ab2a6-be85-4f6f-aedd-5ca845ce96f8" x="378" y="196" width="1" height="20"/>
+			</line>
+			<staticText>
+				<reportElement uuid="c608a079-e6cc-446b-8d8a-ccd9ea6e6f36" x="129" y="38" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Book]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2b51c159-1aaf-45d7-b0d5-5d5c4766714d" x="126" y="178" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Journal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="60dc829b-53ab-4f32-9923-fc09c3004224" x="127" y="98" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Standard]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f330cff9-3c44-4522-a4ea-a4beb4e4b37a" x="126" y="137" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f687ba7f-c0da-4fb2-9f38-ec4f77dc2510" x="129" y="78" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[NonBook]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d5e252ea-591b-4ed9-bb68-1f4a284539cc" x="126" y="118" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Proceeding]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dc4367e7-dc5f-449b-be45-97fd31bc6bce" x="126" y="197" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Misc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c81223e6-53f0-43d6-9066-349275be96a0" x="86" y="38" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="80c42c28-59a7-47a7-a487-9274333a4430" x="86" y="78" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c9c9b77-4aa2-4421-9308-57b166ddd440" x="84" y="99" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d27c921d-36ec-445a-887d-65fc263b2342" x="84" y="118" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5fc8855a-14fe-4b51-b2cd-3485d00446ec" x="84" y="138" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b8bedfef-8762-40dd-93d3-d7039655df87" x="84" y="178" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8a86b6b2-1bf4-4431-95ee-45f6b08708a9" x="84" y="197" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5b1111c5-184b-445c-a103-9e57f446960e" x="216" y="38" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{B_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fe622703-cd65-4adb-9441-150ea0faff90" x="302" y="38" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{B_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f805522a-f9ae-4212-a40d-18f77970574b" x="384" y="38" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budB_Bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="69683a48-7f14-453d-b5ae-ff9f5c3157db" x="216" y="78" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NB_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d9e59598-7d0f-4f8d-97bb-c06c6a922f0a" x="302" y="78" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NB_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1bae2555-a93e-4d93-8042-a87ae7bac037" x="384" y="78" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budNB_Bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d7f0becf-1ddf-4244-a7c1-66d6d40166f6" x="215" y="99" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{S_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e8ce015d-0918-4491-a762-6d72f0441e4a" x="300" y="99" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{S_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4cc57430-368b-455e-b719-e3355a634fa9" x="381" y="99" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budS_Bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="65aa5bd0-43ea-41cf-ac3b-7251bf7fec84" x="214" y="117" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{P_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b8031575-c451-4dad-a038-afd405e07773" x="300" y="117" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{P_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1503b520-148d-48f4-a5de-39321eb5a696" x="381" y="117" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budP_Bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9f57fb2f-3fa2-46bb-a805-3a90180cc0c6" x="214" y="137" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{R_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1e78939-6529-49b5-914a-1f94d6db6cf7" x="299" y="137" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{R_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cc46c3f4-aeed-466b-82b4-94cda90b2166" x="381" y="137" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budR_Bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d48c583c-4c6f-47e6-907c-178e78883b20" x="214" y="178" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{J_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="04624fa2-3485-4e1e-945a-ebd5792aea2a" x="299" y="178" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{J_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1926a3cd-456b-4f4a-9eb5-876615356bfa" x="380" y="178" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budJ_Bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ecf0c978-8ef4-42c1-8370-e53b3c03c299" x="214" y="197" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{M_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b18d26cc-2a4b-47c4-8861-d11ce452bb97" x="299" y="197" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{M_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="139dc507-df5a-4130-93e9-026ab30a627c" x="380" y="197" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budM_Bal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8283b82c-5ae8-40a8-82bc-9531c6c4809d" x="128" y="57" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[BookBank]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6ea3139d-4fb4-4830-b37a-d11ec4474989" x="216" y="57" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BB_Amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4dc37155-97a2-4637-9af9-83841bde96c8" x="86" y="58" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="1d977729-20c8-4aa9-826c-9a3c0b50916a" x="302" y="57" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BB_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="37ec507e-fe3b-42e7-bb25-9417a644089c" x="384" y="58" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budBB_Bal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="98285812-37cd-497c-b641-f74a620156fa" x="85" y="157" width="33" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a0d9a361-5d66-49e5-a5c7-052fe7f784cf" x="214" y="156" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{T_Amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="75153824-6662-4bf6-8869-188cafd1e811" x="126" y="156" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Thesis]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="88ba9a72-544c-4c6b-b500-45bd0a76141e" x="299" y="157" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{T_SAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4bdeee5e-a090-456b-be55-8893aee67084" x="381" y="156" width="70" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budT_Bal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a148b5e0-3bd2-490a-a42a-49e38dba463e" x="1" y="0" width="554" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.GateRegister_Import">
+<class name="GateDataBean" table="return_log" lazy="false">
+
+<id name="memberCode" column="member_code" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+			
+		<property name="entryDate" column="entry_time" type="java.lang.String"/>
+		<property name="outDate" column="return_time" type="java.lang.String"/>
+		<property name="inTime" column="in_time" type="java.lang.String"/>	
+		<property name="outTime" column="out_time" type="java.lang.String"/>
+		<property name="mins" column="min_used" type="int"/>			
+		
+</class>
+
+
+</hibernate-mapping>

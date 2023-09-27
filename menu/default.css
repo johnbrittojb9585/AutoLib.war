@@ -1,0 +1,104 @@
+#sddm
+{	margin: 0;
+	padding: 0;
+	z-index: 30}
+
+#sddm li
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 11px arial}
+
+#sddm li a
+{	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 10px;
+	width: 60px;
+	background: #104E8B;
+	color: #F5FFFA;
+	text-align: center;
+	text-decoration: none}
+
+#sddm li a:hover
+{	
+	background: #F0F8FF;
+	color: #000000;
+}
+
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #104E8B;
+	border: 1px solid #5970B2}
+
+	#sddm div a
+	{	position: relative;
+		display: block;
+		margin: 0;
+		padding: 5px 10px;
+		width: auto;
+		white-space: nowrap;
+		text-align: left;
+		text-decoration: none;
+		background: #104E8B;
+		color: #F5FFFA;
+		font: 11px arial}
+
+	#sddm div a:hover
+	{	background: #F0F8FF;
+		color: #000000;}
+	#sddm #Home0 a, #sddm #Home0 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+	#sddm #Profile1 a, #sddm #Profile1 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+	#sddm #TimeTable2 a, #sddm #TimeTable2 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #Attendance3 a, #sddm #Attendance3 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #Exam4 a, #sddm #Exam4 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #SubjectSyllabus5 a, #sddm #SubjectSyllabus5 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #ProgressReport6 a, #sddm #ProgressReport6 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #Fees7 a, #sddm #Fees7 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #Hostel8 a, #sddm #Hostel8 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #Circular9 a, #sddm #Circular9 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #Transport10 a, #sddm #BusDetails10 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #Scholarship11 a, #sddm #Scholarship11 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}
+#sddm #BusDetails12 a, #sddm #BusDetails10 span{ /*currently selected tab*/
+background-color: #CAE1FF;
+color : #104E8B;
+}

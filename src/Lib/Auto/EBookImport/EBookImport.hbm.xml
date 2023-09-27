@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.EBookImport">
+<class name="EBookDataBean" table="ebook_mas" lazy="false">
+		<id name="accessNo" column="Access_No" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    <property name="callNo" column="Call_No" type="java.lang.String"/>
+	    <property name="rcDate" column="Received_Date" type="java.lang.String"/>
+	    <property name="title" column="Title" type="java.lang.String"/>
+	    <property name="edition" column="Edition" type="java.lang.String"/>
+		<property name="authorName" column="Author_Name" type="java.lang.String"/> 
+		<property name="role" column="Role" type="java.lang.String"/>
+		<property name="pubCode" column="Pub_Code" type="int"/>
+		<property name="subCode" column="Sub_Code" type="int"/>
+		<property name="supCode" column="sup_code" type="int"/>
+		<property name="deptCode" column="Dept_Code" type="int"/>
+		<property name="branchCode" column="Branch_Code" type="int"/>
+		<property name="doc" column="Document" type="java.lang.String"/>
+		<property name="keywords" column="keywords" type="java.lang.String"/>
+		<property name="yop" column="Year_Pub" type="java.lang.String"/> 
+		<property name="pages" column="Pages" type="java.lang.String"/>
+		<property name="type" column="Type" type="java.lang.String"/>		
+		<property name="content" column="Content" type="java.lang.String"/>	
+		<property name="addfield1" column="Add_Field1" type="java.lang.String"/>
+		<property name="addfield2" column="Add_Field2" type="java.lang.String"/>	
+		<property name="isbn" column="isbn" type="java.lang.String"/>
+		<property name="price" column="price" type="java.lang.Double"/>
+		<property name="url" column="url" type="java.lang.String"/>
+		<property name="purchaseType" column="gift_purchase" type="java.lang.String"/>
+				
+						
+</class>
+
+
+</hibernate-mapping>
+

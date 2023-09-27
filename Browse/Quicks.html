@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>AutoLib Software ystems</titile></title>
+<link rel="stylesheet" type="text/css" href="/AutoLib/browsestyle.css">
+<base target="_self">
+</head>
+<body background="/AutoLib/soft.jpg" >
+<form name ="left" action="./BrowseDocument" target="body" onsubmit="return validate()">
+<table cellspacing=0 cellpadding=2 border=0 ID="Table1">
+<font face="Tahoma" size="2" color="#000080" class=disc ><b>Basic Search</b></font>
+<hr size=1>
+<font face="Tahoma" size="1" color="#000080" class=disc ><b>Search  Terms:<b></font>
+<input tabindex="0" name="name" size="14" maxlength="100">
+<tr><td><input type=radio name=ignore  checked value="Any"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Anywhere</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="BOOK"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Book</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="BOOK BANK"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Book Bank</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="NON BOOK"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Non Book</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="THESIS"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Thesis</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="REPORT"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Report</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="STANDARD"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Standard</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="PROCEEDING"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Proceeding</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="jnl_name"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Journal</b></font></td></tr>
+<tr><td><input type=radio name=ignore value="jnl_atl"><font face="Tahoma" size="1" color="#000080" class=disc ><b>Journal Articles</b></font></td></tr>
+
+<tr><td><center><input type="submit" value="Search" ></center></td>
+<td><input type="hidden" name="hid" value="search"></td></tr>
+</table>
+</form>
+<script language="javascript">
+
+function validate()
+{
+if(document.left.name.value=="")
+{
+alert("Enter Any Values");
+document.left.name.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+
+</table>
+</form>
+</body>
+
+<script language="javascript">
+function validates()
+{
+
+if(document.bot.userid.value=="")
+{
+alert("Please Enter Your User Id !!!");
+document.bot.userid.focus();
+return false;
+}
+if(document.bot.password.value=="")
+{
+alert("Please Enter Your Password !!!");
+document.bot.password.focus();
+return false;
+}
+return true;
+}
+</script>

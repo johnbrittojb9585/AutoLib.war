@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.JNL_Payment">
+
+<class name="JnlPaymentBean" table="journal_payment_mas" lazy="false">
+		<id name="paymentno" column="Payment_Ref_No" type="int">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="paymentsenddate" column="Payment_Sent_Date" type="java.lang.String"/> 
+		<property name="checkno" column="Cheque_No" type="java.lang.String"/>	
+		<property name="chequedate" column="Cheque_Date" type="java.lang.String"/> 
+		<property name="Netamount" column="Tot_Amount" type="double"/>	
+		<property name="transdetails" column="Trans_Details" type="java.lang.String"/>	
+	
+		<property name="Remarks" column="Remarks" type="java.lang.String"/>  
+		<property name="Add1" column="Add_Field1" type="java.lang.String"/>  		
+		<property name="Add2" column="Add_Field2" type="java.lang.String"/>  	
+		
+				
+</class>
+
+
+<sql-query name="PaymentInvRefNo">
+		SELECT invoice_no,sp_name,invoice_amount FROM jnl_invoice_fullview where invoice_no like :invno
+</sql-query>
+
+<sql-query name="PaymentInvoiceUpdate">
+		UPDATE journal_invoice_mas SET Payment_Flag='COMPLETED',Payment_Ref_No=:pmtno WHERE Invoice_No =:invno
+</sql-query>
+
+<sql-query name="PaymentFullView">
+		SELECT Payment_Ref_No,Payment_Sent_Date,Cheque_no,Cheque_Date,Tot_Amount,Trans_Details,Remarks,Add_Field1,Add_Field2,Invoice_No,Invoice_Amount FROM
+jnl_payment_fullview WHERE Payment_Ref_No=:pmtno
+</sql-query>
+
+<sql-query name="DeleteJNLPaymentMas">
+		delete from journal_payment_mas where Payment_Ref_No=:pmtno
+</sql-query>
+
+<sql-query name="PaymentInvoiceDeleteUpdate">
+		UPDATE journal_invoice_mas SET Payment_Flag='PENDING',Payment_Ref_No='' WHERE Invoice_No=:invno
+</sql-query>
+
+<sql-query name="PaymentNoSearch">
+		SELECT Payment_Ref_No,sp_name,tot_amount FROM jnl_payment_fullview where sp_name like :invno 
+		GROUP BY sp_name,Payment_Ref_No
+</sql-query>
+
+</hibernate-mapping>
+
+
+

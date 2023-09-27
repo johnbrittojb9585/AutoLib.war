@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Budget">
+<class name="BudgetBean" table="budget_mas" lazy="false">
+		<id name="code" column="bud_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="head" column="bud_head" type="java.lang.String"/>
+		<property name="dcode" column="dept_code" type="java.lang.String"/>  
+		<property name="bamount" column="bud_amount" type="java.lang.String"/>  
+		 <property name="samount" column="bud_samount" type="java.lang.String"/>
+		<property name="from" column="bud_from" type="java.lang.String"/>  
+		<property name="to" column="bud_to" type="java.lang.String"/> 
+		<property name="remarks" column="remarks" type="java.lang.String"/>
+		
+		
+		
+</class>
+
+
+
+</hibernate-mapping>
+
+
+

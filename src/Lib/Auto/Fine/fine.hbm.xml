@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Fine">
+
+<class name="Finebean" table="fine_mas" lazy="false">
+		<id name="fcode" column="fine_id" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="gcode" column="group_code" type="java.lang.String"/>
+		<property name="fperiod" column="fine_period" type="java.lang.String"/>  
+		<property name="famount" column="fine_amount" type="java.lang.String"/>
+		<property name="type" column="period_type" type="java.lang.String"/>  
+
+</class>
+
+</hibernate-mapping>
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.MResource">
+<class name="MResourceBean" table="missing_mas" lazy="false">
+		<id name="accessno" column="access_no" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    <property name="doctype" column="doc_type" type="java.lang.String"/>
+		<property name="availability" column="status" type="java.lang.String"/> 
+		<property name="mdate" column="mdate" type="date"/> 
+			
+</class>
+
+</hibernate-mapping>
+
+
+

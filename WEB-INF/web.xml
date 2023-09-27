@@ -1,0 +1,2956 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <display-name>LIBRARY</display-name>
+  
+  <filter>
+	<filter-name>ServletRequestFilter</filter-name>
+	<display-name>ServletRequestFilter</display-name>
+	<filter-class>com.library.autolib.portal.configbase.ServletRequestFilter</filter-class>
+  </filter>	
+
+  <filter>
+    <filter-name>ResponseOverrideFilter</filter-name>
+    <filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+  </filter>	
+  
+   <filter-mapping> 
+    <filter-name>ResponseOverrideFilter</filter-name> 
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Home/HomeServlet</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Author/AuthorServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Backup/BackupServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Subject/SubjectServlet</url-pattern>
+  </filter-mapping>
+  
+    <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Department/DepartmentServlet</url-pattern>
+  </filter-mapping>
+  
+      <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Review_Report/ReviewReportServlet</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+		<servlet-name>MessageMas</servlet-name>
+		<servlet-class>Lib.Auto.MsgMas.MsgMas</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MessageMas</servlet-name>
+		<url-pattern>/msgMas/MsgMasServlet</url-pattern>
+	</servlet-mapping>
+  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/City/CityServlet</url-pattern>
+  </filter-mapping>
+  
+ <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Member/MemberServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Photo/PhotoServlet</url-pattern>
+  </filter-mapping>
+  
+  
+   <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/BulkPhoto/BulkPhotoServlet</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/ContentUpload/ContentUploadServlet</url-pattern>
+  </filter-mapping>  
+    
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Member/SearchMemberServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Book/BookServlet</url-pattern>
+  </filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Book/BookSearch</url-pattern>
+  </filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/BibliographyReport/BiblioServlet</url-pattern>
+</filter-mapping>
+ 
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/BibliographyReport/BibSearch</url-pattern>
+</filter-mapping>
+    
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/AccessionRegister/AccessionServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/BudgetReport/BudgetReportServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/FrequentlyUsedResource/FreqUsedResource</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/FrequentlyUsedMember/FreqUsedMember</url-pattern>
+</filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/msgMas/MsgMasServlet</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/BulkReturnCounter/BulkReturnCounterServlet</url-pattern>
+  </filter-mapping>
+
+ <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/newarrivals/NewArraivalsServlet</url-pattern>
+  </filter-mapping> 
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JournalList/JournalListServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JnlIssueReport/JnlIssueReport</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/LibraryCollection/LibCollectionServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/MemberReport/MemberReportServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/PaymentInfo/PaymentInfoServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/SuggestionReport/SuggestionReportServlet</url-pattern>
+</filter-mapping>
+
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/PaymentInfo/PaymentInfoSearchServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>ServletRequestFilter</filter-name>
+  <url-pattern>/CounterReport/CounterReportsSearch</url-pattern>
+</filter-mapping>     
+
+<filter-mapping>
+  <filter-name>ServletRequestFilter</filter-name>
+  <url-pattern>/Gate_Register/EgateReportsSearch</url-pattern>
+</filter-mapping> 
+<filter-mapping>
+  <filter-name>ServletRequestFilter</filter-name>
+  <url-pattern>/Library_Login/LibraryLoginReportsSearch</url-pattern>
+</filter-mapping>  
+<filter-mapping>
+  <filter-name>ServletRequestFilter</filter-name>
+  <url-pattern>/Library_Login/LibraryLoginServlet</url-pattern>
+</filter-mapping>      
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/CounterReport/CounterReportsAll</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Statistics/FindServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Statistics/StatisticsServlet</url-pattern>
+</filter-mapping>   
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/DBReport/FindServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/DBReport/DBReportServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Gate_Register/AccountServlet</url-pattern>    
+</filter-mapping>   
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Unique_Report/UniqueTitleServlet</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Unique_Report/FindUniqueServlet</url-pattern>
+</filter-mapping>
+    
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Course/CourseServlet</url-pattern>
+</filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Desig/DesignationServlet</url-pattern>
+  </filter-mapping>
+  
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/PubSup/PubSupServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Branch/BranchServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Currency/CurrencyServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/SortBook/SaveSortBookServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/SendMail/LibMailServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/SendMail/ForgetPWD</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Email_Reminder/MailReminder</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Book_Import/BookImportServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/GateRegisterImport/GateRegisterImportServlet</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/BulkChangesImport/BulkChangesImportServlet</url-pattern>
+	</filter-mapping>
+  
+   <filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/BackVolume_Import/BvolumeImportServlet</url-pattern>
+	</filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Member_Import/MemberImportServlet</url-pattern>
+  </filter-mapping>    
+  
+  <filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/Issue_Mas_Update/IssueMasUpdateServlet</url-pattern>
+	</filter-mapping>
+      
+      
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/EResource/ImportEResourceServlet</url-pattern>
+  </filter-mapping>    
+      
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/EBookImport/ImportEBookServlet</url-pattern>
+  </filter-mapping>    
+      
+        
+      <filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/SugEmail/sugmailServlet</url-pattern>
+	</filter-mapping>
+      
+        <filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/RefDueDays/RefDueDaysServlet</url-pattern>
+	</filter-mapping>
+      
+      
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Keywords/KeywordsServlet</url-pattern>
+  </filter-mapping>
+  
+  
+   <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/journalSubscription/JournalSubscriptionServlet</url-pattern>
+  </filter-mapping>
+  
+     <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/FineCollectionReport/FineCollectedReportSearch</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Newsclliping/NewscllipingServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/EResourceSearch/EResourceSearchServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/EBook/EBookServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/EBook/EBookSearch</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/EBookSearch/EBookSearchServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Suggestion/SuggestionServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Suggestion/SuggestionDisplayServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Review/ReviewServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Review/ReviewDisplayServlet</url-pattern>
+  </filter-mapping>
+  
+  
+  
+   <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/NewsClipSearch/NewsClipSearchServlet</url-pattern>
+  </filter-mapping>
+
+   <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Journal_ArticleSearch/JNLArticleSearchServlet</url-pattern>
+  </filter-mapping>    
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/EResource/EResourceServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/MResource/MResourceServlet</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Payment/PaymentServlet</url-pattern>
+  </filter-mapping>  
+ 
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Counter/CounterServlet</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Bulk_Counter/BulkCounterServlet</url-pattern>
+  </filter-mapping> 
+    
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/TransMas/TransMasServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Miscellaneous/MiscellaneousServlet</url-pattern>
+  </filter-mapping>    
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Counter/SearchCounterMember</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/Bulk_Counter/SearchBulkCounterMember</url-pattern>
+  </filter-mapping>
+    
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Fine/FineServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Holiday/HolidayServlet</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/WeekEndHoliday/WeekEndHolidayServlet</url-pattern>
+  </filter-mapping>
+    
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Budget/BudgetServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Group/GroupServlet</url-pattern>
+  </filter-mapping>
+  
+   <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Login/LoginServlet</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/MemberTransfer/MemberTransServlet</url-pattern>
+  </filter-mapping>
+    
+     <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/bulkTransferBooks/bulkTransferAction</url-pattern>
+  </filter-mapping>
+    
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/BulkUpdate/BulkUpdateServlet</url-pattern>
+  </filter-mapping>
+    
+    
+     <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/bulkUpdateMember/BulkUpdateMemberServlet</url-pattern>
+  </filter-mapping>
+    
+    <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+    <url-pattern>/QB_Import/QBImportServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Simples/SimpleServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Journal/JournalServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Journal_Issues/JnlIssServlet</url-pattern>
+  </filter-mapping>
+  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Journal_Artical/JournalArtServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Mas/IndentMasServlet</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Approval/IndentApproveServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Order/IndentOrderServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Invoice/IndentInvServlet</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Payment/PaymentIndentServlet</url-pattern>
+  </filter-mapping> 
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Order_Report/IndentOrdReportServlet</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Payment_Report/IndentPaymentReportServlet</url-pattern>
+  </filter-mapping>    
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Indent_Report/IndentDetailReportServlet</url-pattern>
+  </filter-mapping>    
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/OrdInvProcessing/OrderInvServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Enquiry/EnquiryJNLServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Order/OrderJNLServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Supplier_Invoice/SupInvoiceJNLServlet</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Invoice/InvoiceJNLServlet</url-pattern>
+  </filter-mapping>  
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Payment/PaymentJNLServlet</url-pattern>
+  </filter-mapping> 
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Enquiry_Report/JnlEnquiryReportServlet</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Order_Report/JnlOrdReportServlet</url-pattern>
+  </filter-mapping>  
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Invoice_Report/JnlInvoiceReportServlet</url-pattern>
+  </filter-mapping> 
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JNL_Payment_Report/JnlPaymentReportServlet</url-pattern>
+  </filter-mapping>    
+  
+  
+ <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Stock/StockServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Stock/BulkStockServlet</url-pattern>
+  </filter-mapping>      
+    
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Stock/StockServletDisplay</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Binding/BindingServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Binding_Books/BindingAction</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Transfer_Books/TransferAction</url-pattern>
+  </filter-mapping>
+  
+  
+  	<filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>
+			/Transfer_Report/Transfer_ReportServlet
+		</url-pattern>
+	</filter-mapping>
+  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/Advanced/AdvancedServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/BrowseSimple/SimpleBrowse</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	 <url-pattern>/Browse/BrowseSearch</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/JournalBrowse/JournalSearch</url-pattern>
+  </filter-mapping>  
+    
+ <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	 <url-pattern>/Account/AccountServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>  <!-- For Online Reservation -->
+	 <url-pattern>/Simples/AccountServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>  <!-- For Online Reservation -->
+	 <url-pattern>/Advanced/AccountServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>  <!-- For Online Reservation -->
+	 <url-pattern>/Browse/AccountServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	 <url-pattern>/NoDues/NoDuesServlet</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	 <url-pattern>/NoDues/NoDuesSearch</url-pattern>
+  </filter-mapping>
+  
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	 <url-pattern>/MemberReport/MemberReportSearch</url-pattern>
+  </filter-mapping>
+  
+<filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	 <url-pattern>/JournalList/JournalListSearch</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	 <url-pattern>/JnlIssueReport/JnlReportSearch</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+	<filter-name>ServletRequestFilter</filter-name>
+	<url-pattern>/MissingResourceReport/MissResourceReportServlet</url-pattern>
+  </filter-mapping>
+  
+  
+	<filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/SpineLabel/SpineLabelServlet</url-pattern>
+	</filter-mapping>
+  
+  <filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/QueryBuilder/QueryBuildServlet</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/QBSubject/QBSubjectServlet</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/QuestionBank/QuestionBankServlet</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/QBReport/QBReportServlet</url-pattern>
+	</filter-mapping>
+	
+	 <filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/QBSearch/QBSearchServlet</url-pattern>
+	</filter-mapping>
+
+  <listener>
+	<listener-class>
+	com.library.autolib.portal.configbase.SessionFactoryListener
+	</listener-class>
+  </listener>
+  
+  <!--     For Advance Due Reminder (SMS Schedule) and Automatic Backup   -->     
+  <listener>
+	<listener-class>
+	Common.businessutil.sms.schedule.ScheduleAction
+	</listener-class>
+  </listener>
+    
+  <welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+
+     <servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>Login.Login</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Home</servlet-name>
+		<servlet-class>Lib.Auto.Home.Home</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/Home/HomeServlet</url-pattern>	
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>newArrivals</servlet-name>
+		<servlet-class>Lib.Auto.NewArrivals.NewArrivals</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>newArrivals</servlet-name>
+		<url-pattern>/newarrivals/NewArraivalsServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Author</servlet-name>
+		<servlet-class>Lib.Auto.Author.Author</servlet-class>
+	</servlet>
+<servlet-mapping>
+		<servlet-name>Author</servlet-name>
+		<url-pattern>/Author/AuthorServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Backup</servlet-name>
+		<servlet-class>Lib.Auto.Backup.Backup</servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>Backup</servlet-name>
+		<url-pattern>/Backup/BackupServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Account</servlet-name>
+		<servlet-class>Lib.Auto.Account.Account</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Account</servlet-name>
+		<url-pattern>/Account/AccountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Account</servlet-name>   <!-- For Online Reservation -->
+		<url-pattern>/Simples/AccountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Account</servlet-name>    <!-- For Online Reservation -->
+		<url-pattern>/Advanced/AccountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Account</servlet-name>    <!-- For Online Reservation -->
+		<url-pattern>/Browse/AccountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Gate_Register</servlet-name>
+		<servlet-class>Lib.Auto.Account.Account</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Gate_Register</servlet-name>
+		<url-pattern>/Gate_Register/AccountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LibraryLoginServlet</servlet-name>
+		<servlet-class>Lib.Auto.Library_Login.Library_Login_Report</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LibraryLoginServlet</servlet-name>
+		<url-pattern>/Library_Login/LibraryLoginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Book</servlet-name>
+		<servlet-class>Lib.Auto.Book.Book</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Book</servlet-name>
+		<url-pattern>/Book/BookServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BookSearch</servlet-name>
+		<servlet-class>Lib.Auto.Book.BookSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BookSearch</servlet-name>
+		<url-pattern>/Book/BookSearch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BiblioServlet</servlet-name>
+		<servlet-class>Lib.Auto.BibliographyReport.BibliographyReport</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>BiblioServlet</servlet-name>
+		<url-pattern>/BibliographyReport/BiblioServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BibSearch</servlet-name>
+		<servlet-class>Lib.Auto.BibliographyReport.BiblioSearch</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>BibSearch</servlet-name>
+		<url-pattern>/BibliographyReport/BibSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BookSearchInsert</servlet-name>
+		<servlet-class>Lib.Auto.Book.BookSearchInsert</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BookSearchInsert</servlet-name>
+		<url-pattern>/Book/BookSearchInsert</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>IndentMasProcessing</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Mas.IndentMasProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentMasProcessing</servlet-name>
+		<url-pattern>/Indent_Mas/IndentMasServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>IndentApproveProcessing</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Approval.IndentApprovalProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentApproveProcessing</servlet-name>
+    	<url-pattern>/Indent_Approval/IndentApproveServlet</url-pattern>   
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>IndentOrderProcessing</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Order.IndentOrderProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentOrderProcessing</servlet-name>
+    	<url-pattern>/Indent_Order/IndentOrderServlet</url-pattern>   
+	</servlet-mapping>
+	
+    <servlet>
+		<servlet-name>IndentInvoiceProcessing</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Invoice.IndentInvProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentInvoiceProcessing</servlet-name>
+	    <url-pattern>/Indent_Invoice/IndentInvServlet</url-pattern>	
+	</servlet-mapping>	
+	
+    <servlet>
+		<servlet-name>IndentPaymentProcessing</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Payment.IndentPaymentProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentPaymentProcessing</servlet-name>
+	    <url-pattern>/Indent_Payment/PaymentIndentServlet</url-pattern>	
+	</servlet-mapping>		
+	
+    <servlet>
+		<servlet-name>IndentOrdReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Order_Report.IndentOrdReportProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentOrdReportServlet</servlet-name>
+	    <url-pattern>/Indent_Order_Report/IndentOrdReportServlet</url-pattern>
+	</servlet-mapping>		
+
+	<servlet>
+		<servlet-name>IndentPaymentReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Payment_Report.IndentPaymentReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentPaymentReportServlet</servlet-name>
+	    <url-pattern>/Indent_Payment_Report/IndentPaymentReportServlet</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>
+		<servlet-name>IndentDetailReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.Indent_Report.IndentReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndentDetailReportServlet</servlet-name>
+	    <url-pattern>/Indent_Report/IndentDetailReportServlet</url-pattern>
+	</servlet-mapping>		
+
+	<servlet>
+		<servlet-name>OrdInvProcessing</servlet-name>
+		<servlet-class>
+			Lib.Auto.OrdInvProcessing.OrdInvProcessing
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OrdInvProcessing</servlet-name>
+		<url-pattern>/OrdInvProcessing/OrderInvServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>EnquiryJNLProcessing</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Enquiry.EnquiryJNLProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EnquiryJNLProcessing</servlet-name>
+    	<url-pattern>/JNL_Enquiry/EnquiryJNLServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>OrderJNLProcessing</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Order.OrdJNLProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OrderJNLProcessing</servlet-name>
+		<url-pattern>/JNL_Order/OrderJNLServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>SupInvoiceJNLProcessing</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Supplier_Invoice.SupInvJNLProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SupInvoiceJNLProcessing</servlet-name>
+	    <url-pattern>/JNL_Supplier_Invoice/SupInvoiceJNLServlet</url-pattern>	
+	</servlet-mapping>	
+
+    <servlet>
+		<servlet-name>InvoiceJNLProcessing</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Invoice.InvoiceJNLProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InvoiceJNLProcessing</servlet-name>
+		<url-pattern>/JNL_Invoice/InvoiceJNLServlet</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>BulkReturnCounter</servlet-name>
+		<servlet-class>Lib.Auto.BulkReturnCounter.BulkReturnCounter</servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>BulkReturnCounter</servlet-name>
+		<url-pattern>/BulkReturnCounter/BulkReturnCounterServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SuggestionReport</servlet-name>
+		<servlet-class>Lib.Auto.SuggestionReport.Suggestion_Report</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SuggestionReport</servlet-name>
+	    <url-pattern>/SuggestionReport/SuggestionReportServlet</url-pattern>	
+	</servlet-mapping>	
+	
+	
+    <servlet>
+		<servlet-name>PaymentJNLProcessing</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Payment.PaymentJNLProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PaymentJNLProcessing</servlet-name>
+	    <url-pattern>/JNL_Payment/PaymentJNLServlet</url-pattern>	
+	</servlet-mapping>			
+			
+	<servlet>
+		<servlet-name>JnlEnquiryReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Enquiry_Report.JNLEnquiryReportProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JnlEnquiryReportServlet</servlet-name>
+		<url-pattern>/JNL_Enquiry_Report/JnlEnquiryReportServlet</url-pattern>
+	</servlet-mapping>		
+		
+    <servlet>
+		<servlet-name>JnlOrdReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Order_Report.JNLOrdReportProcessing</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JnlOrdReportServlet</servlet-name>
+	    <url-pattern>/JNL_Order_Report/JnlOrdReportServlet</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>
+		<servlet-name>JnlInvoiceReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Invoice_Report.JNLInvoiceReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JnlInvoiceReportServlet</servlet-name>
+	    <url-pattern>/JNL_Invoice_Report/JnlInvoiceReportServlet</url-pattern>
+	</servlet-mapping>		
+
+	<servlet>
+		<servlet-name>JnlPaymentReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.JNL_Payment_Report.JNLPaymentReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JnlPaymentReportServlet</servlet-name>
+	    <url-pattern>/JNL_Payment_Report/JnlPaymentReportServlet</url-pattern>
+	</servlet-mapping>			
+
+	<servlet>
+		<servlet-name>StockIndex</servlet-name>
+		<servlet-class>Lib.Auto.Stock.StockIndexServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StockIndex</servlet-name>
+		<url-pattern>/Stock/StockIndex</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BulkStockImport</servlet-name>
+		<servlet-class>Lib.Auto.Stock.BulkStockImport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BulkStockImport</servlet-name>
+		<url-pattern>/Stock/BulkStockServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>StockServletDisplay</servlet-name>
+		<servlet-class>
+			Lib.Auto.Stock.StockServletDisplay
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StockServletDisplay</servlet-name>
+		<url-pattern>/Stock/StockServletDisplay</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>StockServlet</servlet-name>
+		<servlet-class>Lib.Auto.Stock.StockServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StockServlet</servlet-name>
+		<url-pattern>/Stock/StockServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StockReportServlet</servlet-name>
+		<servlet-class>Lib.Auto.Stock.StockReportServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StockReportServlet</servlet-name>
+		<url-pattern>/Stock/StockReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>StockSearch</servlet-name>
+		<servlet-class>Lib.Auto.Stock.StockSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StockSearch</servlet-name>
+		<url-pattern>/Stock/StockSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Keywords</servlet-name>
+		<servlet-class>Lib.Auto.Keywords.Keywords</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Keywords</servlet-name>
+		<url-pattern>/Keywords/KeywordsServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>journalSubscription</servlet-name>
+		<servlet-class>Lib.Auto.JournalSubscription.JournalSubscription</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>journalSubscription</servlet-name>
+		<url-pattern>/journalSubscription/JournalSubscriptionServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Newsclliping</servlet-name>
+		<servlet-class>Lib.Auto.Newsclliping.Newsclliping</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Newsclliping</servlet-name>
+		<url-pattern>/Newsclliping/NewscllipingServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>NewsClipSearch</servlet-name>
+		<servlet-class>Lib.Auto.NewsClipSearch.NewsClipSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NewsClipSearch</servlet-name>
+		<url-pattern>/NewsClipSearch/NewsClipSearchServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>JournalAtlSearch</servlet-name>
+		<servlet-class>Lib.Auto.Journal_ArticleSearch.JournalAltSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalAtlSearch</servlet-name>
+		<url-pattern>/Journal_ArticleSearch/JNLArticleSearchServlet</url-pattern>
+	</servlet-mapping>
+
+
+    <servlet>
+		<servlet-name>EResource</servlet-name>
+		<servlet-class>Lib.Auto.EResource.EResource</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EResource</servlet-name>
+		<url-pattern>/EResource/EResourceServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>EResourceSearch</servlet-name>
+		<servlet-class>Lib.Auto.EResourceSearch.EResourceSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EResourceSearch</servlet-name>
+		<url-pattern>/EResourceSearch/EResourceSearchServlet</url-pattern>
+	</servlet-mapping>	
+
+    <servlet>
+		<servlet-name>MResource</servlet-name>
+		<servlet-class>Lib.Auto.MResource.MResource</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MResource</servlet-name>
+		<url-pattern>/MResource/MResourceServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EBookServlet</servlet-name>
+		<servlet-class>Lib.Auto.EBook.EBookServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EBookServlet</servlet-name>
+		<url-pattern>/EBook/EBookServlet</url-pattern>
+	</servlet-mapping>
+
+
+    <servlet>
+		<servlet-name>EBookSearch</servlet-name>
+		<servlet-class>Lib.Auto.EBook.EBookSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EBookSearch</servlet-name>
+		<url-pattern>/EBook/EBookSearch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EBookSearchServlet</servlet-name>
+		<servlet-class>Lib.Auto.EBookSearch.EBookSearchServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EBookSearchServlet</servlet-name>
+		<url-pattern>/EBookSearch/EBookSearchServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SuggestionServlet</servlet-name>
+		<servlet-class>Lib.Auto.Suggestion.SuggestionServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SuggestionServlet</servlet-name>
+		<url-pattern>/Suggestion/SuggestionServlet</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+		<servlet-name>SuggestionDisplayServlet</servlet-name>
+		<servlet-class>Lib.Auto.Suggestion.SuggestionDisplayServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SuggestionDisplayServlet</servlet-name>
+		<url-pattern>/Suggestion/SuggestionDisplayServlet</url-pattern>
+	</servlet-mapping>
+
+
+    <servlet>
+		<servlet-name>ReviewServlet</servlet-name>
+		<servlet-class>Lib.Auto.Review.ReviewServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReviewServlet</servlet-name>
+		<url-pattern>/Review/ReviewServlet</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+		<servlet-name>ReviewDisplayServlet</servlet-name>
+		<servlet-class>Lib.Auto.Review.ReviewDisplayServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReviewDisplayServlet</servlet-name>
+		<url-pattern>/Review/ReviewDisplayServlet</url-pattern>
+	</servlet-mapping>
+		
+	
+	<servlet>
+		<servlet-name>Payment</servlet-name>
+		<servlet-class>Lib.Auto.Payment.Payment</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Payment</servlet-name>
+		<url-pattern>/Payment/PaymentServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PaymentInfo</servlet-name>
+		<servlet-class>Lib.Auto.PaymentInfo.PaymentInfo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PaymentInfo</servlet-name>
+		<url-pattern>/PaymentInfo/PaymentInfoServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>Lib.Auto.PaymentInfo.Search</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/PaymentInfo/PaymentInfoSearchServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>NoDuesSearch</servlet-name>
+		<servlet-class>Lib.Auto.NoDues.NoDuesSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoDuesSearch</servlet-name>
+		<url-pattern>/NoDues/NoDuesSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>NoDuesServlet</servlet-name>
+		<servlet-class>Lib.Auto.NoDues.NoDuesServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoDuesServlet</servlet-name>
+		<url-pattern>/NoDues/NoDuesServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CollectionIndex</servlet-name>
+		<servlet-class>
+			Lib.Auto.LibraryCollection.CollectionIndexServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CollectionIndex</servlet-name>
+		<url-pattern>/LibraryCollection/CollectionIndex</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Transfer</servlet-name>
+		<servlet-class>Lib.Auto.Transfer.Transfer</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Transfer</servlet-name>
+		<url-pattern>/OrdInvProcessing/TransferServlet</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+		<servlet-name>bulkTransferActions</servlet-name>
+		<servlet-class>
+			Lib.Auto.bulkTransfer_Books.bulkTransferBooksAction
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>bulkTransferActions</servlet-name>
+		<url-pattern>/bulkTransferBooks/bulkTransferAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JournalApproval</servlet-name>
+		<servlet-class>Lib.Auto.Jnl_Approval.JnlApprove</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalApproval</servlet-name>
+		<url-pattern>/Jnl_Approval/JnlApprove</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Statistics</servlet-name>
+		<servlet-class>Lib.Auto.Statistics.Statistics</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Statistics</servlet-name>
+		<url-pattern>/Statistics/StatisticsServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FindServlet</servlet-name>
+		<servlet-class>Lib.Auto.Statistics.FindServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FindServlet</servlet-name>
+		<url-pattern>/Statistics/FindServlet</url-pattern>
+	</servlet-mapping>
+	
+    <servlet>
+		<servlet-name>DBReport</servlet-name>
+		<servlet-class>Lib.Auto.DBReport.DBReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DBReport</servlet-name>
+		<url-pattern>/DBReport/DBReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DBReportFind</servlet-name>
+		<servlet-class>Lib.Auto.DBReport.FindServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DBReportFind</servlet-name>
+		<url-pattern>/DBReport/FindServlet</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>FindUniqueServlet</servlet-name>
+		<servlet-class>Lib.Auto.Unique_Report.FindServlet</servlet-class>
+	</servlet>
+	
+    <servlet-mapping>
+		<servlet-name>FindUniqueServlet</servlet-name>
+		<url-pattern>/Unique_Report/FindUniqueServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UniqueTitle</servlet-name>
+		<servlet-class>Lib.Auto.Unique_Report.UniqueTitle</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UniqueTitle</servlet-name>
+		<url-pattern>/Unique_Report/UniqueTitleServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>Logins</servlet-name>
+		<servlet-class>Lib.Auto.Login.Login</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Logins</servlet-name>
+		<url-pattern>/Login/LoginServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchLogin</servlet-name>
+		<servlet-class>Lib.Auto.Login.SearchLogin</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchLogin</servlet-name>
+		<url-pattern>/Login/SearchLogin</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>MemberTransfer</servlet-name>
+		<servlet-class>Lib.Auto.MemberTransfer.MemberTransfer</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MemberTransfer</servlet-name>
+		<url-pattern>/MemberTransfer/MemberTransServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>BulkUpdate</servlet-name>
+		<servlet-class>Lib.Auto.BulkUpdate.BulkUpdate</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BulkUpdate</servlet-name>
+		<url-pattern>/BulkUpdate/BulkUpdateServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	  <servlet>
+		<servlet-name>BulkUpdateMember</servlet-name>
+		<servlet-class>Lib.Auto.BulkUpdateMember.BulkUpdateMember</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BulkUpdateMember</servlet-name>
+		<url-pattern>/BulkUpdateMember/BulkUpdateMemberServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>OrderFindServlet</servlet-name>
+		<servlet-class>
+			Lib.Auto.OrdInvProcessing.OrderFindServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OrderFindServlet</servlet-name>
+		<url-pattern>/OrdInvProcessing/OrderFindServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>InvoiceReport</servlet-name>
+		<servlet-class>
+			Lib.Auto.OrdInvProcessing.InvoiceReport
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InvoiceReport</servlet-name>
+		<url-pattern>/OrdInvProcessing/InvReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>InvoiceSearch</servlet-name>
+		<servlet-class>
+			Lib.Auto.OrdInvProcessing.InvoiceSearch
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InvoiceSearch</servlet-name>
+		<url-pattern>/OrdInvProcessing/InvoiceSearch</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>SearchAuthor</servlet-name>
+		<servlet-class>Lib.Auto.Author.SearchAuthor</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchAuthor</servlet-name>
+		<url-pattern>/Author/SearchAuthorServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Department</servlet-name>
+		<servlet-class>Lib.Auto.Department.Department</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Department</servlet-name>
+		<url-pattern>/Department/DepartmentServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SearchDept</servlet-name>
+		<servlet-class>Lib.Auto.Department.SearchDept</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchDept</servlet-name>
+		<url-pattern>/Department/SearchDepartmentServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>City</servlet-name>
+		<servlet-class>Lib.Auto.City.City</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>City</servlet-name>
+		<url-pattern>/City/CityServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SearchCity</servlet-name>
+		<servlet-class>Lib.Auto.City.SearchCity</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchCity</servlet-name>
+		<url-pattern>/City/SearchCityServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Course</servlet-name>
+		<servlet-class>Lib.Auto.Course.Course</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Course</servlet-name>
+		<url-pattern>/Course/CourseServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SearchCourse</servlet-name>
+		<servlet-class>Lib.Auto.Course.SearchCourse</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchCourse</servlet-name>
+		<url-pattern>/Course/SearchCourseServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Designation</servlet-name>
+		<servlet-class>Lib.Auto.Designation.Designation</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Designation</servlet-name>
+		<url-pattern>/Desig/DesignationServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SearchDesig</servlet-name>
+		<servlet-class>Lib.Auto.Designation.SearchDesig</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchDesig</servlet-name>
+		<url-pattern>/Desig/SearchDesignationServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Branch</servlet-name>
+		<servlet-class>Lib.Auto.Branch.Branch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Branch</servlet-name>
+		<url-pattern>/Branch/BranchServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SearchBranch</servlet-name>
+		<servlet-class>Lib.Auto.Branch.SearchBranch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchBranch</servlet-name>
+		<url-pattern>/Branch/SearchBranchServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SortBook</servlet-name>
+		<servlet-class>Lib.Auto.SortBook.SortBook</servlet-class>
+	</servlet>
+     <servlet>
+		<servlet-name>QBImport</servlet-name>
+		<servlet-class>Lib.Auto.QB_Import.ImportQB</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>QBImport</servlet-name>
+        <url-pattern>/QB_Import/QBImportServlet</url-pattern>	
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SortBook</servlet-name>
+		<url-pattern>/SortBook/SaveSortBookServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LibMail</servlet-name>
+		<servlet-class>Lib.Auto.SendMail.SendEmail</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LibMail</servlet-name>
+		<url-pattern>/SendMail/LibMailServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MailReminder</servlet-name>
+		<servlet-class>Lib.Auto.Email_Reminder.Reminder</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MailReminder</servlet-name>
+		<url-pattern>/Email_Reminder/MailReminder</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ForgetPWD</servlet-name>
+		<servlet-class>Lib.Auto.SendMail.SendEmail</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ForgetPWD</servlet-name>
+		<url-pattern>/SendMail/ForgetPWD</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>BookImport</servlet-name>
+		<servlet-class>Lib.Auto.Book_Import.ImportBook</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BookImport</servlet-name>
+        <url-pattern>/Book_Import/BookImportServlet</url-pattern>	
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>BulkChangesImport</servlet-name>
+		<servlet-class>Lib.Auto.BulkChangesImport.ImportChanges</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BulkChangesImport</servlet-name>
+		<url-pattern>/BulkChangesImport/BulkChangesImportServlet</url-pattern>
+	</servlet-mapping>
+
+   <servlet>
+		<servlet-name>BackVolumeImport</servlet-name>
+		<servlet-class>Lib.Auto.BackVolume_Import.ImportBvolume</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BackVolumeImport</servlet-name>
+		<url-pattern>/BackVolume_Import/BvolumeImportServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>MemberServlet</servlet-name>
+		<servlet-class>Lib.Auto.Member_Import.ImportMember</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MemberServlet</servlet-name>
+        <url-pattern>/Member_Import/MemberImportServlet</url-pattern>	
+	</servlet-mapping>	  	
+	 	
+	 <servlet>
+		<servlet-name>EResourceImport</servlet-name>
+		<servlet-class>Lib.Auto.EResourceImport.ImportEResource</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EResourceImport</servlet-name>
+        <url-pattern>/EResourceImport/ImportEResourceServlet</url-pattern>	
+	</servlet-mapping>	 
+	
+    <servlet>
+		<servlet-name>EBookImport</servlet-name>
+		<servlet-class>Lib.Auto.EBookImport.ImportEBook</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EBookImport</servlet-name>
+        <url-pattern>/EBookImport/ImportEBookServlet</url-pattern>	
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Issue_Mas_Update</servlet-name>
+		<servlet-class>Lib.Auto.Issue_Mas_Update.IssueMasUpdate</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Issue_Mas_Update</servlet-name>
+		<url-pattern>/Issue_Mas_Update/IssueMasUpdateServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>sugEmail</servlet-name>
+		<servlet-class>Lib.Auto.SugEmail.SugEmail</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sugEmail</servlet-name>
+		<url-pattern>/SugEmail/sugmailServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RefDueDays</servlet-name>
+		<servlet-class>Lib.Auto.RefDueDays.RefDueDays</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RefDueDays</servlet-name>
+		<url-pattern>/RefDueDays/RefDueDaysServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>	
+     	<servlet-name>Currency</servlet-name>
+		<servlet-class>Lib.Auto.Currency.Currency</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Currency</servlet-name>
+		<url-pattern>/Currency/CurrencyServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SearchCurrency</servlet-name>
+		<servlet-class>Lib.Auto.Currency.SearchCurrency</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchCurrency</servlet-name>
+		<url-pattern>/Currency/SearchCurrencyServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>PubSup</servlet-name>
+		<servlet-class>Lib.Auto.PubSup.PubSup</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PubSup</servlet-name>
+		<url-pattern>/PubSup/PubSupServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SearchPubSup</servlet-name>
+		<servlet-class>Lib.Auto.PubSup.SearchPubSup</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchPubSup</servlet-name>
+		<url-pattern>/PubSup/SearchPubSupServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Member</servlet-name>
+		<servlet-class>Lib.Auto.Member.Member</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Member</servlet-name>
+		<url-pattern>/Member/MemberServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Photo</servlet-name>
+		<servlet-class>Lib.Auto.Photo.Photo</servlet-class>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>Photo</servlet-name>
+		<url-pattern>/Photo/PhotoServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>BulkPhoto</servlet-name>
+		<servlet-class>Lib.Auto.BulkPhoto.BulkPhoto</servlet-class>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>BulkPhoto</servlet-name>
+		<url-pattern>/BulkPhoto/BulkPhotoServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>ContentUpload</servlet-name>
+		<servlet-class>Lib.Auto.ContentUpload.ContentUpload</servlet-class>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>ContentUpload</servlet-name>
+	    <url-pattern>/ContentUpload/ContentUploadServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchMember</servlet-name>
+		<servlet-class>Lib.Auto.Member.SearchMember</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchMember</servlet-name>
+		<url-pattern>/Member/SearchMemberServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchCounterMember</servlet-name>
+		<servlet-class>Lib.Auto.Counter.SearchMember</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchCounterMember</servlet-name>
+		<url-pattern>/Counter/SearchCounterMember</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchBulkCounterMember</servlet-name>
+		<servlet-class>Lib.Auto.Bulk_Counter.SearchMember</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchBulkCounterMember</servlet-name>
+		<url-pattern>/Bulk_Counter/SearchBulkCounterMember</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>	
+		<servlet-name>AccessionRegister</servlet-name>
+		<servlet-class>
+			Lib.Auto.AccessionRegister.Accession
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AccessionRegister</servlet-name>
+		<url-pattern>/AccessionRegister/AccessionServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>	
+		<servlet-name>LibraryCollection</servlet-name>
+		<servlet-class>
+			Lib.Auto.LibraryCollection.LibraryCollection
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LibraryCollection</servlet-name>
+		<url-pattern>/LibraryCollection/LibCollectionServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Fine</servlet-name>
+		<servlet-class>Lib.Auto.Fine.Fine</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Fine</servlet-name>
+		<url-pattern>/Fine/FineServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SearchFine</servlet-name>
+		<servlet-class>Lib.Auto.Fine.SearchFine</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchFine</servlet-name>
+		<url-pattern>/Fine/SearchFineServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Holiday</servlet-name>
+		<servlet-class>Lib.Auto.Holiday.Holiday</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Holiday</servlet-name>
+		<url-pattern>/Holiday/HolidayServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>WeekEndHoliday</servlet-name>
+		<servlet-class>Lib.Auto.WeekEndHoliday.WeekEndHoliday</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WeekEndHoliday</servlet-name>
+		<url-pattern>/WeekEndHoliday/WeekEndHolidayServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Budget</servlet-name>
+		<servlet-class>Lib.Auto.Budget.Budget</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Budget</servlet-name>
+		<url-pattern>/Budget/BudgetServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BudgetSearch</servlet-name>
+		<servlet-class>Lib.Auto.Budget.SearchBudget</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BudgetSearch</servlet-name>
+		<url-pattern>/Budget/BudgetSearch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BudgetReport</servlet-name>
+		<servlet-class>Lib.Auto.BudgetReport.BudgetReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BudgetReport</servlet-name>
+		<url-pattern>/BudgetReport/BudgetReportServlet</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>Subject</servlet-name>
+		<servlet-class>Lib.Auto.Subject.Subject</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Subject</servlet-name>
+		<url-pattern>/Subject/SubjectServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Journal</servlet-name>
+		<servlet-class>Lib.Auto.Journal.Journal</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Journal</servlet-name>
+		<url-pattern>/Journal/JournalServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JournalArtical</servlet-name>
+		<servlet-class>
+			Lib.Auto.Journal_Artical.JournalArt
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalArtical</servlet-name>
+		<url-pattern>/Journal_Artical/JournalArtServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Group</servlet-name>
+		<servlet-class>Lib.Auto.Group.Group</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Group</servlet-name>
+		<url-pattern>/Group/GroupServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchGroup</servlet-name>
+		<servlet-class>Lib.Auto.Group.SearchGroup</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchGroup</servlet-name>
+		<url-pattern>/Group/SearchGroupServlet</url-pattern>
+	</servlet-mapping>
+
+  	<servlet>
+		<servlet-name>CounterReportSearch</servlet-name>
+		<servlet-class>Lib.Auto.Report.CounterReportSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterReportSearch</servlet-name>
+		<url-pattern>/CounterReport/CounterReportsSearch</url-pattern>
+	</servlet-mapping>
+	
+	  	<servlet>
+		<servlet-name>FineCollectedReportSearch</servlet-name>
+		<servlet-class>Lib.Auto.Report.CounterReportSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FineCollectedReportSearch</servlet-name>
+		<url-pattern>/FineCollectionReport/FineCollectedReportSearch</url-pattern>
+	</servlet-mapping>
+	
+		  	<servlet>
+		<servlet-name>FineCollectedServlet</servlet-name>
+		<servlet-class>Lib.Auto.FineCollectedReport.FineCollectedReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FineCollectedServlet</servlet-name>
+		<url-pattern>/FineCollectionReport/FineCollectedServlet</url-pattern>
+	</servlet-mapping>
+	
+  	<servlet>
+		<servlet-name>GateReportSearch</servlet-name>
+		<servlet-class>Lib.Auto.Gate_Register.GateReportSearch</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GateReportSearch</servlet-name>
+		<url-pattern>/Gate_Register/EgateReportsSearch</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>LibraryLoginReportsSearch</servlet-name>
+		<servlet-class>Lib.Auto.Library_Login.LibraryLoginReportSearch</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LibraryLoginReportsSearch</servlet-name>
+		<url-pattern>/Library_Login/LibraryLoginReportsSearch</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>CounterReportsAll</servlet-name>
+		<servlet-class>Lib.Auto.Report.ReportAll</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterReportsAll</servlet-name>
+		<url-pattern>/CounterReport/CounterReportsAll</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CounterReturnAll</servlet-name>
+		<servlet-class>Lib.Auto.Report.ReturnAll</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterReturnAll</servlet-name>
+		<url-pattern>/CounterReport/CounterReturnAll</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CounterRenewalAll</servlet-name>
+		<servlet-class>Lib.Auto.Report.RenewalAll</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterRenewalAll</servlet-name>
+		<url-pattern>/CounterReport/CounterRenewalAll</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CounterReserveAll</servlet-name>
+		<servlet-class>Lib.Auto.Report.ReserveAll</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterReserveAll</servlet-name>
+		<url-pattern>/CounterReport/CounterReserveAll</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CounterReserveRemaindAll</servlet-name>
+		<servlet-class>Lib.Auto.Report.ReserveRemaindAll</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterReserveRemaindAll</servlet-name>
+		<url-pattern>
+			/CounterReport/CounterReserveRemaindAll
+		</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CounterDueRemaindAll</servlet-name>
+		<servlet-class>Lib.Auto.Report.DueRemaindAll</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterDueRemaindAll</servlet-name>
+		<url-pattern>/CounterReport/CounterDueRemaindAll</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Counter</servlet-name>
+		<servlet-class>Lib.Auto.Counter.Counter</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Counter</servlet-name>
+		<url-pattern>/Counter/CounterServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BulkCounter</servlet-name>
+		<servlet-class>Lib.Auto.Bulk_Counter.BulkCounter</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BulkCounter</servlet-name>
+		<url-pattern>/Bulk_Counter/BulkCounterServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>TransMas</servlet-name>
+		<servlet-class>Lib.Auto.TransMas.TransMas</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TransMas</servlet-name>
+		<url-pattern>/TransMas/TransMasServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Miscellaneous</servlet-name>
+		<servlet-class>Lib.Auto.Miscellaneous.Miscellaneous</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Miscellaneous</servlet-name>
+	    <url-pattern>/Miscellaneous/MiscellaneousServlet</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>Full_search</servlet-name>
+		<servlet-class>Lib.Auto.Simples.Full_search</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Full_search</servlet-name>
+		<url-pattern>/Simples/Full_search</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<servlet-class>Lib.Auto.Simples.View</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/Simples/viewservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SelectView</servlet-name>
+		<servlet-class>Lib.Auto.Simples.SelectView</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SelectView</servlet-name>
+		<url-pattern>/Simples/SelectView</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Reserve</servlet-name>
+		<servlet-class>Lib.Auto.Simples.Reserve</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Reserve</servlet-name>
+		<url-pattern>/Simples/ReserveView</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ReportIndex</servlet-name>
+		<servlet-class>Lib.Auto.Report.ReportIndex</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReportIndex</servlet-name>
+		<url-pattern>/CounterReport/ReportIndex</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ReserveMember</servlet-name>
+		<servlet-class>Lib.Auto.Simples.ReserveMember</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReserveMember</servlet-name>
+		<url-pattern>/Simples/ReserveMember</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserFindServlet</servlet-name>
+		<servlet-class>Lib.Auto.Advanced.UserFindServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserFindServlet</servlet-name>
+		<url-pattern>/Advanced/UserFindServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SelectViewAd</servlet-name>
+		<servlet-class>Lib.Auto.Advanced.SelectView</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SelectViewAd</servlet-name>
+		<url-pattern>/Advanced/SelectViewAd</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>UserReport</servlet-name>
+		<servlet-class>Lib.Auto.Advanced.UserReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserReport</servlet-name>
+		<url-pattern>/Advanced/UserReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Advanced</servlet-name>
+		<servlet-class>Lib.Auto.Advanced.Advanced</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Advanced</servlet-name>
+		<url-pattern>/Advanced/AdvancedServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchJournal</servlet-name>
+		<servlet-class>Lib.Auto.Journal.SearchJournal</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchJournal</servlet-name>
+		<url-pattern>/Journal/SearchJournal</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchJournalArt</servlet-name>
+		<servlet-class>
+			Lib.Auto.Journal_Artical.SearchJournalArt
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchJournalArt</servlet-name>
+		<url-pattern>/Journal_Artical/SearchJournalArt</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>JnlIssServlet</servlet-name>
+		<servlet-class>Lib.Auto.Journal_Issues.JnlIssues</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JnlIssServlet</servlet-name>
+		<url-pattern>/Journal_Issues/JnlIssServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AdvancedView</servlet-name>
+		<servlet-class>Lib.Auto.Advanced.AdvancedView</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>AdvancedView</servlet-name>
+		<url-pattern>/Advanced/Advancedviewservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AdvancedSelectView</servlet-name>
+		<servlet-class>
+			Lib.Auto.Advanced.AdvancedSelectView
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdvancedSelectView</servlet-name>
+		<url-pattern>/Advanced/AdvancedSelectView</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AdvancedReserve</servlet-name>
+		<servlet-class>Lib.Auto.Advanced.AdvancedReserve</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdvancedReserve</servlet-name>
+		<url-pattern>/Advanced/AdvancedReserveView</url-pattern>
+	</servlet-mapping>
+	
+     <servlet>
+		<servlet-name>TransferAction</servlet-name>
+		<servlet-class>
+			Lib.Auto.Transfer_Books.TransferBooksAction
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TransferAction</servlet-name>
+		<url-pattern>/Transfer_Books/TransferAction</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Transfer_Report</servlet-name>
+		<servlet-class>
+			Lib.Auto.Transfer_Report.Transfer_Report
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Transfer_Report</servlet-name>
+		<url-pattern>
+			/Transfer_Report/Transfer_ReportServlet
+		</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<servlet-name>BindingAction</servlet-name>
+		<servlet-class>
+			Lib.Auto.Binding_Books.BindingBooksAction
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BindingAction</servlet-name>
+		<url-pattern>/Binding_Books/BindingAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BindingSearch</servlet-name>
+		<servlet-class>
+			Lib.Auto.Binding_Books.BindingSearchServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BindingSearch</servlet-name>
+		<url-pattern>/Binding_Books/BindingSearch</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>AdvancedReserveMember</servlet-name>
+		<servlet-class>
+			Lib.Auto.Advanced.AdvancedReserveMember
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdvancedReserveMember</servlet-name>
+		<url-pattern>/Advanced/AdvancedReserveMember</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Simples</servlet-name>
+		<servlet-class>Lib.Auto.Simples.Simples</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Simples</servlet-name>
+		<url-pattern>/Simples/SimpleServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JournalAppSearch</servlet-name>
+		<servlet-class>
+			Lib.Auto.Jnl_Approval.JournalAppSearch
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalAppSearch</servlet-name>
+		<url-pattern>/Jnl_Approval/JournalAppSearch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BindingReport</servlet-name>
+		<servlet-class>Lib.Auto.BindingReport.BinderReportServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>BindingReport</servlet-name><!-- For Online Reservation -->
+		<url-pattern>/BindingReport/BindingReportServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>JournalIssSearch</servlet-name>
+		<servlet-class>
+			Lib.Auto.Journal_Issues.JournalIssSearch
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalIssSearch</servlet-name>
+		<url-pattern>/Journal_Issues/JournalIssSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Browse</servlet-name>
+		<servlet-class>Lib.Auto.Browse.Browse</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Browse</servlet-name>
+		<url-pattern>/Browse/BrowseSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AnyBrowse</servlet-name>
+		<servlet-class>Lib.Auto.Browse.Alldocument</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AnyBrowse</servlet-name>
+		<url-pattern>/Browse/BrowseDocument</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FullBrowse</servlet-name>
+		<servlet-class>Lib.Auto.Browse.SelectView</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FullBrowse</servlet-name>
+		<url-pattern>/Browse/BrowseFull</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BrowseSimple</servlet-name>
+		<servlet-class>
+			Lib.Auto.BrowseSimple.BrowseSimple
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BrowseSimple</servlet-name>
+		<url-pattern>/BrowseSimple/SimpleBrowse</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BrowseAdvanced</servlet-name>
+		<servlet-class>
+			Lib.Auto.BrowseAdvanced.BrowseAdvanced
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BrowseAdvanced</servlet-name>
+		<url-pattern>/BrowseAdvanced/AdvancedBrowse</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Browseview</servlet-name>
+		<servlet-class>Lib.Auto.BrowseSimple.SelectView</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Browseview</servlet-name>
+		<url-pattern>/BrowseSimple/Browseview</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Browseviewad</servlet-name>
+		<servlet-class>
+			Lib.Auto.BrowseAdvanced.SelectView
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Browseviewad</servlet-name>
+		<url-pattern>/BrowseAdvanced/Browseviewad</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JournalBrowse</servlet-name>
+		<servlet-class>
+			Lib.Auto.JournalBrowse.JournalBrowse
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalBrowse</servlet-name>
+		<url-pattern>/JournalBrowse/JournalSearch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>JournalList</servlet-name>
+		<servlet-class>Lib.Auto.JournalList.JournalList</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalList</servlet-name>
+		<url-pattern>/JournalList/JournalListServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JournalListSearch</servlet-name>
+		<servlet-class>
+			Lib.Auto.JournalList.JournalListSearch
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JournalListSearch</servlet-name>
+		<url-pattern>/JournalList/JournalListSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JnlIssueReport</servlet-name>
+		<servlet-class>
+			Lib.Auto.JnlIssueReport.JnlIssueReport
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JnlIssueReport</servlet-name>
+		<url-pattern>/JnlIssueReport/JnlIssueReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JnlReportSearch</servlet-name>
+		<servlet-class>
+			Lib.Auto.JnlIssueReport.JnlReportSearch
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JnlReportSearch</servlet-name>
+		<url-pattern>/JnlIssueReport/JnlReportSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MemberReport</servlet-name>
+		<servlet-class>Lib.Auto.MemberReport.MemberReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MemberReport</servlet-name>
+		<url-pattern>/MemberReport/MemberReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MemberReportSearch</servlet-name>
+		<servlet-class>Lib.Auto.MemberReport.MemberReportSearch</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MemberReportSearch</servlet-name>
+		<url-pattern>/MemberReport/MemberReportSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ReviewReport</servlet-name>
+		<servlet-class>Lib.Auto.Review_Report.ReviewReport</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ReviewReport</servlet-name>
+		<url-pattern>/Review_Report/ReviewReportServlet</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>FreqUsedResource</servlet-name>
+		<servlet-class>Lib.Auto.FreqUsedResource.FreqUsedServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FreqUsedResource</servlet-name>
+		<url-pattern>/FrequentlyUsedResource/FreqUsedResource</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FreqUsedMember</servlet-name>
+		<servlet-class>Lib.Auto.FreqUsedMember.FreqUsedMember</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FreqUsedMember</servlet-name>
+		<url-pattern>/FrequentlyUsedMember/FreqUsedMember</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FreqUsedIndex</servlet-name>
+		<servlet-class>Lib.Auto.FreqUsedResource.FreqUsedIndex</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FreqUsedIndex</servlet-name>
+		<url-pattern>/FrequentlyUsedResource/FreqUsedIndex</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Binding</servlet-name>
+		<servlet-class>Lib.Auto.Binding.Binding</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Binding</servlet-name>
+		<url-pattern>/Binding/BindingServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchBinding</servlet-name>
+		<servlet-class>Lib.Auto.Binding.SearchBinding</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchBinding</servlet-name>
+		<url-pattern>/Binding/SearchBindingServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BindingBooks</servlet-name>
+		<servlet-class>
+			Lib.Auto.Binding_Books.BindingBooksServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BindingBooks</servlet-name>
+		<url-pattern>/Binding_Books/BindingIndex</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>FreqAccessReport</servlet-name>
+		<servlet-class>
+			Lib.Auto.MemberReport.FreqAccessReport
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FreqAccessReport</servlet-name>
+		<url-pattern>/MemberReport/FreqAccessReport</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>FindFreqUserServlet</servlet-name>
+		<servlet-class>Lib.Auto.FreqUsedMember.FindServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FindFreqUserServlet</servlet-name>
+		<url-pattern>/FrequentlyUsedMember/FindFreqUserServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SpineLabel</servlet-name>
+		<servlet-class>Lib.Auto.spineLabel.spineLabel</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SpineLabel</servlet-name>
+		<url-pattern>/SpineLabel/SpineLabelServlet</url-pattern>
+
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<servlet-name>CounterFineAll</servlet-name>
+		<servlet-class>Lib.Auto.Report.FineAll</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CounterFineAll</servlet-name>
+		<url-pattern>/CounterReport/CounterFineAll</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+		<servlet-name>QueryBuilder</servlet-name>
+		<servlet-class>Lib.Auto.QueryBuilder.QueryBuilder</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>QueryBuilder</servlet-name>
+		<url-pattern>/QueryBuilder/QueryBuildServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MissResourceReport</servlet-name>
+		<servlet-class>Lib.Auto.MissingResourceReport.MissResourceReport</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>MissResourceReport</servlet-name>
+		<url-pattern>/MissingResourceReport/MissResourceReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>QBSubject</servlet-name>
+		<servlet-class>Lib.Auto.QBSubject.QBSubject</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>QBSubject</servlet-name>
+		<url-pattern>/QBSubject/QBSubjectServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QBReport</servlet-name>
+		<servlet-class>Lib.Auto.QBReport.QBReport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>QBReport</servlet-name>
+		<url-pattern>/QBReport/QBReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QuestionBank</servlet-name>
+		<servlet-class>Lib.Auto.QuestionBank.QuestionBank</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>QuestionBank</servlet-name>
+		<url-pattern>/QuestionBank/QuestionBankServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QBSearch</servlet-name>
+		<servlet-class>Lib.Auto.QBSearch.QBSearch</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>QBSearch</servlet-name><!-- For Online Reservation -->
+		<url-pattern>/QBSearch/QBSearchServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>GateImport</servlet-name>
+		<servlet-class>Lib.Auto.GateRegister_Import.ImportGateRegister</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GateImport</servlet-name>
+        <url-pattern>/GateRegisterImport/GateRegisterImportServlet</url-pattern>	
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>Dashboard</servlet-name>
+		<servlet-class>Lib.Auto.Dashboard.DashboardServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Dashboard</servlet-name>
+        <url-pattern>/Dashboard/DashboardServlet</url-pattern>	
+	</servlet-mapping>	
+	
+
+
+  <error-page>
+      <exception-type>java.lang.Throwable</exception-type>
+      <location>/jsp/common/customLogin.jsp</location>
+  </error-page>
+  
+
+	<!-- BIRT starts Some birt file are removed on 14-11-2013 by RK-->	
+	
+<!--	<taglib>-->
+<!--			<taglib-uri>/birt.tld</taglib-uri>-->
+<!--			<taglib-location>/WEB-INF/tlds/birt.tld</taglib-location>-->
+<!--	</taglib>-->
+	
+	<error-page>
+           <error-code>404</error-code>
+           <location>/jsp/common/sessiontimeout.jsp</location>
+    </error-page>
+	<!-- BIRT ends -->	
+	
+	<!--<resource-ref>-->	
+    <!--  <description>DB Connection</description>-->	
+    <!--  <res-ref-name>jdbc/library</res-ref-name>-->	
+    <!--  <res-type>javax.sql.DataSource</res-type>-->	
+ <!--     <res-auth>Container</res-auth>-->	
+  <!--  </resource-ref>-->	
+	
+
+
+  	
+</web-app>

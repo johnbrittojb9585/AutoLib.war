@@ -1,0 +1,417 @@
+package Lib.Auto.Group;
+import Lib.Auto.Fine.Finebean;
+import Lib.Auto.Group.GroupBean;
+import Lib.Auto.Holiday.Holiday;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Serializable;
+//import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.UnavailableException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+
+
+import Common.Security;
+import Common.businessutil.BusinessServiceFactory;
+import Common.businessutil.admin.AdminService;
+
+
+
+
+public class Group extends HttpServlet implements Serializable {
+	private static Logger log4jLogger = Logger.getLogger(Group.class);
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String flag="",code="",name="",Group_savename="",Group_saverem="",Group_savestatus="",protocol="";
+	int Group_savecode=0,Group_savegeli=0,Group_savebeli=0,Group_savebbeli=0,Group_savebveli=0,Group_savenbeli=0,Group_savejeli=0,Group_saveseli=0,Group_savereli=0,Group_savepeli=0,Group_saveteli=0,Group_saveglper=0,Group_saveblper=0,Group_savebblper=0,Group_savebvlper=0,Group_savenblper=0,Group_savejlper=0,Group_saveslper=0,Group_saverlper=0,Group_saveplper=0,Group_savetlper=0,Group_saveren=0;
+	GroupBean ob=new GroupBean();
+	singlecodecheck chkcode=new singlecodecheck();
+	 
+	String indexPage = null;
+   
+	String nm;
+	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+
+		performTask(request, response);
+
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) {
+
+		performTask(request, response);
+
+	}
+	public synchronized void performTask(
+		HttpServletRequest request,
+		HttpServletResponse response) {
+
+		
+		try {
+			HttpSession session = request.getSession(true);
+			String res = Security.checkSecurity(1, session, response, request);		
+			if(res.equalsIgnoreCase("Failure"))
+			{
+				response.sendRedirect("/AutoLib/Tree/sessiontimeout.jsp");  
+				return;
+			}
+			
+			response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            AdminService ss = BusinessServiceFactory.INSTANCE.getAdminService();
+	       
+            nm=request.getParameter("name");
+			flag=request.getParameter("flag");
+			
+			
+			if((flag.equals("Gen"))||(flag.equals("Spe"))||(flag.equals("Gs"))){
+				log4jLogger.info("start===========Gen=====");
+				ob=new GroupBean();
+				
+				ob.setRemarks(request.getParameter("name"));
+				ob.setStatus(request.getParameter("flag"));
+				List FineArrylist = new ArrayList();
+				
+							
+				if(ob!=null){
+					
+					FineArrylist=ss.getGroupGenSearch(ob);
+		
+					request.setAttribute("serarch", FineArrylist);
+			        indexPage = "/Group/search.jsp?check=ok&flag="+flag+"";
+			    	dispatch(request, response, indexPage);
+				}
+				
+				
+			}
+			
+			if(flag.equals("new")){
+				log4jLogger.info("start===========new=====");
+				
+				ob=ss.getGroupMax();
+				request.setAttribute("bean", ob);			
+				indexPage = "/Group/index.jsp?check=newGroup";
+				dispatch(request, response, indexPage);
+			
+		}					
+			
+
+if(flag!=null){
+		if(!request.getParameter("GCode").trim().equals(""))
+		Group_savecode=Integer.parseInt(request.getParameter("GCode"));
+	
+		Group_savename=chkcode.getParam(request, "GName");
+		if(!request.getParameter("Geligible").trim().equals(""))
+		Group_savegeli=Integer.parseInt(request.getParameter("Geligible"));
+		if(!request.getParameter("Beligible").trim().equals(""))
+		Group_savebeli=Integer.parseInt(request.getParameter("Beligible"));
+		if(!request.getParameter("BBeligible").trim().equals(""))
+		Group_savebbeli=Integer.parseInt(request.getParameter("BBeligible"));
+		if(!request.getParameter("BVeligible").trim().equals(""))
+		Group_savebveli=Integer.parseInt(request.getParameter("BVeligible"));
+		if(!request.getParameter("NBeligible").trim().equals(""))
+		Group_savenbeli=Integer.parseInt(request.getParameter("NBeligible"));
+		if(!request.getParameter("JLeligible").trim().equals(""))
+		Group_savejeli=Integer.parseInt(request.getParameter("JLeligible"));
+		if(!request.getParameter("Seligible").trim().equals(""))
+		Group_saveseli=Integer.parseInt(request.getParameter("Seligible"));
+		if(!request.getParameter("Religible").trim().equals(""))
+		Group_savereli=Integer.parseInt(request.getParameter("Religible"));
+		if(!request.getParameter("Peligible").trim().equals(""))
+		Group_savepeli=Integer.parseInt(request.getParameter("Peligible"));
+		if(!request.getParameter("Teligible").trim().equals(""))
+		Group_saveteli=Integer.parseInt(request.getParameter("Teligible"));
+		if(!request.getParameter("Gperiod").trim().equals(""))
+		Group_saveglper=Integer.parseInt(request.getParameter("Gperiod"));
+		if(!request.getParameter("Bperiod").trim().equals(""))
+		Group_saveblper=Integer.parseInt(request.getParameter("Bperiod"));
+		if(!request.getParameter("BBperiod").trim().equals(""))
+		Group_savebblper=Integer.parseInt(request.getParameter("BBperiod"));
+		if(!request.getParameter("BVperiod").trim().equals(""))
+		Group_savebvlper=Integer.parseInt(request.getParameter("BVperiod"));
+		if(!request.getParameter("NBperiod").trim().equals(""))
+		Group_savenblper=Integer.parseInt(request.getParameter("NBperiod"));
+		if(!request.getParameter("JLperiod").trim().equals(""))
+		Group_savejlper=Integer.parseInt(request.getParameter("JLperiod"));
+		if(!request.getParameter("SLperiod").trim().equals(""))
+		Group_saveslper=Integer.parseInt(request.getParameter("SLperiod"));
+		if(!request.getParameter("RLperiod").trim().equals(""))
+		Group_saverlper=Integer.parseInt(request.getParameter("RLperiod"));
+		if(!request.getParameter("PLperiod").trim().equals(""))
+		Group_saveplper=Integer.parseInt(request.getParameter("PLperiod"));
+		if(!request.getParameter("TLperiod").trim().equals(""))
+		Group_savetlper=Integer.parseInt(request.getParameter("TLperiod"));
+		
+		Group_saverem=chkcode.getParam( request, "Remarks");
+		if(!request.getParameter("Renewal").trim().equals(""))
+		Group_saveren=Integer.parseInt(request.getParameter("Renewal"));
+		Group_savestatus=request.getParameter("ra1");
+		if(Group_savestatus==null)
+		{
+			Group_savestatus=request.getParameter("ra2");
+
+			if(Group_savestatus==null)
+			{
+				Group_savestatus=request.getParameter("ra3");
+			}
+		}
+
+		
+			
+			if(flag.equals("search")){
+				log4jLogger.info("start===========search=====");
+				
+				ob=ss.getGroupSearch(request.getParameter("GCode"));
+				if(ob!=null){
+					request.setAttribute("bean", ob);
+					
+					indexPage = "/Group/index.jsp?check=searchGroup";	
+				}else{
+					indexPage = "/Group/index.jsp?check=FailGroup";
+				}
+				dispatch(request, response, indexPage);
+			
+			}
+				
+		
+			if(flag.equals("update")){
+				log4jLogger.info("start===========update=====");
+				ob.setCode(Group_savecode);
+				 ob.setName(Group_savename);
+				 ob.setGeli(Group_savegeli);
+				 ob.setBeli(Group_savebeli);
+				 ob.setBbeli(Group_savebbeli);
+				 ob.setBveli(Group_savebveli);
+				 ob.setNbeli(Group_savenbeli);
+				 ob.setJeli(Group_savejeli);
+				 ob.setSeli(Group_saveseli);
+				 ob.setReli(Group_savereli);
+				 ob.setPeli(Group_savepeli);
+				 ob.setTeli(Group_saveteli);
+				 ob.setGlper(Group_saveglper);
+				 ob.setBlper(Group_saveblper);
+				 ob.setBblper(Group_savebblper);
+	             ob.setBvlper(Group_savebvlper);
+				 ob.setNblper(Group_savenblper);
+				 ob.setJlper(Group_savejlper);
+				 ob.setSlper(Group_saveslper);
+				 ob.setRlper(Group_saverlper);
+				 ob.setPlper(Group_saveplper);
+				 ob.setTlper(Group_savetlper);
+				 ob.setRemarks(Group_saverem);
+				 ob.setRenewal(Group_saveren);
+				 ob.setStatus(Group_savestatus);
+				 
+				int count=ss.getGroupUpdate(ob);
+				indexPage = "/Group/index.jsp?check=UpdateGroup";
+				dispatch(request, response, indexPage);
+			}
+
+
+			if(flag.equals("delete")){
+				log4jLogger.info("start===========delete=====");
+				
+				ob=ss.getGroupSearch(request.getParameter("GCode"));
+				if(ob!=null){
+					request.setAttribute("bean", ob);
+					indexPage = "/Group/index.jsp?check=deleteCheck";
+				}else{
+					indexPage = "/Group/index.jsp?check=FailGroup";
+				}
+				dispatch(request, response, indexPage);
+			}
+		
+		
+		
+			if(flag.equals("Confirmdete")){
+				log4jLogger.info("start===========Confirmdete=====");
+								
+				int count=ss.getGroupInterface(request.getParameter("GCode"));
+				
+				if (count>0){
+					indexPage = "/Group/index.jsp?check=ReferredGroup";
+				}else{
+					int rk=Integer.parseInt(request.getParameter("GCode"));
+					
+					if(rk==1)
+					{
+						indexPage = "/Group/index.jsp?check=DefaultGroup";
+					}
+					else
+					{					
+					  count=ss.getGroupDelete(request.getParameter("GCode"));
+					  indexPage = "/Group/index.jsp?check=DeleteGroup";
+					}
+				}
+				dispatch(request, response, indexPage);
+			}
+			
+			if(flag.equals("save")){
+				log4jLogger.info("start===========save=====");
+				 ob.setCode(Group_savecode);
+				 ob.setName(Group_savename);
+				 ob.setGeli(Group_savegeli);
+				 ob.setBeli(Group_savebeli);
+				 ob.setBbeli(Group_savebbeli);
+				 ob.setBveli(Group_savebveli);
+				 ob.setNbeli(Group_savenbeli);
+				 ob.setJeli(Group_savejeli);
+				 ob.setSeli(Group_saveseli);
+				 ob.setReli(Group_savereli);
+				 ob.setPeli(Group_savepeli);
+				 ob.setTeli(Group_saveteli);
+				 ob.setGlper(Group_saveglper);
+				 ob.setBlper(Group_saveblper);
+				 ob.setBblper(Group_savebblper);
+	             ob.setBvlper(Group_savebvlper);
+				 ob.setNblper(Group_savenblper);
+				 ob.setJlper(Group_savejlper);
+				 ob.setSlper(Group_saveslper);
+				 ob.setRlper(Group_saverlper);
+				 ob.setPlper(Group_saveplper);
+				 ob.setTlper(Group_savetlper);
+				 ob.setRemarks(Group_saverem);
+				 ob.setRenewal(Group_saveren);
+				 ob.setStatus(Group_savestatus);
+				 				 				 
+				 GroupBean newbean=new GroupBean();
+				 newbean=ss.getGroupSearch(request.getParameter("GCode"));
+				 
+				 
+				 if(newbean!=null){
+					
+					 					
+							 ob.setCode(Group_savecode);
+							 ob.setName(Group_savename);
+							 ob.setGeli(Group_savegeli);
+							 ob.setBeli(Group_savebeli);
+							 ob.setBbeli(Group_savebbeli);
+							 ob.setBveli(Group_savebveli);
+							 ob.setNbeli(Group_savenbeli);
+							 ob.setJeli(Group_savejeli);
+							 ob.setSeli(Group_saveseli);
+							 ob.setReli(Group_savereli);
+							 ob.setPeli(Group_savepeli);
+							 ob.setTeli(Group_saveteli);
+							 ob.setGlper(Group_saveglper);
+							 ob.setBlper(Group_saveblper);
+							 ob.setBblper(Group_savebblper);
+				             ob.setBvlper(Group_savebvlper);
+							 ob.setNblper(Group_savenblper);
+							 ob.setJlper(Group_savejlper);
+							 ob.setSlper(Group_saveslper);
+							 ob.setRlper(Group_saverlper);
+							 ob.setPlper(Group_saveplper);
+							 ob.setTlper(Group_savetlper);
+							 ob.setRemarks(Group_saverem);
+							 ob.setRenewal(Group_saveren);
+							 ob.setStatus(Group_savestatus);
+							 
+							 request.setAttribute("bean", ob);
+							 indexPage = "/Group/index.jsp?check=UpdateCheck";
+					 
+					 
+				 }else{
+					 
+					 int Gru_name=ss.getGroupNameInterface(Group_savename);
+					 
+					 if(Gru_name>0){						 
+						
+						 indexPage = "/Group/index.jsp?check=CodeCompareGroup";				
+						
+					 }else{						 						 
+					 
+					 
+					 ob.setCode(Group_savecode);
+					 ob.setName(Group_savename);
+					 ob.setGeli(Group_savegeli);
+					 ob.setBeli(Group_savebeli);
+					 ob.setBbeli(Group_savebbeli);
+					 ob.setBveli(Group_savebveli);
+					 ob.setNbeli(Group_savenbeli);
+					 ob.setJeli(Group_savejeli);
+					 ob.setSeli(Group_saveseli);
+					 ob.setReli(Group_savereli);
+					 ob.setPeli(Group_savepeli);
+					 ob.setTeli(Group_saveteli);
+					 ob.setGlper(Group_saveglper);
+					 ob.setBlper(Group_saveblper);
+					 ob.setBblper(Group_savebblper);
+		             ob.setBvlper(Group_savebvlper);
+					 ob.setNblper(Group_savenblper);
+					 ob.setJlper(Group_savejlper);
+					 ob.setSlper(Group_saveslper);
+					 ob.setRlper(Group_saverlper);
+					 ob.setPlper(Group_saveplper);
+					 ob.setTlper(Group_savetlper);
+					 ob.setRemarks(Group_saverem);
+					 ob.setRenewal(Group_saveren);
+					 ob.setStatus(Group_savestatus);
+					 
+					 int count=ss.getGroupSave(ob);
+					 indexPage = "/Group/index.jsp?check=SaveGroup";
+					 }				 					 
+				 }
+				 dispatch(request, response, indexPage);
+			}
+		
+		
+		
+}
+
+
+
+
+
+			
+			 } catch (Exception e) {
+					
+					}
+		    catch (Throwable theException) {
+			
+		   }
+		    finally{
+		    	try{
+					
+
+				}catch(Exception e){
+				e.printStackTrace();
+				}
+		    }
+
+	}
+
+	
+	public void dispatch(HttpServletRequest request,
+			HttpServletResponse response, String indexPage)
+			throws ServletException, IOException {
+		RequestDispatcher dispatch = request.getRequestDispatcher(indexPage);
+		dispatch.forward(request, response);
+	}
+
+
+	/**
+	 * Instance variable for SQL statement property
+	 */
+	protected java.lang.String SQLStringCode ="select max(Group_code) as maxno from group_mas";
+	
+	
+
+
+	
+}

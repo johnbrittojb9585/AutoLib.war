@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.EBookSearch">
+
+<sql-query name="ebookSearchQuery">
+
+ SELECT access_no,publisher,title,author_name,call_no,role,edition,year_pub,pages,sub_code,Sub_Name,pub_code,dept_code,Dept_Name,branch_code,document,TYPE,received_date,content,keywords,isbn,url,sup_code,supplier,pages FROM ebook_mas_view WHERE 2>1 
+
+</sql-query>
+
+</hibernate-mapping>

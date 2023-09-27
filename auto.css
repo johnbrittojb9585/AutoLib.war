@@ -1,0 +1,129 @@
+.news {
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 11px; 
+	COLOR: #d4d4d4; 
+	LINE-HEIGHT: 150%; 
+	FONT-FAMILY: verdana, arial; 
+	TEXT-DECORATION: none
+}
+.disc {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #666666; LINE-HEIGHT: 160%; FONT-STYLE: normal; FONT-FAMILY: verdana, arial; TEXT-DECORATION: none
+}
+TD.bg
+{
+    BACKGROUND-IMAGE: url(images/cellbg.jpg);
+    BACKGROUND-POSITION: center bottom;
+    BACKGROUND-REPEAT: no-repeat
+}
+TD.clhd
+{
+	background-color: #9197E6;
+	padding-left: 25;
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 12px;
+	COLOR: #FFFFFF; 
+	LINE-HEIGHT: 160%; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: verdana, arial;
+	TEXT-DECORATION: none;
+	font-weight: bold;
+}
+TD.cllist
+{
+	background-color: #C8CBF2;
+	padding: 15 15 15 25;
+	FONT-WEIGHT: 
+	normal; FONT-SIZE: 11px; 
+	COLOR: #000000; 
+	LINE-HEIGHT: 180%; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: verdana, arial; 
+	TEXT-DECORATION: none;
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	font-size: 80%;
+	font-weight: bold;
+	background-image: url(images/sidebanner.gif);
+	SCROLLBAR-FACE-COLOR: #B394DC; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #F2EDF9; 
+	SCROLLBAR-SHADOW-COLOR: #690505; 
+	SCROLLBAR-3DLIGHT-COLOR: #690505;  
+	SCROLLBAR-ARROW-COLOR: #B030AA; 
+	SCROLLBAR-TRACK-COLOR: #F2EDF9; 
+	SCROLLBAR-DARKSHADOW-COLOR: #B394DC;
+}
+
+a:link {
+	color: #76B0D5;
+	text-decoration: none;
+	}
+	
+a:visited {
+	color: #7B878F;
+	text-decoration: none;
+	}
+	
+a:hover, a:active {
+	color: #2399E5;
+	}
+.b:link {
+	color: #000000;
+	text-decoration: none;
+	}
+	
+.b:visited {
+	color: #3333FF;
+	text-decoration: none;
+}
+	
+.b:hover, a:active {
+	color: #FF6600;
+}
+	
+#menu3 ul {
+	list-style:  none;
+	margin: 0px;
+	}
+#menu3 ul {
+	list-style:  none;
+	margin: 0px;
+	}
+	
+#menu3 li {
+	display: inline;
+	width: 32px;
+	border: 1px solid #ccc;
+	margin: 0px;
+	}
+
+#menu3 li a {
+  	height: 28px;
+	font: bold;
+	font-size: 9pt;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}	
+	
+#menu3 li a:link, #menu3 li a:visited {
+	color: #888;
+	display: block;
+	background: url(images/menu3.gif);
+	padding: 5px 15px 5px 28px;
+	}
+	
+#menu3 li a:hover, #menu3 li a:active {
+	color: #FFFFFF;
+	background: url(images/menu05.gif);
+    padding: 5px 15px 5px 28px;
+}
+.title
+{
+	color: #996633;
+	margin-top: 10px;
+	text-align: center;
+	font-family: verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+}

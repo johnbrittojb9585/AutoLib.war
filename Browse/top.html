@@ -1,0 +1,47 @@
+<html>
+<body ><!--background="/AutoLib/soft.jpg" -->
+<form name ="top" action="./BrowseSearch" target="body" onsubmit="return validate()">
+
+<table >
+<tr><td align=left><img src="/AutoLib/images/banner_01.gif"></td><td align=right><font face="Tahoma" size="2" color="#000080" class=disc ><b>Browse: <b></font></td>
+<td><input tabindex="0" name="name" size="20" maxlength="100">
+</td>
+<td><select name="type">
+<option value="author_name">Author</option>
+<option value="title">Title</option>
+<option value="sub_name">Subject</option>
+<option value="sp_name">Publisher</option>
+<option value="isbn">ISBN</option>
+<option value="jnl_name">Journal Title</option>
+<option value="jnl_atl">Journal Articles</option>
+</select>
+</td>
+<td><input type="submit" value="Search" ></td>
+<td><input type="hidden" name="hid" value="search">
+</td>
+</tr>
+<tr>
+</table>
+</form>
+</body>
+</html>
+
+<script >
+function validate()
+{
+if(document.top.name.value=="")
+{
+alert("Enter Any Values");
+document.top.name.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+
+
+
+

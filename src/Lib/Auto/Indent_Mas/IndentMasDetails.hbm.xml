@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Indent_Mas">
+
+<class name="IndentMasDetailsBean" table="indent_details_mas" lazy="false">
+		<id name="indtno" column="Indent_No" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="titleNo" column="Title_No" type="int"/>  
+		<property name="title" column="Title" type="java.lang.String"/>  
+		<property name="author" column="Author_Name" type="java.lang.String"/> 
+		<property name="authorcode" column="Author_Code" type="java.lang.String"/>				
+		<property name="noofcopy" column="No_Of_Copy" type="int"/> 			
+		<property name="pendingcopy" column="Pending_Copy" type="int"/> 					
+		<property name="isbn" column="ISBN" type="java.lang.String"/> 		
+		<property name="yearpub" column="YearPub" type="int"/>				
+		<property name="edition" column="Edition" type="java.lang.String"/> 				
+				
+		<property name="memcode" column="Member_Code" type="java.lang.String"/>	
+		<property name="memname" column="Member_Name" type="java.lang.String"/>  								
+		<property name="department" column="Dept_Name" type="java.lang.String"/> 
+		<property name="deptcode" column="Dept_Code" type="int"/>	
+		<property name="publisher" column="Pub_Name" type="java.lang.String"/> 			
+		<property name="pubcode" column="Pub_Code" type="int"/>
+
+		<property name="indtdate" column="Indent_Date" type="java.lang.String"/>  		
+		<property name="indtstatus" column="Indent_Status" type="java.lang.String"/> 				
+		<property name="titlestatus" column="Title_Status" type="java.lang.String"/>  	
+		
+		<property name="bcurrency" column="Currency" type="java.lang.String"/>				
+		<property name="bcost" column="Cost" type="double"/>
+		<property name="bprice" column="INR_Price" type="double"/>
+		<property name="discount" column="Discount" type="double"/>
+		<property name="netamount" column="Accepted_Price" type="double"/>	
+		
+		<property name="flag" column="Flag" type="java.lang.String"/>
+				
+</class>
+
+<sql-query name="IndentMasFullView">
+
+SELECT Indent_No,Title_Status,indent_Date,Member_Code,Member_Name,Indent_Status,
+Title_No,Title,No_Of_Copy,Author_Name,Author_Code,Pub_Name,Pub_Code,Dept_Name,Dept_Code,
+ISBN,YearPub,Edition,Currency,Cost,INR_Price,Discount,Accepted_Price FROM indent_details_mas where Indent_No=:indtno
+
+</sql-query>
+
+<sql-query name="DeleteIndentMas">
+		delete from indent_details_mas WHERE Indent_No=:indtno
+
+</sql-query>
+
+</hibernate-mapping>
+
+
+

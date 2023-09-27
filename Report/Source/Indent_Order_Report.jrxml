@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Budget_Report" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="def85fb4-3be2-44b9-a55f-52f2b055aeb4">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1753"/>
+	<parameter name="CMP_NAME" class="java.lang.String"/>
+	<parameter name="CMP_ADD" class="java.lang.String"/>
+	<parameter name="ReportTitle" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="All_Query" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{All_Query}]]>
+	</queryString>
+	<field name="order_no" class="java.lang.String"/>
+	<field name="order_date" class="java.util.Date"/>
+	<field name="copies" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="title" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="pincode" class="java.lang.String"/>
+	<field name="address1" class="java.lang.String"/>
+	<field name="author_name" class="java.lang.String"/>
+	<field name="publisher" class="java.lang.String"/>
+	<field name="edition" class="java.lang.String"/>
+	<field name="isbn" class="java.lang.String"/>
+	<field name="yearpub" class="java.lang.String"/>
+	<field name="supplier" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="348" splitType="Stretch">
+			<line>
+				<reportElement uuid="c5b8b308-2c75-4f67-987b-dc78ac29a8b5" x="0" y="152" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="d54b29a3-4bfb-4b04-afaf-8fe520e2bf03" x="6" y="202" width="331" height="74"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To
+         M/s C. Sitaraman & Co.
+         Law Book Sellers, Publishers & Distributor
+         73/37, Royapettah High Road,
+         Chennai -600014	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d829c53c-247c-4f80-b473-3486cdfd230b" x="425" y="181" width="41" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="36bd20ea-4649-400c-8c6a-4795a3d838a2" x="7" y="280" width="54" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dear Sir,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f6790ccc-f82a-45ce-b2b8-219cb18ccd9f" x="10" y="299" width="541" height="49"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[              Subject:  SUPPLY OF BOOK
+              Ref:Your e-mail dated on.25/01/2017
+With reference to your quote through e-mail cited you are requested to supply the following publication:-]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="57a8b321-dfe3-4329-a398-bf1e14a93388" x="462" y="184" width="87" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{order_date}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="9d15dc99-e14f-4e86-9e73-d8d1dc5c11ae" key="image-1" x="227" y="41" width="74" height="74"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA["/logo/reportcollege.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="54679b38-a08c-4fbc-bf7f-df973f03c170" x="5" y="158" width="532" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReportTitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="15d5c62d-9451-4d97-8ef3-03d0fd0767ff" x="5" y="10" width="207" height="69"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[दूरभाष / Phone : 044 -26364049
+फैक्‍स / Fax       : 044 - 26383661
+Email Id        : krc_cvrde@cvrde.drdo.in                                                                                                       ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7e04c086-aa7c-4696-bf27-049de696c0f0" x="6" y="84" width="206" height="67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[सभी पत्रदि निदेशक के पते से भेजे जाने
+और कोई अन्‍य अधिकारी के नाम से नहीं ।
+All Correspondence should be addressed to DIRECTOR and not to any Officer by Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f9e608b-fbdb-4528-b781-bf9ef82f863f" x="309" y="10" width="242" height="28"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[   By Registered Post
+S.O. No.CV/7.4/KRC/2016-17/       	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="86b29be4-5869-4d9d-bedd-a44ed7f81829" x="309" y="41" width="228" height="110"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[सरकार। भारत, रक्षा मंत्रालय के
+अनुसंधान एवं Dev.Organisation।
+लड़ाकू वाहन रेस। और dev.Estt।
+अवादी, चेन्नई - 600 054
+Govt. of India,Ministry of Defence
+Research & Dev.Organisation.
+Combat Vechicles Res. & dev.Estt.
+Avadi,Chennai - 600 054]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="16a6788c-5159-45ea-a4fb-783d7270a670" x="5" y="0" width="35" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="84356a02-6d63-48f5-915d-fe2d02d3c11b" x="337" y="0" width="45" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Publisher]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="11f94e37-b80d-4268-a5f4-5ea78576e598" x="409" y="0" width="39" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="380da869-01b8-434c-bd21-dd39024bcca3" x="0" y="0" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="fd9c0934-0f77-4bdb-82b9-90ec850d3f08" x="0" y="20" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="f4329698-77a5-4df5-a5e8-1050d9c0dee8" x="0" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="86a4fe1c-8100-480e-a16e-c5485e6d6614" x="37" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="4149d432-9984-486e-8681-50dbbdf8215d" x="328" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="b2c92825-6600-4d5d-9f84-d93cf31303bb" x="505" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="ae1f4547-f082-42b3-98ed-dde182e1fa64" x="554" y="0" width="1" height="19"/>
+			</line>
+			<staticText>
+				<reportElement uuid="85254716-d067-4000-8a3b-b2a0f6f52366" x="41" y="1" width="86" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Author Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="faadc355-a9e7-4aa8-a2ee-dfe01652ec5b" x="141" y="-1" width="71" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3fa5567b-f2ab-4902-b27d-49d63ffacde1" x="270" y="2" width="53" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edition]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4258397a-5aa1-4810-b488-75e29c3be00c" x="508" y="0" width="43" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Copies]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="32bf096c-f82c-4221-a824-ad5c7e4d68d7" x="407" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="f0c50ab9-841f-45c7-b754-e9b5f4d8edae" x="452" y="1" width="1" height="19"/>
+			</line>
+			<staticText>
+				<reportElement uuid="21517d06-0a1a-4542-828f-8b56d7a8952e" x="463" y="-1" width="31" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISBN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="267" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="433e17c6-ec81-4f39-8d0c-c1d4f0628cd0" x="8" y="1" width="20" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8a5693cf-3d40-4849-9d4e-a47cbbb1320d" x="0" y="30" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="31055c94-921a-4b99-8a40-1737f5c9e114" x="37" y="-2" width="1" height="32"/>
+			</line>
+			<line>
+				<reportElement uuid="11a69880-2a0d-4ebc-aee6-88d4e289b50e" x="0" y="-5" width="1" height="35"/>
+			</line>
+			<line>
+				<reportElement uuid="ff2b4f9c-9023-4b55-8d53-9b30865f4b2a" x="328" y="-3" width="1" height="33"/>
+			</line>
+			<line>
+				<reportElement uuid="2f188212-9d4f-4763-88bd-b63a11723fa3" x="505" y="-3" width="1" height="33"/>
+			</line>
+			<line>
+				<reportElement uuid="0b028c99-785f-4d2f-b0a6-04f8e9dba2c0" x="554" y="-3" width="1" height="33"/>
+			</line>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="fbb68584-b30b-4224-ad01-7be50a4ac2a1" x="267" y="1" width="54" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{edition}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="fb4ebd02-fc70-4a5c-b3e8-15e0ad5d1cb9" x="41" y="2" width="95" height="28"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{author_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="1b0dbe10-cc82-490d-b56e-997f9b6b5f3b" x="263" y="-20" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="b339e2e2-2661-4830-a0b0-ede2f8020a9d" x="137" y="-20" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="b6d9ce5b-6ccb-49cd-b4f7-c5244715aafc" x="137" y="-1" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement uuid="b70602f0-4eb1-4d48-a6fe-06f2d5665340" x="263" y="-2" width="1" height="32"/>
+			</line>
+			<line>
+				<reportElement uuid="d0f700c8-b808-407a-af85-f90f41342b3d" x="407" y="-3" width="1" height="33"/>
+			</line>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="e131d80d-7cb0-4525-b499-1aee2f7199ef" x="141" y="0" width="120" height="28"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy" isBlankWhenNull="true">
+				<reportElement uuid="22439afc-766d-4ef8-be86-c254ce655a77" x="331" y="1" width="73" height="28"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{publisher}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c012aaae-2563-4ce9-8478-5bf3adfa245c" x="516" y="0" width="34" height="28"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{copies}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="769a73ed-77fc-45a9-b706-6375bce142c4" x="452" y="-2" width="1" height="32"/>
+			</line>
+			<textField pattern="yyyy" isBlankWhenNull="false">
+				<reportElement uuid="3bc5781f-6d14-4394-9128-a7e9b956b902" x="414" y="1" width="36" height="27"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{yearpub}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="997c2cd1-d1a4-4fa0-99ce-3f1d0680c604" x="456" y="0" width="47" height="28"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{isbn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8141eac8-4d3f-4c9f-9761-fb0303da2c53" x="212" y="31" width="254" height="22"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(ONE THOUSAND RUPEES ONLY)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd325db7-20d7-4f27-b7aa-7eae2f2ca699" x="212" y="53" width="254" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                      ONE ITEM ONLY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34b796d3-872d-4ce1-88f1-97663d2b594b" x="5" y="73" width="541" height="100"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Please confirm the receipt of the supply order as per terms and conditions on the reverse of this order and expedite the supply.
+Note:
+1. Price proof has to be enclosed along with the bill.
+2. The original Supply Order should be returned along with the invoice while completion of the supply.
+3. In case supply cannot be materialized, the original Supply order should be returned with
+             reason for non-supply of the Documents
+
+	        The Due date for supply of the above Titles is   13/06/2017. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed0c577-f62f-45f5-8aa3-e477957b7805" x="227" y="173" width="310" height="94"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(डा. एस. मुरलीधर/Dr. S. MURALIDHAR) वैज्ञा.'जी'/ Sc'G'
+						                  	for निर्देशक/Director
+		                                                                                       for and on behalf of the President of India    ]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="df0813c9-bba9-4522-9a62-9f883338a6dc" x="5" y="0" width="541" height="647"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TERMS & CONDITIONS FOR SUPPLY OF BOOKS/BOOK LIKE MATERIALS (OTHER THAN JOURNALS/ BIBLIOGRAPHIC DATABASES IN CD-ROM)
+
+1. Receipt of supply order must be acknowledged by the supplier within a week of its receipt.
+2. All correspondence should be addressed to the Director, CVRDE, Avadi, Chennai-600 054 and not to any individual officer by name. Books & Publications under free delivery should be supplied to our Library before 1500 hrs on working days. If the supply is made through post, postage charges will be borne by the supplier in case of local delivery. However for outstation supplies through post, postage charges can be claimed by producing necessary receipts when such mention has been already made in your letter and in our supply order.
+3. Books covered by the order must be supplied at CVRDE, Avadi, Chennai - 54 on or before the due date mentioned in this order. In case some of the books cannot be supplied within the stipulated time, extension of delivery date must be obtained from Library in-charge in writing/email before the due date of delivery. An amendment to that effect will be issued. However, more than two extensions will not be given. If the vendor is unable to supply within the extension date, the supply order shall automatically stand cancelled w.e.f. the next day and action will be taken accordingly.
+4. In the body of the bill/invoice, please quote our supply order number/amendment and date also on the cover of the packet        containing books.
+5. Proof in support of the prices charged, i.e. a photocopy of the publishers invoice/catalogue may also be attached along with the bills to avoid delay in passing the bills for payment.
+6. For foreign books, prices in original currency should be mentioned first and then in rupees. Conversion rates should be as per the RBI/SBI 	declared rates on the date of 	placing of supply Order/amendment. Certificate for conversion rate/paper cutting should be enclosed with the bills to this effect.
+7. A Certificate should be given on the body of the bill that Net published prices have been charged and the books supplied are not remaindered titles.
+8. DISCOUNT STRUCTURE:
+Discount as per invoice, However minimum discount rate for foreign books is 10% and Indian books 15%
+For short discount titles, documentary proof should be given and the full discount should be passed on to the Institution.
+Do not supply ‘No-discount publications’ without confirmation from the Library-in-charge. After the confirmation for supply of No discount publications, publishers’ proof of ‘No-discount’ has to be enclosed along with the bills.
+9.   Unless otherwise mentioned, latest edition of the book(s) only must be supplied. Evidence of the currency of the edition(s) issued by the 	publisher(s) must be supplied along with the bill(s). Specific   mention of edition, such as paperback, student edition, deluxe edition, 	library edition, etc should be made on the body of the bill(s) to avoid	any misunderstanding about the price of the concerned book.
+10. The books supplied should be in good condition without any defects and damages.  Payment will be made only after inspection and acceptance of the library. Defective and damaged copies will be returned at the supplier’s cost and the supplier should replace the same at their own cost.
+11. Packing and forwarding charges will be borne by the suppliers.
+12. Wrong titles will be returned at the suppliers cost and the same should be replaced by the supplier at their own cost.
+13. Pre-receipted bill(s) are to be submitted in Triplicate (3 copies), the original, duly stamped with one rupee revenue stamp in case the amount in the bill exceeds Rs. 5000.00
+14. Bill/s is/are to be addressed to The Director, Combat Vehicles Research & Development Establishment, Avadi, Chennai-54
+15. Director, CVRDE is empowered to cancel any order without assigning any reason
+16. For any dispute/arbitration, the legal jurisdiction will be that of judicial courts at Chennai.
+17. Handling charges for Short discount titles and No discount titles should not exceed 15% 	of the cost of publication
+18. Director CVRDE reserves all rights to give order to any vendor depending upon their performance and past service on  the above mentioned 	discount rates.
+19. Director CVRDE can also place supply order with any non registered vendors in case of 	urgency or availability of books with other vendors.
+20. The supplier should also add a declaration on the bill that the prices have been correctly 	charged in accordance with the publisher’s 	/importer’s/distributor’s invoices and publisher’s latest catalogues.
+21. The discount on remaindered titles will be over and above 30% of the published prices and should be charged through separate invoices.
+22. In case you require advance payment you are requested to forward your pre-receipted proforma invoice (Duly affixing Rupee Revenue Stamp) 	in triplicate well in advance to arrange 100%/95%/90% advance payment.
+23. (a) In the case of publications where advance payment is involved, the amount will be paid in full only against a pre-receipted proforma invoice. (b) The agency will have to execute a Bank Guarantee   for the total invoice amount to be paid in advance or optionally to pay the whole supply order amount to the publishers immediately on receipt of our supply order on our behalf and thereafter claim the same from us by producing the copy of the remittance proforma. (c) Part payment is admissible (three times).
+24. Your bill will be forwarded to the JCDA (R&D), CVRDE, AVADI, Chennai-600 054, by this Establishment. after receipt and acceptance of the Publications mentioned in the supply order in good condition, who will issue the payment in full settlement of your bill.
+25. The Payment will be made only through NEFT. Kindly furnish bank details such as Account Number, Name of the Bank, Name of the Branch,  IFSC Code, MICR Code along with the bill for the processing the payment through NEFT.
+
+				 भवदीय /Yours faithfully,
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af49a00d-332e-445a-b7aa-28e5adf8046a" x="261" y="667" width="288" height="93"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(डा. एस. मुरलीधर/Dr. S. MURALIDHAR) वैज्ञा.'जी'/ Sc'G'
+						                  	for निर्देशक/Director
+		                                                                                       for and on behalf of the President of India    ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

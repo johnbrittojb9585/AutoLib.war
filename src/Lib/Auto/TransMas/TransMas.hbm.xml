@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.TransMas">
+
+<class name="TransMasBean" table="transaction_mas" lazy="false">
+		<id name="tcode" column="Trans_Code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	    
+	   <property name="thead" column="Trans_Head" type="java.lang.String"/>
+	   <property name="tamount" column="Amount" type="java.lang.String"/>  
+	   <property name="tremarks" column="Remarks" type="java.lang.String"/>  
+	   <property name="taddfield1" column="Add_Field1" type="java.lang.String"/>  
+		
+</class>
+
+
+<sql-query name="TransMasSelectQuery">
+		SELECT Trans_Code,Trans_Head,Amount,Remarks,Add_Field1 FROM transaction_mas where Trans_Code=:transCode
+        	
+</sql-query>
+
+<sql-query name="TransMasHeadSelectQuery">
+		SELECT Trans_Code,Trans_Head,Amount,Remarks,Add_Field1 FROM transaction_mas where Trans_Head=:transHead
+        	
+</sql-query>
+
+<sql-query name="TransMasDeleteQuery">
+		DELETE FROM transaction_mas where Trans_Code=:transCode
+        	
+</sql-query>
+
+</hibernate-mapping>
+
+
+

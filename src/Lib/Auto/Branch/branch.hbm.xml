@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Branch">
+
+<class name="BranchBean" table="branch_mas" lazy="false">
+		<id name="code" column="branch_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="name" column="branch_name" type="java.lang.String"/>
+		<property name="desc" column="short_desc" type="java.lang.String"/>  
+		
+		
+		
+</class>
+<sql-query name="LoadBranch">
+select branch_code,branch_name from branch_mas
+</sql-query>
+</hibernate-mapping>
+
+
+

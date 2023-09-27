@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Account">
+
+<sql-query name="accountSearchQuery">
+select access_no,title,author_name, issue_date,due_date,trans_date,trans_head,trans_amount from trans_member_view where 2>1
+
+
+</sql-query>
+
+<sql-query name="accountIssueHistorySearchQuery">
+SELECT access_no,CONVERT (title,CHAR) AS  title,CONVERT (author_name,CHAR) AS author_name,issue_date,due_date,return_date,doc_type,fine_amount FROM jhistory where 2>1 
+
+</sql-query>
+
+
+<sql-query name="accountIssueSearchQuery">
+
+	SELECT access_no,convert(title, CHAR) as title,convert(author_name, CHAR) as author_name,issue_date,due_date,doc_type,member_code,member_name FROM issuedbooks where 2>1 
+
+</sql-query>
+
+<sql-query name="accountPaidDetailsQuery">
+	select bill_no,member_code,amount,Payment_date from payment_clearance where 2>1 
+</sql-query>
+
+<sql-query name="accountReserveSearchQuery">
+
+	SELECT  access_no,title,author_name,res_date,availability,doc_type FROM reservedbooks where 2>1 
+</sql-query>
+
+<sql-query name="registerLoadSearchQuery">
+
+	SELECT member_code,member_name,cyear,dept_name,course_name,in_time,desig_name FROM Entry_log_view order by in_time asc
+</sql-query>
+
+<sql-query name="todayVisitedRegisterLoadSearchQuery">
+
+	SELECT member_code , Member_name , cyear , dept_name , course_name , in_time , out_time , designation as desig_name  FROM return_log_view WHERE return_date = CURDATE()
+</sql-query>
+
+<sql-query name="callEntryLog">
+
+	SELECT * from entry_log
+</sql-query>
+
+<sql-query name="saveReturnLog">
+
+	insert into return_log values(:member,:entryTime,:returnTime,:min,:inTime,:outTime)
+</sql-query>
+
+<sql-query name="deleteEntryLog">
+
+	delete from entry_log
+</sql-query>
+
+<sql-query name="accountSuggestionSearchQuery">
+
+	SELECT  request_date,request,Detail,Action_taken,status FROM suggestion_view where 2>1 
+</sql-query>
+
+
+</hibernate-mapping>
+

@@ -1,0 +1,1710 @@
+package Common.businessutil.search;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import Common.Security;
+import Common.Security_Counter;
+import org.apache.log4j.Logger;
+import org.hibernate.SQLQuery;
+
+import Common.DataQuery;
+import Common.Security_Counter;
+import Common.businessutil.mail.MailDaoImpl;
+import Common.businessutil.mail.MailQueryUtill;
+import Common.businessutil.sms.SmsDaoImpl;
+import Lib.Auto.Account.AccountBean;
+import Lib.Auto.Account.OnlineRenewBean;
+import Lib.Auto.Advanced.Adsearchbean;
+import Lib.Auto.Binding.BindingBean;
+import Lib.Auto.Branch.BranchBean;
+import Lib.Auto.Counter.CounterMemberBean;
+
+import com.library.autolib.portal.dbconnectionutil.BaseDBConnection;
+
+
+public class SearchDaoImpl extends BaseDBConnection implements
+SearchDao {
+private static Logger log4jLogger = Logger.getLogger(SearchDaoImpl.class);
+	
+	java.sql.Connection con = null;
+	java.sql.PreparedStatement Prest = null;
+	java.sql.ResultSet rs = null;	
+	java.sql.Statement st = null;
+	
+	
+	
+	public static final String SQLCNT =	"select count(access_no) as cnt from full_search where 2>1";	
+	public static final String SQL_Query_view =	"select  * from full_search where 2>1";
+	public static final String CD_VIEW ="select * from full_search where  remarks like '%+CD%' and access_no=?";
+	
+
+	
+	public List findSimpleSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findSimpleSearch====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("simpleSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		searchDocmentCount(filterQuery);
+		return  sql.list();
+	}
+	
+	public List findAdvancedSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findAdvancedSearch====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("advancedSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		
+		searchDocmentCount(filterQuery);
+		
+		return  sql.list();
+		
+		
+	}
+	
+	public List findEBookSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findEBookSearch====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("ebookSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		//searchDocmentCount(filterQuery);
+		return  sql.list();
+	}
+	
+	
+	public List findFullViewSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findFullViewSearch====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("fullViewSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		return  sql.list();
+	}
+	
+	public void searchDocmentCount(String query) {
+		log4jLogger.info("start===========searchDocmentCount=====");
+		Adsearchbean bean=new Adsearchbean();
+		ArrayList finalResults = new ArrayList();
+		
+		ArrayList ser=new ArrayList ();
+		String SQLString="",f3="";
+		try {
+		
+			con = getSession().connection();
+			st = con.createStatement();
+			if (query == "") {
+				rs = st.executeQuery(DataQuery.SARECH_COUNT_DOC );
+			}else{
+				rs = st.executeQuery(DataQuery.SARECH_COUNT_DOC_LIKE
+						
+						+query + "GROUP BY document");
+			}
+		
+			while (rs.next()) {
+				ser.add(rs.getString("document"));
+				ser.add(rs.getString("doc_count"));
+				
+			
+			    }
+			bean.setAl(ser);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		
+	}
+	
+	
+	
+	public List findBrowseSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findBrowseSearch====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("browseSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		
+		searchDocmentCount(filterQuery);
+		
+		return  sql.list();
+		
+		
+	}
+	
+//	 ----------------- Journal Search ---------------
+	
+	public List findJournalSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findJournalSearch====="+filterQuery);
+		
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("JNLBrowseSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		
+		return  sql.list();
+		
+	}
+	
+	
+	public List findJournalIssueSearch(String filterQuery)
+	{
+		log4jLogger.info("start===========findJournalIssueSearch====="+filterQuery);
+		
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("JNLIssueSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+			
+		return  sql.list();		
+		
+	}
+	
+	
+	public List findJournalFullView(String filterQuery) 
+	{				
+		log4jLogger.info("start===========findJournalFullView====="+filterQuery);
+		
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("JNLFullviewSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		return  sql.list();
+	}	
+	
+	
+	
+	
+	
+	
+//----------------------Binding Books---------------------------------
+	
+	public List findLoadBranchList() {
+		log4jLogger.info("start===========findLoadBranchList=====");
+	
+		BranchBean newbean = null;
+		 
+		 List  finalResults  = new  ArrayList();
+		
+		try {
+			con = getSession().connection();
+			st = con.createStatement();	
+
+				rs = st.executeQuery(DataQuery.Branch_Load);
+				
+			while (rs.next()) {
+				newbean = new BranchBean();
+				newbean.setCode(rs.getInt("Branch_Code"));
+				newbean.setName(rs.getString("Branch_Name"));
+				finalResults.add(newbean);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return finalResults;
+	}
+	
+	public AccountBean findCheckAccount(String uid,String pwd) {
+		log4jLogger.info("start===========findCheckAccount=====");
+		AccountBean bean=new AccountBean();
+		
+		int count=0;
+	
+		try {
+		
+			con = getSession().connection();
+			Prest = con.prepareStatement(DataQuery.ACCOUNT_CHECK);
+			Prest.setString(1, uid);
+			Prest.setString(2, pwd);
+			rs = Prest.executeQuery();
+			
+			if (rs.next()) {
+				
+			 if( (!rs.getString("Login_ID").equals(uid)) || (!rs.getString("Login_Password").equals(pwd)) )
+			 {					
+				 log4jLogger.info("++++++ Invalid User ID or Password in User Account Checking ++++++");
+			 }
+			 else if(rs.getString("Login_Flag").equalsIgnoreCase("No"))
+			 {
+				 log4jLogger.info("++++++ User ID has been locked in User Account Checking ++++++");
+			 }
+			 else
+			 {				
+				
+				bean.setuname(rs.getString("Staff_Name"));
+				bean.setuid(rs.getString("Login_ID"));
+				bean.setauthor(rs.getString("Login_Password"));
+	
+
+				Prest = con.prepareStatement(DataQuery.ACCOUNT_ISSUE_COUNT);
+				Prest.setString(1, uid);
+				rs = Prest.executeQuery();
+				if (rs.next()) {
+					
+					bean.setissuecount(rs.getString("issuecount"));
+				}
+				
+				Prest = con.prepareStatement(DataQuery.ACCOUNT_RETURN_COUNT);
+				Prest.setString(1, uid);
+				rs = Prest.executeQuery();
+				if (rs.next()) {
+					
+					bean.setreturncount(rs.getString("returncount"));
+				}
+				
+				Prest = con.prepareStatement(DataQuery.ACCOUNT_RESERVE_COUNT);
+				Prest.setString(1, uid);
+				rs = Prest.executeQuery();
+				if (rs.next()) {
+					
+					bean.setreservecount(rs.getString("reservecount"));
+				}				
+				count=1;
+			 }
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return bean;
+
+		
+	}	
+	
+	public List findAccountDetails(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findAccountDetails====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("accountSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		
+		
+		
+		return  sql.list();
+		
+		
+	}
+	public List findAccountDetailsIssue(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findAccountDetailsIssue====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("accountIssueSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		
+		
+		
+		return  sql.list();
+		
+		
+	}
+	
+	public String findOnlineRenewSave(AccountBean newbean) {
+		log4jLogger.info("start===========findOnlineRenewSave=====");
+		AccountBean bean=new AccountBean();
+		OnlineRenewBean counterbeanobject=new OnlineRenewBean();		
+		
+		int n=0;
+		int count=0;
+	String doc_type="";
+	String group_code="";
+	String duedate="";
+	String issuedate="";
+	String Rdate = "";
+	String Ddate = "";
+	String retstring="";
+	int days=0;
+		try {
+			con = getSession().connection();
+			Prest = con.prepareStatement("select document from book_mas where access_no='"+newbean.getaccno() +"'");
+			rs=Prest.executeQuery();
+			if (rs.next()) {
+				
+				doc_type=rs.getString("document");
+			}
+		
+			con = getSession().connection();
+			Prest = con.prepareStatement("select group_code from member_mas where member_code='"+newbean.getuid() +"'");
+			rs=Prest.executeQuery();
+			if (rs.next()) {
+				
+				group_code=rs.getString("group_code");
+				
+				
+			}
+			con = getSession().connection();
+			Prest = con.prepareStatement("select issue_date,due_date from issue_mas where member_code='"+newbean.getuid() +"' and access_no='"+newbean.getaccno() +"'");
+			rs=Prest.executeQuery();
+			if (rs.next()) {
+				
+				duedate=Security_Counter.Counter_DateGet(rs.getDate("due_date"));
+				issuedate=rs.getString("issue_date");
+			}
+			
+			counterbeanobject=MEMBER_LOAD_ONLINE_RENEW(newbean.getuid(),doc_type);
+			
+			java.util.StringTokenizer stz_du =
+				new java.util.StringTokenizer(Security_Counter.TodayDate(), "-");
+				int diy = Integer.parseInt(stz_du.nextToken());
+				int dim = Integer.parseInt(stz_du.nextToken());
+				int did = Integer.parseInt(stz_du.nextToken());
+				Rdate = diy + "-" + dim + "-" + did;
+			
+
+			Prest = con.prepareStatement("select datediff('"+Rdate+"','"+duedate+"') as no_of_days");
+			rs=Prest.executeQuery();
+			if (rs.next()) {
+				
+				String no_of_days=rs.getString("no_of_days");
+				n=Integer.parseInt(no_of_days);
+				
+				
+				}
+			
+			if((n< 0)||(n==0)) {
+			
+			
+			int time = 0;
+			int renew = 0;
+			
+			con = getSession().connection();
+			Prest = con.prepareStatement("select time_renew from renewal_time where access_no='"	+newbean.getaccno()	+ "' and member_code='"	+newbean.getuid()+ "' ");
+			rs=Prest.executeQuery();
+			if (rs.next()) {
+				time = Integer.parseInt(rs.getString("time_renew"));
+			
+				time++;
+
+			} else {
+				time = 1;
+				Prest = con.prepareStatement("insert into renewal_time(member_code,access_no,group_code,doc_type,time_renew) values ('"+ newbean.getuid()+ "','"+ newbean.getaccno()	+ "','"	+group_code+ "','"
+						+doc_type
+						+ "','"
+						+ time
+						+ "')");
+				Prest.executeUpdate();	
+			}
+			
+			//sql ="select renewal from group_mas where group_code='" + newbean.getTperiod() + "' ";
+
+			Prest = con.prepareStatement("select renewal from group_mas where group_code='" + group_code + "' ");
+			rs=Prest.executeQuery();
+			if (rs.next()) {
+				renew = rs.getInt("renewal");
+				
+
+			}
+
+			if (time > renew) {
+				retstring="You Can't Renew!!!";
+
+			}else{
+				
+				con = getSession().connection();
+				Prest = con.prepareStatement(	"update renewal_time set time_renew='"
+						+ time
+						+ "' where access_no= '"
+						+ newbean.getaccno()
+						+ "'and member_code='"
+						+ newbean.getuid()
+						+ "' ");
+				Prest.executeUpdate();	
+				
+				Prest = con.prepareStatement(DataQuery.SELECT_BOOKMAS);
+				Prest.setString(1,  newbean.getaccno());
+				rs = Prest.executeQuery();
+				if (rs.next()) {
+					String avail = rs.getString("availability");
+					if (avail.equals("ISSUED")) {
+						rs.absolute(1);
+						Prest = con.prepareStatement(
+							"update book_mas set availability='ISSUED' where access_no='"
+								+ newbean.getaccno()
+								+ "'");
+						Prest.executeUpdate();	
+						
+						
+						
+						n = counterbeanobject.getCountperiod();
+
+
+						int a = 0;
+						
+						a = n * 1;
+						
+						
+						java.util.StringTokenizer stz =
+							new java.util.StringTokenizer(Security_Counter.TodayDate(), "-");
+							 diy = Integer.parseInt(stz.nextToken());
+							 dim = Integer.parseInt(stz.nextToken());
+							 did = Integer.parseInt(stz.nextToken());
+							Rdate = diy + "-" + dim + "-" + did;
+						
+						con = getSession().connection();
+						Prest = con.prepareStatement("select adddate('"+Rdate+"', '"+a+"') as days");
+						rs=Prest.executeQuery();
+						if (rs.next()) {
+							Ddate=rs.getString("days");
+						
+						}
+							
+						boolean Rflag = true;
+						while (Rflag == true) {
+						
+						     Prest = con.prepareStatement("select date_format('"+Ddate+"','%w') as days");
+							 rs=Prest.executeQuery();
+							
+							if (rs.next()) {
+								
+								 days=Integer.parseInt(rs.getString("days"));
+								 
+								 counterbeanobject.setAuthor(String.valueOf(days));
+				
+
+								if (days == 0) {
+									a=1;
+									con = getSession().connection();
+									Prest = con.prepareStatement("select adddate('"+Ddate+"', '"+a+"') as days");
+									rs=Prest.executeQuery();
+									if (rs.next()) {
+										Ddate=rs.getString("days");
+									}
+									
+									
+								}
+								if (days == 6) {
+									a=2;
+									con = getSession().connection();
+									Prest = con.prepareStatement("select adddate('"+Ddate+"', '"+a+"') as days");
+									rs=Prest.executeQuery();
+									if (rs.next()) {
+										Ddate=rs.getString("days");
+									}
+									
+									
+								}
+								
+								
+
+								con = getSession().connection();
+								Prest = con.prepareStatement(DataQuery.SELECT_HOLIDAY_MAS_CHECK);
+								Prest.setString(1, Ddate);
+								rs=Prest.executeQuery();
+								String leave_date="";
+								if (rs.next()) {
+											
+									leave_date=rs.getString("Leave_date");
+									
+								
+									a=1;
+									con = getSession().connection();
+									Prest = con.prepareStatement("select adddate('"+Ddate+"', '"+a+"') as days");
+									rs=Prest.executeQuery();
+									if (rs.next()) {
+										Ddate=rs.getString("days");
+										Rflag = true;
+									}
+									
+									
+									}else {
+									Rflag = false;
+								}
+								
+								}	
+								
+							}
+							
+						
+						
+						con = getSession().connection();
+						Prest = con.prepareStatement(DataQuery.UPDATE_ISSUEMAS);
+						Prest.setString(1, Ddate);
+						Prest.setString(2, Rdate);
+						Prest.setString(3, "RENEW");
+						Prest.setString(4, newbean.gettitle());  // For Staff Code
+						Prest.setString(5, newbean.getuid());
+						Prest.setString(6, newbean.getaccno()); 
+						Prest.executeUpdate(); 
+					
+						
+						Prest = con.prepareStatement(DataQuery.INSERT_HISTORY);
+						Prest.setString(1, newbean.getuid());
+						Prest.setString(2, newbean.getaccno());
+						Prest.setString(3, issuedate);
+						Prest.setString(4, (String.valueOf(duedate)));
+						Prest.setString(5, Rdate);
+						Prest.setDouble(6, 0.0);
+						Prest.setObject(7, newbean.gettitle());
+						Prest.setString(8, doc_type);
+						Prest.setString(9, doc_type);
+						Prest.executeUpdate();
+						
+						
+						retstring="Document Successfully Renewed!!!";
+
+					}
+				}
+				
+				
+				
+				
+				 
+				
+			}
+
+	
+			}else{
+				
+				retstring="You Can't Renew!!!";
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return retstring;
+
+		
+	}
+	
+	
+	public void RETURN_UPDATE_RENEW_NOFINE(CounterMemberBean newbean)
+	throws SQLException, ParseException {
+log4jLogger.info("start===========ONLINE RENEW SAVE=====");
+try{	
+	
+    con = getSession().connection();
+	Prest = con.prepareStatement(DataQuery.UPDATE_ISSUEMAS);
+	Prest.setString(1, newbean.getDdate());
+	Prest.setString(2, newbean.getRdate());
+	Prest.setString(3, "RENEW");
+	Prest.setString(4,  newbean.getTitle());  // For Staff Code
+	Prest.setString(5, newbean.getMcode());
+	Prest.setString(6, newbean.getAccno()); 
+	Prest.executeUpdate(); 
+	
+	Prest = con.prepareStatement(DataQuery.INSERT_HISTORY);
+	Prest.setString(1, newbean.getMcode());
+	Prest.setString(2, newbean.getAccno());
+	Prest.setString(3, Security_Counter.TextDate_Insert(newbean.getIdate()));
+	Prest.setString(4, newbean.getRdate());
+	Prest.setString(5, newbean.getDdate());
+	Prest.setDouble(6, 0.0);
+	Prest.setObject(7, newbean.getTitle());   // For Staff Code
+	Prest.setString(8, newbean.getDoc());
+	Prest.setString(9, newbean.getDoc());
+	Prest.executeUpdate();
+
+} catch (Exception e) {
+
+} finally {
+	try {
+		if (rs != null) {
+			rs.close();
+		}
+		if (Prest != null) {
+			Prest.close();
+		}
+		if (con != null) {
+			con.close();
+		}
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+}	
+	
+	
+	public OnlineRenewBean MEMBER_LOAD_ONLINE_RENEW(String loadmemcode,	String doctype)
+	 {
+	int member_period = 0;
+	int Groups=0;
+	OnlineRenewBean counterbeanobject=new OnlineRenewBean();
+	
+	try{
+	con = getSession().connection();
+	Prest = con.prepareStatement(DataQuery.SELECT_MEMBER);
+	Prest.setString(1, loadmemcode);
+	rs = Prest.executeQuery();
+	if (rs.next()) {		
+
+		Groups = rs.getInt("group_code");
+		String status = rs.getString("status");
+		if (status.equals("V1")) {
+
+			counterbeanobject.setGeligible(rs.getInt("gelg"));
+			member_period = rs.getInt("gper");
+			counterbeanobject.setGperiod(member_period);
+
+		} else if (status.equals("V2")) {
+
+			if (doctype.equals("BOOK")) {
+				counterbeanobject.setBbeligible(rs.getInt("bbelg"));
+				member_period = rs.getInt("bper");
+				counterbeanobject.setBbperiod(member_period);
+			
+			} else if (doctype.equals("BOOK BANK")) {
+				counterbeanobject.setBbeligible(rs.getInt("bbelg"));
+				member_period = rs.getInt("bbper");
+				counterbeanobject.setBbperiod(member_period);
+		
+			} else if (doctype.equals("NON BOOK")) {
+
+				counterbeanobject.setNbeligible(rs.getInt("nbelg"));
+				member_period = rs.getInt("nbper");
+				counterbeanobject.setNbperiod(member_period);
+		
+			} else if (doctype.equals("JOURNAL")) {
+
+				counterbeanobject.setJeligible(rs.getInt("jelg"));
+				member_period = rs.getInt("jlper");
+				counterbeanobject.setJperiod(member_period);
+			
+			} else if (doctype.equals("BACK VOLUME")) {
+
+				counterbeanobject.setBveligible(rs.getInt("bvelg"));
+				member_period = rs.getInt("bvper");
+				counterbeanobject.setBvperiod(member_period);
+				
+			} else if (doctype.equals("THESIS")) {
+
+				counterbeanobject.setTeligible(rs.getInt("telg"));
+				member_period = rs.getInt("tper");
+				counterbeanobject.setTperiod(member_period);
+			
+			} else if (doctype.equals("STANDARD")) {
+
+				counterbeanobject.setSeligible(rs.getInt("selg"));
+				member_period = rs.getInt("sper");
+				counterbeanobject.setSperiod(member_period);
+			
+			} else if (doctype.equals("PROCEEDING")) {
+
+				counterbeanobject.setPeligible(rs.getInt("pelg"));
+				member_period = rs.getInt("pper");
+				counterbeanobject.setPperiod(member_period);
+			
+			} else if (doctype.equals("REPORT")) {
+
+				counterbeanobject.setReligible(rs.getInt("relg"));
+				member_period = rs.getInt("rper");
+				counterbeanobject.setRperiod(member_period);
+				
+			} else {
+				String STOP = "STOP";
+			}
+
+			
+		} else if (status.equals("V3")) {
+
+			counterbeanobject.setGeligible(rs.getInt("gelg"));
+			member_period = rs.getInt("gper");
+			counterbeanobject.setGperiod(member_period);
+		
+			if (doctype.equals("BOOK")) {
+				counterbeanobject.setBbeligible(rs.getInt("bbelg"));
+				member_period = rs.getInt("bper");
+				counterbeanobject.setBbperiod(member_period);
+			
+			} else if (doctype.equals("BOOK BANK")) {
+				counterbeanobject.setBbeligible(rs.getInt("bbelg"));
+				member_period = rs.getInt("bbper");
+				counterbeanobject.setBbperiod(member_period);
+			
+			} else if (doctype.equals("NON BOOK")) {
+
+				counterbeanobject.setNbeligible(rs.getInt("nbelg"));
+				member_period = rs.getInt("nbper");
+				counterbeanobject.setNbperiod(member_period);
+				
+			} else if (doctype.equals("JOURNAL")) {
+
+				counterbeanobject.setJeligible(rs.getInt("jelg"));
+				member_period = rs.getInt("jlper");
+				counterbeanobject.setJperiod(member_period);
+		
+			} else if (doctype.equals("BACK VOLUME")) {
+
+				counterbeanobject.setBveligible(rs.getInt("bvelg"));
+				member_period = rs.getInt("bvper");
+				counterbeanobject.setBvperiod(member_period);
+			
+			} else if (doctype.equals("THESIS")) {
+
+				counterbeanobject.setTeligible(rs.getInt("telg"));
+				member_period = rs.getInt("tper");
+				counterbeanobject.setTperiod(member_period);
+				
+			} else if (doctype.equals("STANDARD")) {
+
+				counterbeanobject.setSeligible(rs.getInt("selg"));
+				member_period = rs.getInt("sper");
+				counterbeanobject.setSperiod(member_period);
+				
+			} else if (doctype.equals("PROCEEDING")) {
+
+				counterbeanobject.setPeligible(rs.getInt("pelg"));
+				member_period = rs.getInt("pper");
+				counterbeanobject.setPperiod(member_period);
+				
+			} else if (doctype.equals("REPORT")) {
+
+				counterbeanobject.setReligible(rs.getInt("relg"));
+				member_period = rs.getInt("rper");
+				counterbeanobject.setRperiod(member_period);
+				
+			} else {
+				String STOP_WORK = "_WORKSTOP";
+			}
+		
+		}
+		counterbeanobject.setCountperiod(member_period);
+		
+	}
+	} catch (Exception e) {
+
+	} finally {
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (Prest != null) {
+				Prest.close();
+			}
+			if (con != null) {
+				con.close();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	return counterbeanobject;
+}
+	
+	
+	public void DAYSCAL(int period)
+	throws SQLException, IOException {
+		log4jLogger.info("DAYSCAL===================== ====================method begin" );
+	
+	OnlineRenewBean counterbeanobject=new OnlineRenewBean();		
+	String sql = "";
+	int no = 1;
+	int a;
+	java.util.Date Ddate = new Date();
+	a = 0;
+
+	a=period;
+	try{
+	con = getSession().connection();
+	Prest =
+		con.prepareStatement(
+			"select adddate('"+Security_Counter.Counter_DateText()+"', '"+a+"') as days");
+			
+	rs = Prest.executeQuery();
+	if (rs.next()) {
+		Ddate = rs.getDate("days");
+		
+
+	}
+	boolean Rflag = true;
+	while (Rflag == true) {
+
+		
+		Prest=con.prepareStatement("select date_format('"+Ddate+"','%w') as days");
+		rs = Prest.executeQuery();
+
+		if (rs.next()) {
+			String day = rs.getString("days");
+			int name_of_day = Integer.parseInt(day);
+			if (name_of_day == 0) {
+				
+				a=1;
+
+				
+				Prest =
+					con.prepareStatement(
+						"select adddate('"+Ddate+"', '"+a+"') as days");
+				rs = Prest.executeQuery();
+				if (rs.next()) {
+					Ddate = rs.getDate("days");
+					
+
+				}
+			}
+
+			if (name_of_day == 6) {
+				
+				a=2;
+				
+				Prest =
+					con.prepareStatement(
+						"select adddate('"+Ddate+"', '"+a+"') as days");
+				
+				rs = Prest.executeQuery();
+				if (rs.next()) {
+					Ddate = rs.getDate("days");
+					
+				}
+			}
+
+			Prest =
+				con.prepareStatement(
+					"select Leave_date  from holiday_mas where leave_date='"
+						+ Ddate
+						+ "'");
+			rs = Prest.executeQuery();
+			if (rs.next()) {
+				
+				a=1;
+				
+				Prest =
+					con.prepareStatement(
+						"select adddate('"+Ddate+"', '"+a+"') as days");
+				
+				rs = Prest.executeQuery();
+
+				if (rs.next()) {
+					Ddate = rs.getDate("days");					
+					Rflag = true;
+				}
+
+			} else {
+				Rflag = false;
+			}
+
+		}
+
+	}
+
+	counterbeanobject.setCalldate(Security_Counter.Counter_DateSet(Ddate));
+	
+	}
+	catch(SQLException e) {
+		
+	}finally {
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (Prest != null) {
+				Prest.close();
+			}
+			if (con != null) {
+				con.close();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+
+}
+
+	
+	
+	public List findAccountDetailsReserve(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findAccountDetailsReserve====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("accountReserveSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		
+		
+		
+		return  sql.list();
+		
+		
+	}
+	
+	
+	public String findOnlineReserveCancel(AccountBean newbean) {
+		log4jLogger.info("start===========findOnlineReserveCancel=====");
+		AccountBean bean=new AccountBean();
+		String delrec="";
+		
+	
+		try {
+		
+			con = getSession().connection();
+			Prest = con.prepareStatement(DataQuery.DELETE_RESERVE_MAS);
+			Prest.setString(1, newbean.getuid());
+			Prest.setString(2, newbean.getaccno());
+			Prest.executeUpdate();
+			
+			delrec="Reservation Cancelled Successfully";
+
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return delrec;
+
+		
+	}	
+	public String findChangePwd(AccountBean newbean) {
+		log4jLogger.info("start===========findChangePwd=====");
+		
+		AccountBean bean=new AccountBean();
+		int chpwd=0;
+		String curpwd="";
+		String retstring="";
+	
+		try {
+			con = getSession().connection();
+			Prest = con.prepareStatement(DataQuery.LOGIN_Same_Name);
+			Prest.setString(1, newbean.getuid());					
+			rs=Prest.executeQuery();
+			if(rs.next()){
+				curpwd=rs.getString("Login_Password");
+				
+				
+				if(curpwd.equals(newbean.getpwd())){
+					
+					con = getSession().connection();
+					Prest = con.prepareStatement(DataQuery.LOGIN_NEWPWD_UPDATE);
+					Prest.setString(2, newbean.getuid());
+					Prest.setString(1, newbean.getnewpwd());
+					Prest.executeUpdate();
+					
+					retstring="Successfully Changed your password!!!";
+					
+				}else{
+					
+					retstring="Not match your old password!!!";
+					
+				}
+				
+			}else{
+				
+				retstring="Invalid User!!!";
+			}
+		
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return retstring;
+
+		
+	}	
+	
+	
+	
+	public List findRegisterLoad() 
+	{		
+		
+		log4jLogger.info("start===========findRegisterLoad=====");
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("registerLoadSearchQuery").getQueryString();
+		
+		sb.append(namedQuery);
+		
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+	
+		return  sql.list();
+		
+		
+	}
+	
+	
+	public int findRegisterAllLogout()
+	{
+		log4jLogger.info("============= Inside findRegisterAllLogout() ============");
+		int count=0;		
+		String query = getSession().getNamedQuery("callEntryLog").getQueryString();
+		SQLQuery sql = getSession().createSQLQuery(query);
+		List list = sql.list();
+		
+		if(list != null && !list.isEmpty()) 
+		{
+			String saveQuery = getSession().getNamedQuery("saveReturnLog").getQueryString();
+			SQLQuery logSave = getSession().createSQLQuery(saveQuery);
+			
+			for(int i = 0; i < list.size(); i++)
+			{				
+				Object[] obj = (Object[]) list.get(i);
+				
+				logSave.setParameter("member", obj[0].toString());
+				logSave.setParameter("entryTime", obj[1].toString());
+				logSave.setParameter("returnTime", obj[1].toString());
+				logSave.setParameter("min", 0);
+				logSave.setParameter("inTime", obj[2].toString());
+				logSave.setParameter("outTime", obj[2].toString());	
+				count = logSave.executeUpdate();
+			}
+			
+			String deleteQuery = getSession().getNamedQuery("deleteEntryLog").getQueryString();
+			SQLQuery logDelete = getSession().createSQLQuery(deleteQuery);
+			count = logDelete.executeUpdate();			
+		}		
+		log4jLogger.info("============= End findRegisterAllLogout() ============"+count);
+		return count;
+	}
+
+	
+	public AccountBean findRegisterEntry(String search) {
+		log4jLogger.info("start===========findChangePwd=====");
+		
+		AccountBean bean=new AccountBean();
+		int chpwd=0;
+		String curpwd="";
+		String retstring="";
+	
+		try {
+			con = getSession().connection();
+			Prest = con.prepareStatement(DataQuery.ENTRY_GATERESISTER_CHECK);
+			Prest.setString(1, search);					
+			rs=Prest.executeQuery();
+			if(rs.next()){
+				String memb_code=rs.getString("member_code");
+				String ent_date=String.valueOf(rs.getDate("entry_time"));
+				
+				String intime="";
+				String outtime="";
+				con = getSession().connection();
+				Prest = con.prepareStatement("select DATE_FORMAT(entry_time,'%H:%i')as in_time from entry_log where member_code='"+memb_code+"'");
+				rs=Prest.executeQuery();
+				if(rs.next()){
+					intime=rs.getString("in_time");
+				}
+				con = getSession().connection();
+				Prest = con.prepareStatement("select DATE_FORMAT(NOW(),'%H:%i')as out_time ");
+			    rs=Prest.executeQuery();
+				if(rs.next()){
+					outtime=rs.getString("out_time");
+				}
+				con = getSession().connection();
+				Prest = con.prepareStatement("SELECT TIMESTAMPDIFF(MINUTE,entry_time,NOW()) as min_used from entry_log where member_code='"+memb_code+"'");
+				rs=Prest.executeQuery();
+				if(rs.next()){
+
+				con = getSession().connection();
+				Prest = con.prepareStatement(DataQuery.ENTRY_GATERESISTER_RETURN);
+				Prest.setString(1, search);		
+				Prest.setString(2, ent_date);
+				Prest.setString(3, Security_Counter.Counter_DateText());
+				Prest.setInt(4, rs.getInt("min_used"));
+				Prest.setString(5, intime);
+				Prest.setString(6, outtime);
+				Prest.executeUpdate();
+				
+				con = getSession().connection();
+				Prest = con.prepareStatement(DataQuery.ENTRY_GATERESISTER_DELETE);
+				Prest.setString(1, search);		
+				Prest.executeUpdate();
+				retstring="Successfully Logged-Out, minutes spent="+ rs.getInt("min_used")+"";
+				
+				con = getSession().connection();     // For Member Out Photo to Display
+				Prest = con.prepareStatement(DataQuery.MEMBERVIEWSELECT_STRING);
+				Prest.setString(1, search);					
+				rs=Prest.executeQuery();
+				if(rs.next()){	
+					
+					bean.setPhoto1(rs.getBytes("photo"));						
+				}				
+				
+				}
+			}else{
+				con = getSession().connection();
+				Prest = con.prepareStatement(DataQuery.MEMBERVIEWSELECT_STRING);
+				Prest.setString(1, search);					
+				rs=Prest.executeQuery();
+				if(rs.next()){
+					con = getSession().connection();
+					Prest = con.prepareStatement("insert into entry_log values('"+search+"',NOW(),DATE_FORMAT(NOW(),'%H:%i'))");
+					Prest.executeUpdate();
+					retstring="Successfully Logged-In.";
+					bean.setPhoto1(rs.getBytes("photo"));
+				}
+				else{
+				retstring="Invalid User!!!";
+				}
+			}
+			bean.setauthor(retstring);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return bean;
+		
+	}	
+		
+	
+	//---------------------------
+	
+	
+	public List findNewsClipSimpleSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findNewsClipSimpleSearch====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("NewsClipsimpleSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		return  sql.list();
+	}
+	
+	
+	public List findEResourceSimpleSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findEResourceSimpleSearch=====");
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("EResourcesimpleSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+	
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		return  sql.list();
+	}
+	
+	
+	public List findJournalArticleSearch(String filterQuery) 
+	{		
+		
+		log4jLogger.info("start===========findJournalArticleSearch====="+filterQuery);
+		StringBuffer sb = new StringBuffer();
+		String namedQuery = getSession().getNamedQuery("JournalArticleSearchQuery").getQueryString();
+		if(filterQuery != null)
+		{
+			sb.append(namedQuery);
+			sb.append(" " + filterQuery);
+		}
+		else
+		{
+			sb.append(namedQuery);
+		}
+		SQLQuery sql = 	getSession().createSQLQuery(sb.toString());
+		return  sql.list();
+	}
+
+	
+// For Online Reservation
+	
+	public List findIssueDetails(String accno,String doc)  
+	{		
+		
+		log4jLogger.info("start===========findIssueDetails====="+accno+" And "+doc);
+		
+		SQLQuery sql = getSession().createSQLQuery(DataQuery.SELECT_ISSUEBOOKCheck);
+		sql.setParameter("accessno",accno);
+		sql.setParameter("doctype",doc);	
+		return  sql.list();
+	}
+	
+	
+	
+	public AccountBean findReserveCheck(AccountBean newbean)
+	{
+		log4jLogger.info("start===========findReserveCheck====="+newbean.getuid()+newbean.getdtype()+newbean.getaccno()+newbean.getresdat());
+		AccountBean bean=new AccountBean();
+		
+		try {
+			con = getSession().connection();
+			Prest = con.prepareStatement(DataQuery.SELECT_MEMBER);
+			Prest.setString(1, newbean.getuid());
+			rs = Prest.executeQuery();		
+			if (rs.next()) {				
+				
+				con = getSession().connection();
+				Prest = con.prepareStatement(DataQuery.SELECT_ISSUEMAS_ONLY);
+				Prest.setString(1, newbean.getuid());
+				Prest.setString(2, newbean.getaccno());
+				rs=Prest.executeQuery();
+				if (rs.next()) {
+					bean.setauthor("Document Already Issued To You!!");					
+				}
+				else {					
+				
+				con = getSession().connection();
+				Prest = con.prepareStatement(DataQuery.SELECT_RESERVEMAS);
+				Prest.setString(1, newbean.getuid());
+				Prest.setString(2, newbean.getaccno());
+				rs=Prest.executeQuery();
+				if (rs.next()) {
+					bean.setauthor("Document Already Reserved!!");					
+				}
+				else
+				{
+					
+					int Res_Count=0;
+					con = getSession().connection();
+					Prest = con.prepareStatement(DataQuery.SELECT_MAX_RESERVEMAS);
+					Prest.setString(1, newbean.getuid());
+					rs = Prest.executeQuery();
+					if (rs.next()) {
+						Res_Count=rs.getInt(1);								
+					}
+                    if(Res_Count<2){
+                    	
+                    	AccountBean beanobject = new AccountBean();
+                    	beanobject=findReserveMasSave(newbean);	
+						
+						if(beanobject!=null) {							
+							
+							bean.setuid(beanobject.getuid()); 
+							bean.setuname(beanobject.getuname());
+							bean.setaccno(beanobject.getaccno());
+							bean.settitle(beanobject.gettitle());							
+							bean.setavailability(beanobject.getavailability());
+							
+							
+							   String emailid="",phone="",name="";
+							   
+							   con = getSession().connection();
+							   Prest = con.prepareStatement(DataQuery.MEMBEREMAIL_STRING);   // For Email
+							   Prest.setString(1, bean.getuid());
+							   rs=Prest.executeQuery();
+							   
+							   if (rs.next()) {
+								   
+								   emailid=rs.getString("member_email");
+								   phone=rs.getString("member_phone");
+								   name=rs.getString("member_name");
+								   
+							   }
+							  
+							   
+							   if(!emailid.isEmpty() && !emailid.equals(""))  // For Online Reservation E-Mail
+							   {
+							     //log4jLogger.info("Inside Online Reservation Email "+emailid);
+							     
+							     boolean chk=Security_Counter.EmailValidator(emailid);
+							     
+							     if(chk==true) {
+							     
+							     String[] strArray = new String[] {emailid};
+							   
+							     MailDaoImpl Mail=new MailDaoImpl();			     
+							     
+							     String namedQuery=MailQueryUtill.Reserve_Message_Text;
+					    		 StringBuffer sb = new StringBuffer();
+					    		 
+					    		    sb.append("Dear "+name+",<br><br>");		    		 	    			
+					    			sb.append(namedQuery);
+					    			
+					    			sb.append("<br><br>");
+					    			sb.append("<table border=1 width=680 align=center CELLSPACING='1' cellpadding='3' style='border-collapse: collapse' bordercolor='#of2e4f'>");	    			    			
+					    			sb.append("<tr bgcolor='#CCEEFF'><th align=left><b><font color='#000000' size='1' face='Verdana'></b>Access No</th>");		    			
+					    			sb.append("<th align=left><b><font color='#000000' size='1' face='Verdana'></b>Title</th>");
+					    			sb.append("<th align=left><b><font color='#000000' size='1' face='Verdana'></b>Reserve Date</th>");
+					    			sb.append("<th align=left><b><font color='#000000' size='1' face='Verdana'></b>Queue</th>");
+					    			sb.append("<th align=left><b><font color='#000000' size='1' face='Verdana'></b>Document</th></tr>");
+					    			
+					    			sb.append("<tr bgcolor='#CCFFFF'><td align=left width=70><font color='a62121' size='1' face='Verdana'>"+ bean.getaccno() +"</td><td align=left><font color='a62121' size='1' face='Verdana'>"+ bean.gettitle() +"</td><td align=left width=75><font color='a62121' size='1' face='Verdana'>"+ Security.TextDate_member(newbean.getresdat()) +"</td><td align=left width=60><font color='a62121' size='1' face='Verdana'>"+ bean.getavailability() +"</td><td align=left width=70><font color='a62121' size='1' face='Verdana'>"+ newbean.getdtype() +"</td></tr>");		    			 			
+					    			sb.append("</table><br><br>");			    			
+					    			
+									sb.append(MailQueryUtill.Regards_Text);
+									
+							     Mail.findSendEmail(strArray,MailQueryUtill.Reserve_Subject_Text,sb.toString());
+							     
+							     }else
+							     {
+							    	 log4jLogger.info("Invalid Emailid");	
+							     }
+							     
+							   }
+							
+							 /**  if(!phone.isEmpty() && !phone.equals("") && phone.length()==10)  // For Issue SMS
+							   {
+							     log4jLogger.info("Inside Issue Master SMS "+phone);
+				                 boolean chk=Security_Counter.SMSValidator(phone);
+							     
+							     if(chk==true) {
+							     SmsDaoImpl sms=new SmsDaoImpl();
+							     
+							     String namedQuery=MailQueryUtill.Reserve_Message_Text;
+					    		 StringBuffer sb = new StringBuffer();
+					    		 	    			
+					    			sb.append(namedQuery);
+					    			sb.append("UserID: " + bean.getuid()+" , Book No: "+bean.getaccno());
+									sb.append(", "+"ReserveDate: "+Security.TextDate_member(newbean.getresdat())+" , Queue: "+bean.getavailability()+". Thanks, AutoLib");
+										   
+										sms.findSendSMS(phone,sb.toString());
+							     }else
+							     {
+							    	 log4jLogger.info("Invalid Phone Number");	
+							     }
+							     
+							   }*/
+							
+							
+							bean.setauthor("DONE");
+
+						}else
+						{
+							bean.setauthor("ERROR OCCURED");
+						}
+						
+						
+				    }
+                    else
+                    {
+                    	bean.setauthor("You Cannot be Reserved More Than Two Resources!!");
+                    }
+				}			
+			}
+			}
+			else
+			{
+				bean.setauthor("INVALID USER / Member Not Found!!");				
+			}
+				
+		} catch (Exception e) {
+
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
+		}
+		
+		
+		return bean;
+		
+	}
+
+	public AccountBean findReserveMasSave(AccountBean newbean) {		
+		log4jLogger.info("start===========findOnlineReserveMasSave====="+newbean.getuid()+newbean.getdtype()+newbean.getaccno()+newbean.getresdat());
+		AccountBean beanobject=new AccountBean();
+		int select_code=0;
+		
+		int cnt=0;
+				
+			try {
+			con = getSession().connection();
+			Prest = con.prepareStatement(DataQuery.SELECT_RESERVEMAS_MAX);
+			rs = Prest.executeQuery();
+			if (rs.next()) {
+				
+				cnt = rs.getInt("maxno");
+				cnt = cnt + 1;
+				
+				select_code=1;
+				
+			}
+			
+			Prest = con.prepareStatement(DataQuery.INSERT_RESERVEMAS);
+			Prest.setInt(1, cnt);
+			Prest.setString(2, newbean.getuid());
+			Prest.setString(3, newbean.getaccno());
+			Prest.setString(4, newbean.getdtype());
+			Prest.setString(5,newbean.getresdat());
+			Prest.executeUpdate();
+			
+					  
+			
+			Prest =
+				con.prepareStatement(
+					"select * from member_reserve_view where access_no='"
+						+ newbean.getaccno()
+						+ "' ORDER BY id");
+			rs = Prest.executeQuery();
+			
+			int order=0;
+			if(rs.next()) {
+			do
+			{
+				order=order+1;
+				
+				if(rs.getString("member_code").equals(newbean.getuid()))  {
+					
+					beanobject.setuid(rs.getString("member_code")); 
+					beanobject.setuname(rs.getString("member_name"));
+					beanobject.setaccno(rs.getString("access_no"));
+					beanobject.settitle(rs.getString("title"));
+					String strI = "" + order;
+					beanobject.setavailability(strI);	
+					
+					break;
+				}
+			}while(rs.next());
+			}
+			else {
+			order=1;
+			}	
+			
+			
+			
+		} catch (Exception e) {
+
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (Prest != null) {
+					Prest.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return beanobject;
+	}	
+
+	
+	
+}
+	

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Treeview example</title>
+<script>
+function op() { //This function is used with folders that do not open pages themselves. See online docs.
+}
+function cl()
+{
+
+window.open("http://localhost:8080/AutoLib/index.html");
+window.close();
+}
+</script>
+</head>
+
+<!--
+(Please keep all copyright notices.)
+This frameset document includes the Treeview script.
+Script found in: http://www.treeview.net
+Author: Marcelino Alves Martins
+
+You may make other changes, see online instructions, 
+but do not change the names of the frames (treeframe and basefrm)
+-->
+
+
+<FRAMESET cols="172,*" onResize="if (navigator.family == 'nn4') window.location.reload()"> 
+  <FRAME src="Admin2left.html" name="treeframe" >
+  <FRAME SRC="/AutoLib/Home1.jsp" name="basefrm"> 
+</FRAMESET> 
+
+
+</HTML>

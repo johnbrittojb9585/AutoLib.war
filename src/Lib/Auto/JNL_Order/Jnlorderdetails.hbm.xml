@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.JNL_Order">
+
+<class name="JnlorderDetailsBean" table="journal_order_details" lazy="false">
+		<id name="ordNo" column="Jnl_Order_No" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="SupCode" column="Sup_Code" type="int"/>  
+		<property name="JnlCode" column="Jnl_Code" type="int"/> 		
+		<property name="Subsfrmdate" column="Subs_From" type="java.lang.String"/>  
+		<property name="Substodate" column="Subs_To" type="java.lang.String"/>  
+				
+		<property name="VolumeNo" column="vol_No" type="java.lang.String"/>				
+		<property name="noofissue" column="No_Of_Issues" type="int"/>
+		<property name="Bcurrency" column="Currency" type="java.lang.String"/>
+				
+		<property name="Bcost" column="Cost" type="double"/>
+		<property name="Bprice" column="INR_Price" type="double"/>
+		<property name="Discount" column="Discount" type="double"/>
+		<property name="Netamount" column="Accepted_Price" type="double"/>		
+	
+		<property name="Remarks" column="Remarks" type="java.lang.String"/>  
+		<property name="Add1" column="Add_Field1" type="java.lang.String"/>  		
+		<property name="Add2" column="Add_Field2" type="java.lang.String"/>  	
+		<property name="flag" column="Flag" type="java.lang.String"/>
+				
+</class>
+
+
+<sql-query name="OrderDetailFullView">
+		SELECT Jnl_Order_No,jnl_order_date,enq_no,enq_date,sup_code,sp_name,
+jnl_code,jnl_name,subs_from,subs_to,vol_no,no_of_issues,currency,cost,inr_price,
+discount,accepted_price,Remarks,add_field1,add_field2,Frequency,Flag FROM jnl_order_fullview 
+WHERE Jnl_Order_No=:ordno
+
+</sql-query>
+
+<sql-query name="DeleteJNLOrderDetail">
+		delete from journal_order_details WHERE Jnl_Order_No=:ordno
+
+</sql-query>
+
+<sql-query name="CheckOrdJNLSupInvMas">
+		select jnl_order_no from journal_supinvoice_details WHERE jnl_order_no=:ordno
+</sql-query>
+
+</hibernate-mapping>
+
+
+

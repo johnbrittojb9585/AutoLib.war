@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Author">
+
+<class name="AuthorBean" table="author_mas" lazy="false">
+		<id name="code" column="Author_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="name" column="Author_name" type="java.lang.String"/>
+		<property name="desc" column="short_desc" type="java.lang.String"/>  
+		<property name="email" column="emailid" type="java.lang.String"/>  
+		
+		
+		
+</class>
+
+
+
+
+
+<sql-query name="AuthorDetailSaveQuery">
+		insert 
+    	into
+        author_mas
+        (Author_code,Author_name,short_desc,emailid) 
+    	values
+        (:code, :name, :shortdesc, :email)	
+	</sql-query>
+
+<sql-query name="AuthorDetailDeleteQuery">
+		delete 
+    	from
+        author_mas
+        where Author_code=:code
+        	
+</sql-query>
+<sql-query name="AuthorDetailUpdateQuery">
+		update 
+    	author_mas
+        set Author_name=:name,short_desc=:shortdesc,emailid=:email where Author_code=:code
+        	
+</sql-query>
+</hibernate-mapping>
+
+
+

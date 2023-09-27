@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.QB_Import">
+<class name="QBDataBean" table="question_bank" lazy="false">
+		<id name="qbCode" column="QB_COde" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    
+	    <property name="date" column="Date" type="java.lang.String"/>
+	    <property name="university" column="University" type="java.lang.String"/>		
+		<property name="subName" column="Sub_Name" type="java.lang.String"/>  
+		<property name="subjectCode" column="Sub_Code" type="java.lang.String"/>
+		<property name="departmentCode" column="Dept" type="int"/>		
+		<property name="courseCode" column="Course" type="int"/>  
+		<property name="pubyear" column="Year" type="java.lang.String"/> 
+		<property name="month" column="Month" type="java.lang.String"/>
+		<property name="semester" column="Semester" type="java.lang.String"/>				
+		<property name="addfield1" column="Add_field1" type="java.lang.String"/>
+		<property name="addfield2" column="Add_field2" type="java.lang.String"/>	
+		<property name="content" column ="Contents"	type="java.lang.String"/>
+		
+		
+		
+		
+</class>
+
+
+</hibernate-mapping>

@@ -1,0 +1,37 @@
+<%@ page import="java.sql.*,java.io.*,java.util.*,com.oreilly.servlet.MultipartRequest,com.microsoft.jdbc.sqlserver.SQLServerDriver;"%>
+<%
+
+/* The Following Code is Used To Insert An Image Into Database 
+
+String filename="";
+try
+{
+MultipartRequest multi= new MultipartRequest(request,"d:/phani",5*1024*1024);
+Enumeration files=multi.getFileNames();
+File f=null;
+while(files.hasMoreElements())
+{
+String name=(String)files.nextElement();
+filename=multi.getFilesystemName(name);
+String type=multi.getContentType(name);
+f=multi.getFile(name);
+System.out.println("The File is "+f);
+}
+Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver");
+Connection con = DriverManager.getConnection("jdbc:microsoft:sqlserver://172.21.1.11:1740;databasename=pubs","sa","satest");
+Statement stmt = con.createStatement();
+System.out.println("2 "+f);
+InputStream is = new FileInputStream(f);
+System.out.println("4 "+is);
+byte b[]=new byte[is.available()];
+is.read(b);
+String sql = "INSERT into photo_test (\"Photo\") values('" + b + "')";
+System.out.println("sql is " +sql);
+stmt.execute(sql);
+stmt.close();
+
+}catch(Exception e)
+{
+System.out.println(e);
+}
+out.println("The Image is Added into Database");

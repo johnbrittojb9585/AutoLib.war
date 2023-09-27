@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Book">
+<class name="bookbean" table="book_mas" lazy="false">
+		<id name="code" column="access_no" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    <property name="title" column="title" type="java.lang.String"/>
+		<property name="author" column="author_name" type="java.lang.String"/>  
+		<property name="callno" column="call_no" type="java.lang.String"/>  
+		<property name="otherTitle" column="other_title" type="java.lang.String"/>
+		<property name="role" column="role" type="java.lang.String"/>  
+		<property name="stateRes" column="sres" type="java.lang.String"/> 
+		<property name="edition" column="edition" type="java.lang.String"/>
+		<property name="language" column="language" type="java.lang.String"/>  
+		<property name="place" column="place" type="java.lang.String"/> 
+		<property name="yop" column="year_pub" type="java.lang.String"/> 
+		<property name="pages" column="pages" type="java.lang.String"/>
+		<property name="size" column="size" type="java.lang.String"/>		
+		<property name="illustration" column="illustrator" type="java.lang.String"/>
+		<property name="isbn" column="isbn" type="java.lang.String"/>  
+		<property name="bprice" column="bprice" type="java.lang.String"/> 
+		<property name="copies" column="noofcopy" type="java.lang.String"/> 
+		<property name="script" column="script" type="java.lang.String"/>
+		<property name="location" column="location" type="java.lang.String"/>		
+		<property name="avail" column="availability" type="java.lang.String"/>		
+		<property name="subCode" column="sub_Code" type="int"/>
+		<property name="supCode" column="sup_Code" type="int"/>  
+		<property name="pubCode" column="pub_code" type="int"/> 
+		<property name="branchCode" column="branch_Code" type="int"/> 
+		<property name="doc" column="document" type="java.lang.String"/>
+		<property name="type" column="type" type="java.lang.String"/>		
+		<property name="physical" column="phy_media" type="java.lang.String"/>		
+		<property name="binding" column="binding" type="int"/>
+		<property name="keywords" column="keywords" type="int"/>  
+		<property name="notes" column="notes" type="int"/> 
+		<property name="summary" column="summary" type="int"/> 
+		<property name="bibliography" column="biblio" type="java.lang.String"/>
+		<property name="contents" column="contents" type="java.lang.String"/>		
+		<property name="volumeNo" column="volno" type="int"/>
+		<property name="partNo" column="part_no" type="int"/>  
+		<property name="volumeTitle" column="vtitle" type="int"/> 
+		<property name="volumeRes" column="vres" type="int"/> 
+		<property name="corAut" column="corp_author_name" type="java.lang.String"/>
+		<property name="corAdd" column="corp_address" type="java.lang.String"/>			
+		<property name="serAut" column="series_author_name" type="java.lang.String"/>		
+		<property name="serName" column="ser_name" type="int"/>
+		<property name="serTitle" column="series_title" type="int"/>  
+		<property name="issn" column="issn" type="int"/> 
+		<property name="meeting" column="meeting" type="int"/> 
+		<property name="sponsor" column="sponsor" type="java.lang.String"/>
+		<property name="venue" column="venue" type="java.lang.String"/>		
+		<property name="rcDate" column="received_date" type="java.lang.String"/>		
+		<property name="invNo" column="invoice_no" type="int"/>
+		<property name="invoiceDate" column="invoice_date" type="int"/>  
+		<property name="currency" column="bcurrency" type="int"/> 
+		<property name="bcost" column="bcost" type="int"/> 
+		<property name="acceptPrice" column="accepted_price" type="int"/>
+		<property name="discount" column="discount" type="int"/>		
+		<property name="addfield1" column="add_field1" type="java.lang.String"/>
+		<property name="addfield2" column="add_field2" type="java.lang.String"/>  
+		<property name="addfield3" column="add_field3" type="java.lang.String"/> 
+		<property name="addfield4" column="add_field4" type="java.lang.String"/> 
+		<property name="deptCode" column="dept_code" type="int"/>
+		<property name="purchaseType" column="gift_purchase" type="java.lang.String"/>		
+		<property name="budgetCode" column="budg_code" type="int"/>
+		<property name="otherDate" column="mdate" type="java.lang.String"/>
+		
+		
+</class>
+
+
+</hibernate-mapping>
+
+
+

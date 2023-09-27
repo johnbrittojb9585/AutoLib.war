@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>AutoLib Software ystems</titile></title>
+<base target="_self">
+</head>
+<body background="/AutoLib/soft.jpg" >
+<form name ="left" action="./BrowseDocument" target="body" onsubmit="return validate()">
+<table cellspacing=0 cellpadding=2 border=0 ID="Table1">
+<b>Basic Search</b>
+<hr size=1>
+Search  Terms:
+<input tabindex="0" name="name" size="14" maxlength="100">
+<tr><td><input type=radio name=ignore  checked value="Any">Anywhere</td></tr>
+<tr><td><input type=radio name=ignore value="BOOK">Book</td></tr>
+<tr><td><input type=radio name=ignore value="BOOK BANK">Book Bank</td></tr>
+<tr><td><input type=radio name=ignore value="NON BOOK">Non Book</td></tr>
+<tr><td><input type=radio name=ignore value="THESIS">Thesis</td></tr>
+<tr><td><input type=radio name=ignore value="REPORT">Report</td></tr>
+<tr><td><input type=radio name=ignore value="STANDARD">Standard</td></tr>
+<tr><td><input type=radio name=ignore value="PROCEEDING">Proceeding</td></tr>
+<tr><td><input type=radio name=ignore value="jnl_name">Journal</td></tr>
+
+
+<tr><td><center><input type="submit" value="Search" ></center></td>
+<td><input type="hidden" name="hid" value="search"></td></tr>
+</table>
+</form>
+<script language="javascript">
+
+function validate()
+{
+if(document.left.name.value=="")
+{
+alert("Enter Any Values");
+document.left.name.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+
+</table>
+</form>
+</body>
+
+<script language="javascript">
+function validates()
+{
+
+if(document.bot.userid.value=="")
+{
+alert("Please Enter Your User Id !!!");
+document.bot.userid.focus();
+return false;
+}
+if(document.bot.password.value=="")
+{
+alert("Please Enter Your Password !!!");
+document.bot.password.focus();
+return false;
+}
+return true;
+}
+</script>

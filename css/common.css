@@ -1,0 +1,315 @@
+<style type="text/css">
+#invertedtabsline{
+clear: both;
+padding: 0;
+width: 100%;
+height: 8px;
+line-height: 8px;
+background:#7D9EC0 ;/* #B0C4DE  #4169E1 #8b0000 #5970B2*/
+border-bottom: 1px solid #fff; /*Remove this to remove border between bar and tabs*/
+}
+
+BODY { 
+	background : #F5F5DC;
+	margin:0;
+	padding:0
+}
+
+
+/* Root = Horizontal, Secondary = Vertical */
+ul#navmenu {
+	margin: 0;
+	border: 5px solid red;
+	padding: 0;
+	width: 800px; /*For KHTML*/
+	list-style: none;
+	height: 24px;
+	}
+
+ul#navmenu li {
+	margin: 0;
+	border: 5px solid red;
+	padding: 0;
+	float: left; /*For Gecko*/
+	display: inline;
+	list-style: none;
+	position: relative;
+	height: 24px;
+	}
+
+ul#navmenu ul {
+	margin: 0;
+	border: 5px solid red;
+	padding: 0;
+	width: 160px;
+	list-style: none;
+	display: none;
+	position: absolute;
+	top: 24px;
+	left: 0;
+	}
+
+ul#navmenu ul:after /*From IE 7 lack of compliance*/{
+	clear: both;
+	display: block;
+	font: 1px/0px serif;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+	}
+
+ul#navmenu ul li {
+	width: 162px;
+	float: left; /*For IE 7 lack of compliance*/
+	display: block !important;
+	display: inline; /*For IE*/
+	}
+
+/* Root Menu */
+ul#navmenu a {
+	border: 5px solid red;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	padding: 0 6px;
+	float: none !important; /*For Opera*/
+	float: left; /*For IE*/
+	display: block;
+	background: #104e8b;
+	color: #D2B48C;
+	font: bold 12px/25px Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	height: auto !important;
+	height: 1%; /*For IE*/
+	}
+
+/* Root Menu Hover Persistence */
+ul#navmenu a:hover,
+ul#navmenu li:hover a,
+ul#navmenu li.iehover a {
+	background: #D2B48C;
+	color: #D2B48C;
+	}
+
+/* 2nd Menu */
+ul#navmenu li:hover li a,
+ul#navmenu li.iehover li a {
+	float: none;
+	background: #D2B48C;
+	color: #D2B48C;
+	}
+
+/* 2nd Menu Hover Persistence */
+ul#navmenu li:hover li a:hover,
+ul#navmenu li:hover li:hover a,
+ul#navmenu li.iehover li a:hover,
+ul#navmenu li.iehover li.iehover a {
+	background: #D2B48C;
+	color: #D2B48C;
+	}
+
+/* 3rd Menu */
+ul#navmenu li:hover li:hover li a,
+ul#navmenu li.iehover li.iehover li a {
+	background: #D2B48C;
+	color: #D2B48C;
+	}
+
+/* 3rd Menu Hover Persistence */
+ul#navmenu li:hover li:hover li a:hover,
+ul#navmenu li:hover li:hover li:hover a,
+ul#navmenu li.iehover li.iehover li a:hover,
+ul#navmenu li.iehover li.iehover li.iehover a {
+	background: #CCC;
+	color: #FFF;
+	}
+
+/* 4th Menu */
+ul#navmenu li:hover li:hover li:hover li a,
+ul#navmenu li.iehover li.iehover li.iehover li a {
+	background: #B0E2FF;
+	color: #666;
+	}
+
+/* 4th Menu Hover */
+ul#navmenu li:hover li:hover li:hover li a:hover,
+ul#navmenu li.iehover li.iehover li.iehover li a:hover {
+	background: #CCC;
+	color: #FFF;
+	}
+
+ul#navmenu ul ul,
+ul#navmenu ul ul ul {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 160px;
+	}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul#navmenu li:hover ul ul,
+ul#navmenu li:hover ul ul ul,
+ul#navmenu li.iehover ul ul,
+ul#navmenu li.iehover ul ul ul {
+	display: none;
+	}
+
+ul#navmenu li:hover ul,
+ul#navmenu ul li:hover ul,
+ul#navmenu ul ul li:hover ul,
+ul#navmenu li.iehover ul,
+ul#navmenu ul li.iehover ul,
+ul#navmenu ul ul li.iehover ul {
+	display: block;
+	}
+#clgtitle {
+	font-family: Centaur; 
+	font-size: 30pt; 
+	color: #ffffff;
+	text-align: left;
+}
+#titleDateTime {
+	font-size: 10pt; 
+	color: #FDFCDC;
+	font-weight: bold;
+}
+
+#titleAutolib {
+	font-family: verdana; 
+	font-size: 10pt; 
+	color: #D2B48C;
+	font-weight: bold;
+}
+
+.dataTable  {
+	color: #4B0082;
+	text-align: left;
+	border: 1px solid #666;
+    width:100%;
+	margin: 20px 0 20px 0 !important;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.dataTable th  {
+	text-align: left;
+	vertical-align: top;
+	background-color:#808000;
+	color: white;
+}
+
+
+thead tr {
+	background-color1: #fc0;
+	background-color:#51adc2;
+}
+
+.dataTable th.sorted {
+	background-color1: orange;
+	background-color:;
+}
+
+.dataTable th a,.dataTable th a:visited {
+	color: white;
+	font-weight: bold;
+}
+
+.dataTable th  a:hover {
+	text-decoration: underline;
+	color: white;
+	font-weight: bold;
+}
+
+.dataTable th.sorted a,.dataTable th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+.dataTable th.sortable a {
+	background-image: url(../images/arrow_off.png);
+	background-repeat: no-repeat;
+}
+
+.dataTable th.order1 a {
+	background-image: url(../images/arrow_down.png);
+	background-repeat: no-repeat;
+}
+
+.dataTable th.order2 a {
+	background-image: url(../images/arrow_up.png);
+	background-repeat: no-repeat;
+}
+
+.dataTable tr.odd {
+	background-color:#F5DEB3;
+}
+
+.dataTable tr.tableRowEven,.dataTable tr.even {
+	background-color1: #fea;
+	background-color:#FFEFD5;
+}
+
+div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 99%;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+	background-repeat: no-repeat;
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png) ;
+	background-repeat: no-repeat;
+}
+
+span.xml {
+	background-image: url(../images/ico_file_xml.png);
+	background-repeat: no-repeat;
+}
+
+span.pdf {
+	background-image: url(../images/ico_file_pdf.png);
+	background-repeat: no-repeat;
+}
+
+span.rtf {
+	background-image: url(../images/ico_file_rtf.png);
+	background-repeat: no-repeat;
+}
+
+span.pagebanner {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 99%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+}
+
+span.pagelinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 99%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+</style>

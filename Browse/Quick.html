@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>AutoLib Software ystems</titile></title>
+<base target="_self">
+</head>
+<body background="/AutoLib/soft.jpg" >
+<form name ="left" action="./BrowseDocument" target="body" onsubmit="return validate()">
+<b>Quick Search</b>
+<hr size=1>
+<table cellspacing=0 cellpadding=2 border=0 ID="Table1">
+<tr><td>Search  Terms:</td></tr>
+<tr><td><input tabindex="0" name="name" size="14" maxlength="100">
+</td></tr>
+<table>
+<tr><td><input type=radio name=ignore  checked value="Any"></td><td>Anywhere</td></tr>
+<tr><td><input type=radio name=ignore value="Book"></td><td>Book</td></tr>
+<tr><td><input type=radio name=ignore value="Book Bank"></td><td>Book Bank</td></tr>
+<tr><td><input type=radio name=ignore value="Non Book"></td><td>Non Book</td></tr>
+<tr><td><input type=radio name=ignore value="Thesis"></td><td>Thesis</td></tr>
+<tr><td><input type=radio name=ignore value="Report"></td><td>Report</td></tr>
+<tr><td><input type=radio name=ignore value="Standard"></td><td>Standard</td></tr>
+<tr><td><input type=radio name=ignore value="Proceeding"></td><td>Proceeding</td></tr>
+<tr><td><input type=radio name=ignore value="Journal"></td><td>Journal</td></tr>
+
+<br><br>
+<tr><td><center><input type="submit" value="Search" ></center></td></tr>
+<tr><td><input type="hidden" name="hid" value="search"></td></tr>
+</table>
+</form>
+<script language="javascript">
+
+function validate()
+{
+if(document.left.name.value=="")
+{
+alert("Enter Any Values");
+document.left.name.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+
+</table>
+</form>
+</body>
+
+<script language="javascript">
+function validates()
+{
+
+if(document.bot.userid.value=="")
+{
+alert("Please Enter Your User Id !!!");
+document.bot.userid.focus();
+return false;
+}
+if(document.bot.password.value=="")
+{
+alert("Please Enter Your Password !!!");
+document.bot.password.focus();
+return false;
+}
+return true;
+}
+</script>

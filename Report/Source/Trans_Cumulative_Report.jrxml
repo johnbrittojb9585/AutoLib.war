@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Trans_Cumulative_Report" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="297ece46-8fbf-4c84-ac6b-f190c8dfaf10">
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="52"/>
+	<parameter name="CMP_NAME" class="java.lang.String"/>
+	<parameter name="CMP_ADD" class="java.lang.String"/>
+	<parameter name="ReportTitle" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="All_Query" class="java.lang.String"/>
+	<parameter name="txtfdate" class="java.lang.String"/>
+	<parameter name="txttdate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P!{All_Query} order by Member_Code]]>
+	</queryString>
+	<field name="Trans_Amount" class="java.lang.Number">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Tot_Amount" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{Trans_Amount}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="104" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="b2dd91e2-27bd-4298-b4d9-e5d881b03acc" key="rectangle-1" x="10" y="10" width="532" height="64"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="6ffc4c13-6de1-4d7c-994f-111a1f263dc8" x="82" y="21" width="453" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CMP_NAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="96ca55a4-f2b6-446a-8373-02386787bc0c" key="image-1" x="19" y="16" width="57" height="54"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA["/logo/reportcollege.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="bc6b825c-a050-42b9-8da7-6f8adfd84702" x="82" y="44" width="453" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CMP_ADD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="530e627d-9c02-4342-bc6d-776732424001" x="10" y="81" width="532" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="7c638665-b67a-495d-87a2-c0a108bc507d" x="494" y="3" width="69" height="21"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b6085b7b-8c31-49a9-8eb4-b4ef1b1cf25f" x="453" y="5" width="43" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date : ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29">
+			<line>
+				<reportElement uuid="04f2d0a5-cec6-4b9d-b852-ffa448590b8c" x="0" y="26" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="bec42ec8-c733-4c97-99fb-06b801215bd2" x="33" y="3" width="119" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{txtfdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e6a02c50-a124-4646-8da1-7a36089455ea" x="188" y="3" width="119" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{txttdate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9d518cd3-0b97-4c25-9a45-71c1e37c1c3d" x="278" y="2" width="115" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Trans_Amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="32285855-ab58-4e15-85ea-fc37f3a94a3c" x="78" y="3" width="208" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount Of Fine Collected :]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e7867196-3566-4a7d-8c1d-86c05a3eff05" x="251" y="0" width="100" height="21"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="32"/>
+	</summary>
+</jasperReport>

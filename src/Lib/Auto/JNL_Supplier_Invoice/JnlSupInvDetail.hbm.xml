@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.JNL_Supplier_Invoice">
+
+<class name="JnlSupInvDetailsBean" table="journal_supinvoice_details" lazy="false">
+		<id name="QuoteNo" column="Sup_Inv_No" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="QuoteDate" column="Sup_Inv_Date" type="java.lang.String"/>  	    
+		<property name="ordNo" column="Jnl_Order_No" type="java.lang.String"/> 	    
+		<property name="SupCode" column="Sup_Code" type="int"/>  
+		<property name="JnlCode" column="Jnl_Code" type="int"/> 		
+		<property name="Subsfrmdate" column="Subs_From" type="java.lang.String"/>  
+		<property name="Substodate" column="Subs_To" type="java.lang.String"/>  
+				
+		<property name="VolumeNo" column="vol_No" type="java.lang.String"/>				
+		<property name="noofissue" column="No_Of_Issues" type="int"/>
+		<property name="Bcurrency" column="Currency" type="java.lang.String"/>
+				
+		<property name="Bcost" column="Cost" type="double"/>
+		<property name="Bprice" column="INR_Price" type="double"/>
+		<property name="Discount" column="Discount" type="double"/>
+		<property name="Netamount" column="Accepted_Price" type="double"/>		
+	
+		<property name="Remarks" column="Remarks" type="java.lang.String"/>  
+		<property name="Add1" column="Add_Field1" type="java.lang.String"/>  		
+		<property name="Add2" column="Add_Field2" type="java.lang.String"/>  	
+				
+</class>
+
+
+<sql-query name="SupInvDetailFullView">
+		SELECT Jnl_Order_No,jnl_order_date,sup_inv_no,sup_inv_date,sup_code,sp_name,
+jnl_code,jnl_name,subs_from,subs_to,vol_no,no_of_issues,currency,cost,inr_price,
+discount,accepted_price,Remarks,add_field1,add_field2,Frequency FROM jnl_supinvoice_fullview 
+WHERE Sup_Inv_No=:invno
+</sql-query>
+
+<sql-query name="DeleteJNLSupDetail">
+		delete from journal_SupInvoice_details WHERE Sup_Inv_No=:invno
+</sql-query>
+
+<sql-query name="InvOrderRefNo">
+		SELECT jnl_order_no,sp_name,sup_code FROM jnl_order_fullview WHERE jnl_order_no LIKE :ordno OR sp_name LIKE :supplier 
+		GROUP BY jnl_order_no,sp_name,sup_code
+</sql-query>
+
+<sql-query name="InvNoSearch">
+		SELECT sup_inv_no,sp_name,sup_code FROM jnl_supinvoice_fullview WHERE sup_inv_no LIKE :ordno OR sp_name LIKE :supplier 
+		GROUP BY sup_inv_no,sp_name,sup_code
+</sql-query>
+
+</hibernate-mapping>
+
+
+

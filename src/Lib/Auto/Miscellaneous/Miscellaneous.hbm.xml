@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Miscellaneous">
+
+<class name="MiscellaneousBean" table="miscellaneous_mas" lazy="false">
+		<id name="mrno" column="Ref_No" type="int">
+			<generator class="assigned"/>
+	    </id>
+	    
+	   <property name="muserID" column="Member_Code" type="java.lang.String"/>
+	   <property name="quantity" column="Quantity" type="int"/>
+	    
+	   <property name="thead" column="Trans_Head" type="java.lang.String"/>
+	   <property name="tamount" column="Amount" type="java.lang.String"/>  
+	   <property name="tremarks" column="Remarks" type="java.lang.String"/>  
+	   <property name="taddfield1" column="Add_Field1" type="java.lang.String"/> 
+	   
+	   <property name="tdate" column="Trans_Date" type="java.lang.String"/> 
+	   <property name="transNo" column="Trans_No" type="int"/>
+	    
+	   <property name="paymentNo" column="Payment_No" type="int"/> 
+	   <property name="payFlag" column="Pay_Flag" type="java.lang.String"/>   	   
+	   	    
+		
+</class>
+
+
+<sql-query name="InsertTransMasQuery">
+	insert into trans_mas(Trans_Date,Trans_Head,member_Code,Trans_Amount,Remarks) 
+	values(:transDate,:transHead,:memberCode,:transAmount,:remarks)
+        	
+</sql-query>
+
+<sql-query name="UpdateTransMasQuery">
+	UPDATE trans_mas SET Trans_Date=:transDate ,Trans_Head=:transHead ,member_Code=:memberCode ,
+	Trans_Amount=:transAmount ,Remarks=:remarks  WHERE Trans_No=:transNo
+        	
+</sql-query>
+
+<sql-query name="InsertMisPaymentMasQuery">
+	insert into payment_clearance(Bill_No,Member_Code,Amount,Payment_Date,Pay_mode,staff_code) 
+	values(:Bill_No,:memberCode,:payAmount,:payDate,:payMode,:staffCode)
+        	
+</sql-query>
+
+<sql-query name="UpdateMisPaymentMasQuery">
+	UPDATE payment_clearance set Member_Code=:memberCode,Amount=:payAmount,Payment_Date=:payDate,Pay_mode=:payMode,staff_code=:staffCode
+	WHERE Bill_No=:Bill_No
+        	
+</sql-query>
+
+
+<sql-query name="UpdateMisTransMasQuery">
+	UPDATE miscellaneous_mas SET Payment_No=:payNo,Pay_Flag=:payFlag WHERE Ref_No=:refNo
+        	
+</sql-query>
+
+<sql-query name="SelectMiscellaneousQuery">
+    SELECT Ref_No,Member_Code,Member_Name,Course_Name,Course_Major,Trans_Head,Quantity,Amount,Remarks,
+    Add_Field1,Trans_Date,Trans_No,Payment_No,Pay_Flag FROM miscellaneous_view where Ref_No=:refNo
+
+</sql-query>
+
+<sql-query name="MiscellaneousDeleteQuery">
+    DELETE FROM miscellaneous_mas where Ref_No=:refNo
+
+</sql-query>
+
+</hibernate-mapping>
+
+
+

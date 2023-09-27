@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.JournalSubscription">
+
+<class name="JournalSubscriptionbean" table="journal_subscription" lazy="false">
+		
+		
+		
+		<id name="subsNo" column="subs_no" type="java.lang.String"><generator class="assigned"/></id>
+
+		
+
+		<property name="jnlcode" column="jnl_code" type="int"/>
+		<property name="supCode" column="sup_code" type="int"/>
+		<property name="subsFrom" column="subs_from" type="java.lang.String"/> 		
+		<property name="subsTo" column="subs_to" type="java.lang.String"/>  
+		
+		<property name="frequency" column="frequency" type="java.lang.String"/>   		
+		<property name="noOfIssues" column="noofissues" type="int"/>  
+		<property name="exceptedDays" column="expected_days" type="int"/>
+		<property name="flag" column="flag" type="java.lang.String"/>		
+		<property name="issueYear" column="issue_year" type="java.lang.String"/>  
+		<property name="issueMonth" column="issue_month" type="java.lang.String"/>
+		<property name="issueVolume" column="issue_volume" type="java.lang.String"/>
+		<property name="issueNo" column="issue_no" type="java.lang.String"/>
+		<property name="jCost" column="cost" type="java.lang.String"/>
+		<property name="jCurrency" column="currency" type="java.lang.String"/>
+		<property name="jPrice" column="price" type="java.lang.String"/>
+		<property name="jDiscount" column="discount" type="java.lang.String"/>
+		<property name="netPrice" column="netPrice" type="java.lang.String"/>
+		<property name="budgCode" column="budgcode" type="int"/>
+		<property name="StartingAccNo" column="FirstAccNo" type="java.lang.String"/>
+		</class>
+</hibernate-mapping>
+
+
+

@@ -1,0 +1,165 @@
+H1
+{
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bold
+}
+H2
+{
+	FONT-FAMILY: Trebuchet MS;
+	FONT-SIZE: 14pt;	
+	text-align : center;
+	color:#7C1271;
+}
+H3
+{
+	COLOR: red;
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 8pt;
+	FONT-WEIGHT: bold;
+	text-align : center;
+	
+}
+H4
+{
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold;
+	
+}
+BODY
+{
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt;
+}
+.contentTable {
+	border: 1px solid #7C1271;
+	border-radius: 5px;
+}
+.contentTable td{
+	font-family: Arial; 
+	font-size: 9pt;
+	color: #000; 
+	text-align: left;
+	border: 0px solid #ACBFD1;
+}
+.contentTable th {
+	font-family: Arial; 
+	font-size: 9pt;
+	font-weight: bold; 
+	color: #000; 
+	text-align:left; 
+	border: 0px solid #ACBFD1;
+}
+
+TABLE1
+{
+	position : relative;
+}
+
+
+P
+{
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 10pt
+}
+TH
+{
+    COLOR: black;
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold
+}
+TD
+{
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 10pt;
+    
+}
+
+TD1
+{
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 10pt
+}
+
+DIV
+{
+	text-align : right;
+}
+.contents
+{
+    FONT-SIZE: 10pt;
+    MARGIN-BOTTOM: 6px;
+    MARGIN-LEFT: 20px;
+    MARGIN-TOP: 6px;
+    TEXT-INDENT: -20px
+}
+.gui
+{
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bold
+}
+.inentry
+{
+    MARGIN-BOTTOM: 3px;
+    MARGIN-TOP: 0px;
+    WORD-SPACING: 0px
+}
+.monospace
+{
+    FONT-FAMILY: Courier New, Courier;
+    FONT-SIZE: 10pt
+}
+.numlst
+{
+    LIST-STYLE: decimal;
+    MARGIN-BOTTOM: 8px;
+    MARGIN-LEFT: 5px;
+    MARGIN-RIGHT: 0px;
+    TEXT-ALIGN: left;
+    TEXT-INDENT: 0px;
+    WORD-SPACING: 0px
+}
+.small
+{
+    FONT-FAMILY: Arial, sans-serif;
+    FONT-SIZE: 8pt
+}
+.warning
+{
+    FONT-STYLE: italic;
+    FONT-WEIGHT: bold
+}
+BODY { 
+	background : #E7F0FF;
+	margin:0;
+	padding:0
+}
+
+#noteStruct {
+	border-style: solid; 
+	border-color: #8B8378; 
+	border-width: 1px; 
+	width : 100%;	
+	position:absolute;
+	bottom:0;
+}
+#noteHead {
+	font-family: Georgia; 
+	font-size: 10pt; 
+	color: #8B1A1A;
+	font-weight: bold;
+	background : #CDC0B0;
+}
+#noteBody {
+	font-family: Georgia; 
+	font-size: 9pt; 
+	color: #8B1A1A;
+}
+
+#field {
+	font-family: verdana; 
+	font-size: 8pt; 
+	color: red;
+}

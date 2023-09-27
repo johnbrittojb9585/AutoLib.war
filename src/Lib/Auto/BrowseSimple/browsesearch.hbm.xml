@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.BrowseSimple">
+
+<sql-query name="browseSearchQuery">
+
+	SELECT  access_no,call_no,title,author_name,edition,location,availability,document FROM full_search where 2>1
+
+</sql-query>
+
+
+
+<!-- Journal Search Queries -->
+
+<sql-query name="JNLBrowseSearchQuery">
+
+	SELECT jnl_code,jnl_name,frequency,doc_type,country,LANGUAGE,issn FROM journal_view where 2>1 
+
+</sql-query>
+
+
+<sql-query name="JNLIssueSearchQuery">
+
+	SELECT Issue_Access_No,Jnl_Name,Issue_Year,Issue_Month,Issue_No,Received_Date,Availability,Issue_Volume FROM journal_issues_search where 2>1 
+
+</sql-query>
+
+
+<sql-query name="JNLFullviewSearchQuery">
+
+	SELECT Issue_Access_No,Jnl_Name,Frequency,Country,Doc_Type,Issue_Year,Issue_Month,Issue_No,Issue_Volume,Received_Date,Availability,content_page FROM journal_issues_search where 2>1 
+
+</sql-query>
+
+
+
+</hibernate-mapping>
+

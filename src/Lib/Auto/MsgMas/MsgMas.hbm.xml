@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.MsgMas">
+
+<class name="MsgMasBean" table="message_mas" lazy="false">
+		<id name="msgCode" column="msg_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="libMsg" column="lib_msg" type="java.lang.String"/> 
+	   <property name="whatsNew" column="whats_new" type="java.lang.String"/> 
+	   <property name="date" column="msg_date" type="java.lang.String"/>  
+		
+				
+</class>
+
+
+
+</hibernate-mapping>
+
+
+

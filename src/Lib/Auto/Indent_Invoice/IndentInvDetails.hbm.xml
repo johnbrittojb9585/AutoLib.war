@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Indent_Invoice">
+
+<class name="IndentInvDetailsBean" table="indent_invoice_details" lazy="false">
+		<id name="invoiceno" column="Invoice_No" type="java.lang.String">
+			<generator class="assigned"/>
+	    </id>
+	    
+		<property name="invoicedate" column="Invoice_Date" type="java.lang.String"/>  		
+		<property name="supcode" column="Sup_Code" type="int"/>  
+		<property name="supplier" column="Supplier" type="java.lang.String"/>  
+		<property name="indentno" column="Indent_No" type="java.lang.String"/> 		
+		<property name="ordno" column="Order_No" type="java.lang.String"/>  
+			    				
+		<property name="titleno" column="Title_No" type="int"/> 				
+		<property name="copies" column="Copies" type="int"/>
+		
+		<property name="bcurrency" column="Currency" type="java.lang.String"/>
+		<property name="bcost" column="Cost" type="double"/>
+		<property name="bprice" column="INR_Price" type="double"/>
+		<property name="discount" column="Discount" type="double"/>
+		<property name="amount" column="Accepted_Price" type="double"/>										
+								
+		<property name="Remarks" column="Remarks" type="java.lang.String"/>  
+		<property name="Add1" column="Add_Field1" type="java.lang.String"/>  		
+		<property name="Add2" column="Add_Field2" type="java.lang.String"/>  			
+		<property name="Flag" column="Flag" type="java.lang.String"/> 		
+				
+</class>
+
+<sql-query name="IndentInvoiceFullView">
+        SELECT Invoice_No,Invoice_Date,Sup_Code,Supplier,Title_no,Title,Author_Name,Copies,Currency,Cost,INR_Price,Discount,Accepted_Price,
+Indent_No,Order_No,Remarks,Add_Field1,Add_Field2,Flag FROM indent_invoice_fullview where Invoice_No=:invno
+</sql-query>
+
+<sql-query name="IndentOrderRefNo">
+		SELECT order_no,supplier,sup_code FROM indent_order_fullview WHERE order_no LIKE :ordno OR supplier LIKE :supplier 
+		GROUP BY order_no,supplier,sup_code
+</sql-query>
+
+<sql-query name="IndentInvNo">
+		SELECT Invoice_No,Supplier,Sup_Code FROM indent_invoice_fullview WHERE Invoice_No LIKE :ordno OR Supplier LIKE :supplier 
+		GROUP BY Invoice_No,Supplier,Sup_Code
+</sql-query>
+
+<sql-query name="InvoiceUpdateIndentMas">
+		UPDATE indent_details_mas SET Title_Status='BILLED',Indent_Status='BILLED' WHERE Title_No=:titleno
+</sql-query>
+
+<sql-query name="DeleteIndentInvoiceDetail">
+		delete from indent_invoice_details WHERE Invoice_No=:invno
+</sql-query>
+
+<sql-query name="IndentInvRefNo">
+		SELECT invoiceno,supplier,SUM(amount) as Accepted_Price FROM IndentInvDetailsBean where invoiceno like :invno GROUP BY invoiceno,supplier,supcode 
+</sql-query>
+
+</hibernate-mapping>
+
+
+

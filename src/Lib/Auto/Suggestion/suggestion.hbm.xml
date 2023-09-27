@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Suggestion">
+<class name="SuggestionBean" table="suggestion_mas" lazy="false">
+
+<id name="sugNo" column="request_no" type="int">
+			<generator class="assigned"/>
+</id>
+
+<property name="memberCode" column="member_code" type="java.lang.String"/>
+<property name="doc" column="request_for" type="java.lang.String"/> 
+<property name="remarks" column="remarks" type="java.lang.String"/> 
+<property name="sugName" column="request_details" type="java.lang.String"/>
+<property name="rcDate" column="request_date" type="java.lang.String"/>
+<property name="actionTaken" column="action_taken" type="java.lang.String"/>
+<property name="status" column="status" type="java.lang.String"/>
+
+</class>
+</hibernate-mapping>

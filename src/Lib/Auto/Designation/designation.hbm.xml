@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Designation">
+
+<class name="DesignationBean" table="designation_mas" lazy="false">
+ 		<id name="code" column="desig_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+       
+	   <property name="name" column="desig_name" type="java.lang.String"/>
+		<property name="desc" column="short_desc" type="java.lang.String"/>  
+			
+</class>
+</hibernate-mapping>
+
+
+

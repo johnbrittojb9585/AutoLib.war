@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Lib.Auto.Journal">
+
+<class name="journalbean" table="journal_mas" lazy="false">
+		<id name="code" column="jnl_code" type="int">
+			<generator class="assigned"/>
+	    </id>
+	   <property name="name" column="jnl_name" type="java.lang.String"/>
+		<property name="issn" column="ISSN" type="java.lang.String"/>  
+		<property name="freq" column="frequency" type="java.lang.String"/>
+		<property name="sname" column="sub_code" type="java.lang.String"/> 		
+		<property name="dname" column="dept_code" type="java.lang.String"/>  
+		<property name="pname" column="pub_code" type="java.lang.String"/>
+		<property name="country" column="country" type="java.lang.String"/>   		
+		<property name="lang" column="language" type="java.lang.String"/>  
+		<property name="deli" column="deli_mode" type="java.lang.String"/>
+		<property name="type" column="jnl_type" type="java.lang.String"/>		
+		<property name="remarks" column="remarks" type="java.lang.String"/>  
+		<property name="Doc_Type" column="doc_type" type="java.lang.String"/>
+		
+
+
+</class>
+</hibernate-mapping>
+
+
+

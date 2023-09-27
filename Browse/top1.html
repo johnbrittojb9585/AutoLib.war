@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/AutoLib/browsestyle.css">
+</head>
+<body background="/AutoLib/soft.jpg" >
+<form name ="top" action="./BrowseSearch" target="body" onsubmit="return validate()">
+<br>
+<center>
+<table cellspacing=3 cellpadding=2 border=0 align=center>
+<tr><td><b>Browse:<b></td>
+
+<td><input tabindex="0" name="name" size="25" maxlength="100">
+</td>
+<td><select name="type">
+<option value="author_name">Author</option>
+<option value="title">Title</option>
+<option value="sub_name">Subject</option>
+<option value="sp_name">Publisher</option>
+<option value="isbn">ISBN</option>
+<option value="jnl_name">Journal Title</option>
+
+</select>
+</td>
+<!--<td><select name="Library">
+<option value="0" selected>All</option>
+<option value="CPL">Connimara public Library</option>
+<option value="2">AutoLib Library</option>
+<option value="SERC"  >SERC</option>
+98</select>
+</td>-->
+<td><input type="submit" value="Search" ></td>
+<td><input type="hidden" name="hid" value="search">
+</td>
+</tr>
+
+</table>
+<center>
+</form>
+</body>
+</html>
+
+<script >
+function validate()
+{
+if(document.top.name.value=="")
+{
+alert("Enter Any Values");
+document.top.name.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+
+
+
+

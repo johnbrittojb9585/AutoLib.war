@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Library_Collection" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="efc09515-43f1-4d57-8d47-aaf7e8124901">
+	<property name="ireport.zoom" value="1.331000000000012"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CMP_ADD" class="java.lang.String"/>
+	<parameter name="CMP_NAME" class="java.lang.String"/>
+	<parameter name="ReportTitle" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     library_collection_final.`document` AS Document,
+     library_collection_final.`volumes` AS Volumes,
+     library_collection_final.`title` AS Title
+FROM
+     `library_collection_final` library_collection_final]]>
+	</queryString>
+	<field name="Document" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Volumes" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Title" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="SUMVOL" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{Volumes}]]></variableExpression>
+	</variable>
+	<variable name="SUMTITLE" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{Title}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="58cf135c-ec00-4dd5-bb10-c6a0a9d1f743" key="rectangle-1" x="10" y="0" width="532" height="64" forecolor="#CCCCCC"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="72a71ea9-8ceb-42b8-8658-fdc621b0f139" x="72" y="9" width="470" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CMP_NAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="49e602b7-5fb7-4938-9f42-d18ba820958c" key="image-1" x="11" y="2" width="60" height="60"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA["/logo/reportcollege.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="5dba4abb-f45c-4e9f-b12b-dad0b4b3ccf9" x="72" y="38" width="470" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CMP_ADD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a1968ce0-7bfb-46c9-afb2-b361dc9c79f3" x="10" y="63" width="532" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="76063480-0f51-4bc7-8a4f-d6dfaf22875a" x="488" y="0" width="66" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3b591f88-0c1a-4b9a-9250-c531d6ba825e" x="447" y="0" width="43" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date : ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<line>
+				<reportElement uuid="9c1a3618-c5dd-4657-8bbc-7d8b99f47bb2" x="77" y="0" width="398" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<staticText>
+				<reportElement uuid="b5ced7c5-f19b-4618-a33c-71a268017c3b" x="78" y="5" width="131" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Document]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1ae8d1af-205e-4ee1-8c6d-e8d68e38ef3c" x="208" y="5" width="137" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Total No.of Volume]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f6ec82f-0dd5-465b-9bd3-f17681c07d93" x="346" y="5" width="130" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Total No.of Title]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="4a7603f4-1e79-4984-94ed-e722b45aeab5" x="77" y="0" width="1" height="32" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="dd4ca5bf-5700-4167-bbc1-27844b0cd2f6" x="208" y="0" width="1" height="31" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="6b7a1f74-9e43-45ba-a710-99930eb9497f" x="345" y="0" width="1" height="32" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="ccfb78a7-6d41-437a-9607-775d4f532bd0" x="475" y="0" width="1" height="32" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="b456fd27-c2e1-4f5d-801f-a31f6e623595" x="77" y="31" width="398" height="1" forecolor="#CCCCCC"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement uuid="f9d4eb19-266e-4f86-b0eb-882a2b6232ce" x="77" y="0" width="130" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Document}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="960fd06b-3413-4385-b9b3-825b78999fae" x="209" y="0" width="137" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Volumes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7bd26b13-aaa6-4c4f-b74b-a07463cc25d7" x="346" y="1" width="129" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Title}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="126b1d04-7678-4fac-8db5-ae40d463b973" x="77" y="0" width="1" height="25" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="19207913-8e8c-44da-b7b8-a874c6349994" x="208" y="0" width="1" height="25" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="5c7efa93-6d54-4f6c-a182-3667dad6e511" x="345" y="0" width="1" height="25" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="a69093d5-78e1-47d0-b00a-4c9d0052b98e" x="475" y="-1" width="1" height="25" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="d1b74eb6-4212-4608-b86a-66c3ad8f49db" x="78" y="24" width="398" height="1" forecolor="#CCCCCC"/>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="29">
+			<textField>
+				<reportElement uuid="1d1d4015-fcc1-40b5-bc82-298776c9cb4b" x="209" y="-1" width="136" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SUMVOL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b6abaff8-d2f6-428f-9222-6c5779948c19" x="78" y="-1" width="129" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2712b649-5b67-48d2-9c00-4fb07931102c" x="77" y="28" width="399" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="ff71b7b6-d712-4d40-9e00-adb5a86a1b2a" x="475" y="0" width="1" height="29" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="dea54c60-c46f-4119-9d68-1d08f6de275a" x="345" y="0" width="1" height="29" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="01336f2a-1d51-47d7-b088-977d3af47855" x="77" y="0" width="1" height="29" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement uuid="c9375725-990e-4e4e-b92e-1ac610483324" x="208" y="0" width="1" height="28" forecolor="#CCCCCC"/>
+			</line>
+			<textField>
+				<reportElement uuid="29ea69ee-cf64-4547-bd09-5b12f0f61f75" x="346" y="1" width="129" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SUMTITLE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
